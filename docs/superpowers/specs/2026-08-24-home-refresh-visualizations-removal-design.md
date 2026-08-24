@@ -79,6 +79,12 @@ button remains a usable touch target, and the page has no horizontal overflow.
 The twelve-card grid continues to collapse through its existing responsive
 breakpoints.
 
+On wide weekly pages, the Week 1 through Week 12 selector remains centered as
+a complete group but is aligned toward the main article column, left of the
+right-side INDEX. It does not use the INDEX column when calculating its visual
+center. Under the tablet breakpoint it returns to full-width horizontal
+scrolling and keeps the active week visible.
+
 ## Validation
 
 Implementation is accepted only when:
@@ -94,6 +100,8 @@ Implementation is accepted only when:
 - Light and dark themes use readable green accents.
 - A 1440 by 900 viewport reveals the start of About the Project.
 - A 390 by 844 viewport has no page-level horizontal overflow.
+- The desktop week selector is centered over the article region rather than
+  the article-plus-INDEX region.
 - `git diff --check` passes and ignored credentials/build artifacts remain
   unstaged.
 
