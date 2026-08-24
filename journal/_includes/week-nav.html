@@ -1,0 +1,33 @@
+```{=html}
+<nav class="week-nav-shell" aria-label="GSoC weekly journal navigation">
+  <div class="week-nav">
+    <a class="week-nav-link" data-week="1" href="/journal/week-1/">Week 1</a>
+    <a class="week-nav-link" data-week="2" href="/journal/week-2/">Week 2</a>
+    <a class="week-nav-link" data-week="3" href="/journal/week-3/">Week 3</a>
+    <a class="week-nav-link" data-week="4" href="/journal/week-4/">Week 4</a>
+    <a class="week-nav-link" data-week="5" href="/journal/week-5/">Week 5</a>
+    <a class="week-nav-link" data-week="6" href="/journal/week-6/">Week 6</a>
+    <a class="week-nav-link" data-week="7" href="/journal/week-7/">Week 7</a>
+    <a class="week-nav-link" data-week="8" href="/journal/week-8/">Week 8</a>
+    <a class="week-nav-link" data-week="9" href="/journal/week-9/">Week 9</a>
+    <a class="week-nav-link" data-week="10" href="/journal/week-10/">Week 10</a>
+    <a class="week-nav-link" data-week="11" href="/journal/week-11/">Week 11</a>
+    <a class="week-nav-link" data-week="12" href="/journal/week-12/">Week 12</a>
+  </div>
+</nav>
+<script>
+(() => {
+  const match = window.location.pathname.match(/\/journal\/(?:week-)?(\d+)?\/?$/);
+  const activeWeek = match && match[1] ? match[1] : "1";
+  const activeLink = document.querySelector(`.week-nav-link[data-week="${activeWeek}"]`);
+  if (!activeLink) return;
+
+  activeLink.classList.add("is-active");
+  activeLink.setAttribute("aria-current", "page");
+
+  if (activeLink.scrollIntoView && window.matchMedia("(max-width: 767px)").matches) {
+    activeLink.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+})();
+</script>
+```

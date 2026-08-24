@@ -79,7 +79,7 @@ Documentation changes will link to their source or rendered destination.
 
 ## Timeline
 
-The [Development Journal](journal.qmd) provides the week-by-week timeline.
+The [Development Journal](/journal/) provides the week-by-week timeline.
 
 ## Final outcomes
 

@@ -32,6 +32,13 @@ The existing `posts/week-XX` source directories are removed. Netlify permanent r
 
 The old listing content currently shown on the Journal page is removed completely.
 
+The journal listing feed is intentionally removed with that listing. It can be
+reintroduced later only from the canonical `journal/` entries.
+
+`/journal/` is the canonical Week 1 URL. `/journal/week-1/` remains a navigable
+alias and emits a canonical link to `/journal/` so the shared body does not
+create duplicate search entries.
+
 ## Weekly Content Architecture
 
 Week 1's reusable article body lives in a Quarto include consumed by both `/journal/` and `/journal/week-1/`. Weeks 2 through 12 use the existing shared planned-entry include until verified progress replaces it.

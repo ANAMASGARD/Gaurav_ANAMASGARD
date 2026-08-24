@@ -12,5 +12,5 @@ categories: [Planned]
 body-classes: "week-page week-12-page"
 ---
 
-{{< include ../../includes/week-nav.html >}}
-{{< include ../../includes/planned-week.qmd >}}
+{{< include ../_includes/week-nav.html >}}
+{{< include ../_includes/planned-week.qmd >}}

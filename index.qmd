@@ -21,7 +21,7 @@ Animint2 · R Project
 :::
 
 ::: {.hero-actions}
-[Explore Development Journal](journal.qmd){.journal-button .journal-button-primary}
+[Explore Development Journal](/journal/){.journal-button .journal-button-primary}
 [View Project Progress](progress.qmd){.journal-button}
 :::
 :::
@@ -35,53 +35,53 @@ Animint2 extends the grammar of graphics with animated, linked, interactive visu
 ## Development journey
 
 ::: {.week-card-grid}
-[**W01**<br>
+[**Week 1**<br>
 Journal structure and project setup<br>
-`PLANNED`](posts/week-01/index.qmd)
+`PLANNED`](/journal/week-1/)
 
-[**W02**<br>
+[**Week 2**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-02/index.qmd)
+`PLANNED`](/journal/week-2/)
 
-[**W03**<br>
+[**Week 3**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-03/index.qmd)
+`PLANNED`](/journal/week-3/)
 
-[**W04**<br>
+[**Week 4**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-04/index.qmd)
+`PLANNED`](/journal/week-4/)
 
-[**W05**<br>
+[**Week 5**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-05/index.qmd)
+`PLANNED`](/journal/week-5/)
 
-[**W06**<br>
+[**Week 6**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-06/index.qmd)
+`PLANNED`](/journal/week-6/)
 
-[**W07**<br>
+[**Week 7**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-07/index.qmd)
+`PLANNED`](/journal/week-7/)
 
-[**W08**<br>
+[**Week 8**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-08/index.qmd)
+`PLANNED`](/journal/week-8/)
 
-[**W09**<br>
+[**Week 9**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-09/index.qmd)
+`PLANNED`](/journal/week-9/)
 
-[**W10**<br>
+[**Week 10**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-10/index.qmd)
+`PLANNED`](/journal/week-10/)
 
-[**W11**<br>
+[**Week 11**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-11/index.qmd)
+`PLANNED`](/journal/week-11/)
 
-[**W12**<br>
+[**Week 12**<br>
 Reserved for verified progress<br>
-`PLANNED`](posts/week-12/index.qmd)
+`PLANNED`](/journal/week-12/)
 :::
 
 ## Latest progress

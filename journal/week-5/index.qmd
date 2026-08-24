@@ -1,5 +1,5 @@
 ---
-title: "Week 05 — Reserved Progress Entry"
+title: "Week 5 — Reserved Progress Entry"
 description: "A neutral starter entry reserved for verified Week 5 Animint2 progress."
 week: 5
 date-start: "Schedule pending"
@@ -9,8 +9,8 @@ sprint: "Week 5"
 pull-requests: 0
 issues: 0
 categories: [Planned]
-body-classes: "week-page week-05-page"
+body-classes: "week-page week-5-page"
 ---
 
-{{< include ../../includes/week-nav.html >}}
-{{< include ../../includes/planned-week.qmd >}}
+{{< include ../_includes/week-nav.html >}}
+{{< include ../_includes/planned-week.qmd >}}

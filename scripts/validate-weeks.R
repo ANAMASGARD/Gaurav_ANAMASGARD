@@ -3,7 +3,7 @@ required <- c(
   "pull-requests", "issues", "categories"
 )
 statuses <- c("Planned", "In Progress", "Complete", "Blocked")
-paths <- Sys.glob("posts/week-*/index.qmd")
+paths <- Sys.glob("journal/week-*/index.qmd")
 
 stopifnot(length(paths) == 12L)
 
@@ -28,11 +28,16 @@ sections <- c(
   "Outcome", "What I Did", "Learnings", "Confusions / Issues",
   "Next Week Targets", "Demo / Media", "Links"
 )
-week_one <- readLines("posts/week-01/index.qmd", warn = FALSE)
-planned <- readLines("includes/planned-week.qmd", warn = FALSE)
+week_one <- readLines("journal/_includes/week-1-body.qmd", warn = FALSE)
+planned <- readLines("journal/_includes/planned-week.qmd", warn = FALSE)
 for (section in sections) {
   heading <- paste0("## ", section)
   stopifnot(heading %in% week_one, heading %in% planned)
 }
+
+journal_home <- read_front_matter("journal/index.qmd")
+missing <- setdiff(required, names(journal_home))
+if (length(missing)) stop("journal/index.qmd is missing: ", paste(missing, collapse = ", "))
+stopifnot(as.integer(journal_home$week) == 1L)
 
 cat("Validated 12 weekly entries and the shared section contract.\n")

@@ -36,7 +36,9 @@ The static production artifact is written to `_site/`, which is intentionally ig
 
 ## Add a weekly journal entry
 
-Edit the matching `posts/week-NN/index.qmd`. Keep this front matter contract:
+Edit the matching `journal/week-N/index.qmd`. Week 1's body is shared by
+`journal/index.qmd` and `journal/week-1/index.qmd`; Weeks 2–12 use the shared
+planned body until verified progress replaces it. Keep this front matter contract:
 
 ```yaml
 ---

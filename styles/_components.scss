@@ -20,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .journal-button {
@@ -187,14 +187,14 @@
 }
 
 .week-nav {
-  width: min(calc(100% - 2rem), $journal-reading-width);
+  width: min(calc(100% - 2rem), $journal-wide-width);
   min-height: 3.25rem;
-  margin-left: 30vw;
+  margin-inline: auto;
   padding: 0 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.45rem, 1vw, 0.85rem);
+  gap: clamp(0.35rem, 0.8vw, 0.7rem);
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -205,8 +205,9 @@
 
 .week-nav-link {
   position: relative;
-  min-width: 1.5rem;
+  min-width: max-content;
   min-height: 2.5rem;
+  padding-inline: 0.35rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -337,12 +338,6 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 1099px) {
-  .week-nav {
-    margin-inline: auto;
-  }
-}
-
 @media (max-width: 900px) {
   .week-card-grid,
   .snapshot-grid {
@@ -368,7 +363,7 @@
   }
 
   .week-nav-link {
-    min-width: 2.25rem;
+    min-width: max-content;
   }
 
   .metric-cell {

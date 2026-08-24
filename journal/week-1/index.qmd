@@ -1,0 +1,17 @@
+---
+title: "Week 1 — Journal Foundation"
+description: "A neutral starter entry reserved for verified Week 1 Animint2 progress."
+week: 1
+date-start: "Schedule pending"
+date-end: "Schedule pending"
+status: "Planned"
+sprint: "Week 1"
+pull-requests: 0
+issues: 0
+categories: [Planned, Journal Infrastructure]
+body-classes: "week-page week-1-page"
+include-in-header: ../_includes/canonical-journal.html
+---
+
+{{< include ../_includes/week-nav.html >}}
+{{< include ../_includes/week-1-body.qmd >}}

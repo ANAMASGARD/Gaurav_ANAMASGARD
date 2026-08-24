@@ -2,12 +2,13 @@ project:
   type: website
   execute-dir: project
   resources:
-    - "homepopulationanimint/**"
-    - "linkedworldbankanimint/**"
+    - "_redirects"
   render:
     - "*.qmd"
-    - "posts/**/*.qmd"
-    - "!includes/**"
+    - "journal/**/*.qmd"
+    - "!journal/_includes/**"
+  post-render:
+    - scripts/copy-animint-assets.sh
 
 website:
   title: "Gaurav / GSoC 2026"
@@ -23,12 +24,12 @@ website:
     pinned: true
     logo: assets/favicon.svg
     logo-alt: "Gaurav GSoC 2026 journal"
-    title: "GAURAV / GSOC 2026"
+    title: "GAURAV CHAUDHARY"
     left:
       - text: Home
         href: index.qmd
       - text: Journal
-        href: journal.qmd
+        href: /journal/
       - text: Progress
         href: progress.qmd
       - text: Visualizations
