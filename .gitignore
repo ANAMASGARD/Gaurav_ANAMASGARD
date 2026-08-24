@@ -12,4 +12,5 @@
 /.env
 /.env.*
 !/.env.example
+/.superpowers/
 **/*.quarto_ipynb
