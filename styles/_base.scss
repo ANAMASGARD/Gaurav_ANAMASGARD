@@ -57,11 +57,14 @@ body::after {
   opacity: 0.64;
 }
 
-#quarto-header,
 #quarto-content,
 .nav-footer {
   position: relative;
   z-index: 1;
+}
+
+#quarto-header {
+  z-index: 1030;
 }
 
 a {
@@ -122,6 +125,7 @@ svg {
 
 .navbar {
   min-height: $journal-navbar-height;
+  padding-block: 0.2rem;
   border-bottom: 1px solid var(--journal-border-faint);
   background: var(--journal-nav-bg) !important;
   backdrop-filter: blur(16px);
@@ -132,16 +136,17 @@ svg {
   font-size: 0.73rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  padding-block: 0.25rem;
 }
 
 .navbar-logo {
-  width: 1.8rem;
-  max-height: 1.8rem;
+  width: 1.65rem;
+  max-height: 1.65rem;
 }
 
 .navbar-nav .nav-link {
   position: relative;
-  min-height: 2.75rem;
+  min-height: 2.25rem;
   display: inline-flex;
   align-items: center;
   color: var(--journal-text-secondary) !important;
@@ -161,7 +166,7 @@ svg {
   bottom: 0.25rem;
   left: 0.5rem;
   height: 1px;
-  background: var(--journal-text);
+  background: var(--journal-accent);
   content: "";
 }
 

@@ -1,12 +1,12 @@
 # GSoC 2026 Animint2 Development Journal
 
-A Quarto website for Gaurav Chaudhary's Google Summer of Code 2026 development journal. It uses native Quarto pages and navigation, SCSS themes, R/knitr, and static interactive Animint2 output. No SPA framework or runtime application server is required.
+A Quarto website for Gaurav Chaudhary's Google Summer of Code 2026 development journal. It uses native Quarto pages and navigation, responsive SCSS themes, and a static Netlify deployment. No SPA framework or runtime application server is required.
 
 ## Live website
 
 [gaurav-anamasgard.netlify.app](https://gaurav-anamasgard.netlify.app)
 
-The production site is deployed from the rendered `_site/` directory. It includes the responsive weekly journal, light and dark themes, and browser-ready Animint2 visualizations.
+The production site is deployed from the rendered `_site/` directory. It includes the responsive weekly journal and accessible light and dark themes.
 
 ## Local setup
 
@@ -58,7 +58,7 @@ Allowed statuses are `Planned`, `In Progress`, `Complete`, and `Blocked`. Replac
 
 ## Animint2
 
-Reusable plots live in `R/animint-demos.R`. The Home and Visualizations pages execute those functions during the Quarto render. Animint2 writes `plot.json`, tabular data, CSS, JavaScript, and vendored browser dependencies into the static site, so Netlify serves the interactions without Shiny or an iframe.
+Reusable Animint2 plot helpers remain in `R/animint-demos.R` for future verified project work. They are not currently executed or published by the website build.
 
 ## Netlify deployment
 

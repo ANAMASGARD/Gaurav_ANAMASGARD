@@ -21,6 +21,7 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 .journal-button {
@@ -46,9 +47,17 @@
 }
 
 .journal-button-primary {
-  border-color: var(--journal-text);
-  background: var(--journal-text);
-  color: var(--journal-bg) !important;
+  border-color: var(--journal-accent);
+  background: var(--journal-accent);
+  color: var(--journal-accent-contrast) !important;
+  box-shadow: 0 12px 30px var(--journal-accent-soft);
+}
+
+.journal-button-primary:hover {
+  border-color: var(--journal-accent);
+  background: var(--journal-accent);
+  color: var(--journal-accent-contrast) !important;
+  filter: brightness(1.06);
 }
 
 .editorial-panel,
@@ -179,14 +188,17 @@
   top: $journal-navbar-height;
   z-index: 40;
   width: 100vw;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(-30vw - 1.5rem);
   border-top: 1px solid var(--journal-border-faint);
   border-bottom: 1px solid var(--journal-border-faint);
   background: var(--journal-nav-bg);
   backdrop-filter: blur(16px);
+  display: grid;
+  grid-template-columns: 70vw 30vw;
 }
 
 .week-nav {
+  grid-column: 1;
   width: min(calc(100% - 2rem), $journal-wide-width);
   min-height: 3.25rem;
   margin-inline: auto;
@@ -229,7 +241,7 @@
   bottom: 0;
   left: 0.2rem;
   height: 1px;
-  background: var(--journal-text);
+  background: var(--journal-accent);
   content: "";
 }
 
@@ -342,6 +354,13 @@
   .week-card-grid,
   .snapshot-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1099px) {
+  .week-nav-shell {
+    display: block;
+    margin-left: calc(50% - 50vw);
   }
 }
 

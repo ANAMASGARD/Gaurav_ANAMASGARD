@@ -7,9 +7,6 @@ project:
     - "*.qmd"
     - "journal/**/*.qmd"
     - "!journal/_includes/**"
-  post-render:
-    - scripts/copy-animint-assets.sh
-
 website:
   title: "Gaurav / GSoC 2026"
   description: "Gaurav Chaudhary's Google Summer of Code 2026 development journal for Animint2 and the R Project."
@@ -32,8 +29,6 @@ website:
         href: /journal/
       - text: Progress
         href: progress.qmd
-      - text: Visualizations
-        href: visualizations.qmd
       - text: About
         href: about.qmd
       - text: Contact
