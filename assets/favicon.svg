@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Gaurav GSoC journal</title>
+  <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
+  <path d="M17 18h30v7H25v14h14v-5H31v-6h16v18H17z" fill="#f4f4f5"/>
+  <path d="M17 51h30" stroke="#3b82f6" stroke-width="4"/>
+</svg>

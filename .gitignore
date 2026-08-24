@@ -1,2 +1,15 @@
-_site
-.quarto
+/_site/
+/.quarto/
+/.Rproj.user/
+/.Rhistory
+/.RData
+/renv/library/
+/renv/staging/
+/test-results/
+/homepopulationanimint/
+/linkedworldbankanimint/
+/.netlify/
+/.env
+/.env.*
+!/.env.example
+**/*.quarto_ipynb

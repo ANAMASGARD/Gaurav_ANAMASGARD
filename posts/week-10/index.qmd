@@ -1,0 +1,16 @@
+---
+title: "Week 10 — Reserved Progress Entry"
+description: "A neutral starter entry reserved for verified Week 10 Animint2 progress."
+week: 10
+date-start: "Schedule pending"
+date-end: "Schedule pending"
+status: "Planned"
+sprint: "Week 10"
+pull-requests: 0
+issues: 0
+categories: [Planned]
+body-classes: "week-page week-10-page"
+---
+
+{{< include ../../includes/week-nav.html >}}
+{{< include ../../includes/planned-week.qmd >}}

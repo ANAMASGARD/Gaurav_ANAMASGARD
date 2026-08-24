@@ -1,0 +1,39 @@
+---
+title: "Contact"
+description: "Project and contact links for Gaurav's GSoC 2026 journal."
+body-classes: contact-page
+toc: false
+---
+
+::: {.page-intro}
+::: {.eyebrow}
+CONTACT & PROJECT LINKS
+:::
+
+# Get in touch
+
+Use the verified public links below. Private contact information is intentionally not guessed or exposed.
+:::
+
+::: {.contact-grid}
+::: {.contact-card}
+### GitHub
+
+[github.com/ANAMASGARD](https://github.com/ANAMASGARD)
+:::
+::: {.contact-card}
+### Journal source
+
+[ANAMASGARD/Gaurav_ANAMASGARD](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD)
+:::
+::: {.contact-card}
+### Email
+
+Add a verified public email address here.
+:::
+::: {.contact-card}
+### LinkedIn
+
+Add a verified public LinkedIn profile here.
+:::
+:::

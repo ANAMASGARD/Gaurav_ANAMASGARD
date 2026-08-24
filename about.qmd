@@ -1,19 +1,42 @@
 ---
-title: "About"
-image: profile.jpg
-about:
-  template: jolla
-  links:
-    - icon: bluesky
-      text: Bluesky
-      href: https://bsky.app/
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
-    - icon: github
-      text: Github
-      href: https://github.com
-
+title: "About Me"
+description: "About Gaurav Chaudhary and the GSoC 2026 Animint2 journal."
+body-classes: about-page
+toc: true
 ---
 
-About this blog
+::: {.page-intro}
+::: {.eyebrow}
+CONTRIBUTOR PROFILE
+:::
+
+# Gaurav Chaudhary
+
+Google Summer of Code 2026 contributor working with Animint2 in the R Project ecosystem.
+:::
+
+## About this journal
+
+This site is a transparent record of weekly progress, engineering decisions, experiments, questions, and verified contributions. It is built with Quarto so technical writing and executable R visualizations live in the same maintainable project.
+
+## About Animint2
+
+Animint2 extends a grammar-of-graphics workflow with linked selections, animation, tooltips, and browser-based interactive output.
+
+## Project description
+
+::: {.empty-state}
+The accepted project title, detailed scope, and mentor names will be added when verified information is supplied.
+:::
+
+## Technologies
+
+::: {.tag-list}
+`R` `Animint2` `Quarto` `Knitr` `HTML` `SCSS` `GitHub Actions` `Netlify`
+:::
+
+## Contribution links
+
+- [Animint2 repository](https://github.com/animint/animint2)
+- [This journal's source](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD)
+- Verified contribution links will be added here.

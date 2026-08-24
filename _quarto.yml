@@ -1,23 +1,74 @@
 project:
   type: website
+  execute-dir: project
+  resources:
+    - "homepopulationanimint/**"
+    - "linkedworldbankanimint/**"
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "!includes/**"
 
 website:
-  description: "A blog built with Quarto"
-  site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
-  title: "Gaurav_ANAMASGARD"
+  title: "Gaurav / GSoC 2026"
+  description: "Gaurav Chaudhary's Google Summer of Code 2026 development journal for Animint2 and the R Project."
+  site-url: "https://gaurav-anamasgard.netlify.app"
+  favicon: assets/favicon.svg
+  repo-url: https://github.com/ANAMASGARD/Gaurav_ANAMASGARD
+  repo-actions: [source]
+  search:
+    location: navbar
+    type: overlay
   navbar:
+    pinned: true
+    logo: assets/favicon.svg
+    logo-alt: "Gaurav GSoC 2026 journal"
+    title: "GAURAV / GSOC 2026"
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Journal
+        href: journal.qmd
+      - text: Progress
+        href: progress.qmd
+      - text: Visualizations
+        href: visualizations.qmd
+      - text: About
+        href: about.qmd
+      - text: Contact
+        href: contact.qmd
     right:
-      - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: bluesky
-        href: https://bsky.app/
+        aria-label: "GitHub repository"
+        href: https://github.com/ANAMASGARD/Gaurav_ANAMASGARD
+  page-footer:
+    left: "Gaurav Chaudhary · Google Summer of Code 2026"
+    center: "Built with Quarto and animint2"
+    right:
+      - text: Source
+        href: https://github.com/ANAMASGARD/Gaurav_ANAMASGARD
+  page-navigation: true
+  open-graph: true
+  twitter-card: true
+  reader-mode: false
+
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+      light: [cosmo, styles/theme-light.scss]
+      dark: [darkly, styles/theme-dark.scss]
+    toc: true
+    toc-location: right
+    toc-title: "INDEX"
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap
+    anchor-sections: true
+    include-after-body: assets/site.js
 
+execute:
+  echo: true
+  warning: false
+  message: false
 
-
+lang: en

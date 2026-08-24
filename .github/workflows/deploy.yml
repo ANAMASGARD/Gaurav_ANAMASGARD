@@ -1,0 +1,93 @@
+name: Build and deploy Quarto journal
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: quarto-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.6.1"
+          use-public-rspm: true
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.10.18"
+      - uses: r-lib/actions/setup-renv@v2
+      - name: Validate weekly content
+        run: Rscript scripts/validate-weeks.R
+      - name: Render website
+        run: quarto render
+      - name: Verify static artifact
+        run: scripts/verify-site.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: quarto-site
+          path: _site
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    if: >-
+      github.event_name == 'push' ||
+      (github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: quarto-site
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Require Netlify credentials
+        run: test -n "$NETLIFY_AUTH_TOKEN" && test -n "$NETLIFY_SITE_ID"
+      - name: Deploy production
+        if: github.event_name == 'push'
+        id: production
+        run: |
+          output=$(npx --yes netlify-cli deploy --dir _site --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" --prod --json)
+          url=$(printf '%s' "$output" | jq -r '.deploy_url // .url')
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Deploy pull request preview
+        if: github.event_name == 'pull_request'
+        id: preview
+        run: |
+          output=$(npx --yes netlify-cli deploy --dir _site --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" --alias "pr-${{ github.event.number }}" --json)
+          url=$(printf '%s' "$output" | jq -r '.deploy_url // .url')
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Comment preview URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ steps.preview.outputs.url }}
+        with:
+          script: |
+            const marker = '<!-- netlify-quarto-preview -->';
+            const body = `${marker}\nNetlify preview: ${process.env.PREVIEW_URL}`;
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const existing = comments.find(comment => comment.user.type === 'Bot' && comment.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
