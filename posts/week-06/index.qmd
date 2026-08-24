@@ -1,0 +1,16 @@
+---
+title: "Week 06 — Reserved Progress Entry"
+description: "A neutral starter entry reserved for verified Week 6 Animint2 progress."
+week: 6
+date-start: "Schedule pending"
+date-end: "Schedule pending"
+status: "Planned"
+sprint: "Week 6"
+pull-requests: 0
+issues: 0
+categories: [Planned]
+body-classes: "week-page week-06-page"
+---
+
+{{< include ../../includes/week-nav.html >}}
+{{< include ../../includes/planned-week.qmd >}}

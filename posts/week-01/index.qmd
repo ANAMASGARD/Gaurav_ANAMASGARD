@@ -1,0 +1,90 @@
+---
+title: "Week 01 — Journal Foundation"
+description: "A neutral starter entry reserved for verified Week 1 Animint2 progress."
+week: 1
+date-start: "Schedule pending"
+date-end: "Schedule pending"
+status: "Planned"
+sprint: "Week 1"
+pull-requests: 0
+issues: 0
+categories: [Planned, Journal Infrastructure]
+body-classes: "week-page week-01-page"
+---
+
+{{< include ../../includes/week-nav.html >}}
+
+::: {.week-header}
+::: {.week-badge}
+WEEK 1
+:::
+
+::: {.week-title}
+Journal foundation and project setup
+:::
+
+::: {.week-date}
+::: {.week-date-icon aria-hidden="true"}
+□
+:::
+Schedule pending
+:::
+
+::: {.metric-grid}
+::: {.metric-cell}
+**Week 1**
+
+SPRINT
+:::
+::: {.metric-cell}
+**Planned**
+
+STATUS
+:::
+::: {.metric-cell}
+**0**
+
+PULL REQUESTS
+:::
+::: {.metric-cell}
+**0**
+
+ISSUES
+:::
+:::
+:::
+
+## Outcome
+
+This entry is reserved for verified Week 1 progress. Replace this starter paragraph only after the outcome can be supported by project links, code, or mentor feedback.
+
+## What I Did
+
+- Add completed tasks only when their result is verifiable.
+- Link implementation work to its repository, pull request, issue, or rendered artifact.
+- Distinguish exploration from merged or completed work.
+
+## Learnings
+
+Record technical lessons, project conventions, and decisions that would help a future contributor understand the work.
+
+## Confusions / Issues
+
+Document blockers and unresolved questions honestly. Include the current state and the next evidence needed to resolve each item.
+
+## Next Week Targets
+
+- Replace this list with scoped, reviewable targets.
+- Keep planned work separate from completed outcomes.
+
+## Demo / Media
+
+::: {.media-placeholder}
+Add a captioned screenshot, short demonstration, or interactive artifact after verifying that it belongs to this project and contains no private information.
+:::
+
+## Links
+
+- [Animint2 repository](https://github.com/animint/animint2)
+- [Journal source](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD)
+- Add verified Week 1 links here.
