@@ -2,9 +2,25 @@
 window.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".quarto-color-scheme-toggle");
   const clickSound = new Audio("/assets/click-003.mp3");
+  const clickableSelector = [
+    "a[href]",
+    "button",
+    "summary",
+    'input[type="button"]',
+    'input[type="submit"]',
+    '[role="button"]',
+    '[role="switch"]',
+  ].join(", ");
 
   clickSound.preload = "auto";
-  clickSound.volume = 0.5;
+  clickSound.volume = 1;
+  clickSound.load();
+
+  const findClickableControl = (target) =>
+    target instanceof Element ? target.closest(clickableSelector) : null;
+
+  const isUnavailable = (control) =>
+    control.matches(':disabled, [aria-disabled="true"]');
 
   const playClickSound = () => {
     clickSound.currentTime = 0;
@@ -13,13 +29,28 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  document
-    .querySelectorAll(
-      ".navbar-nav .nav-link, .week-nav-link, .quarto-color-scheme-toggle"
-    )
-    .forEach((control) =>
-      control.addEventListener("click", playClickSound, { capture: true })
+  document.addEventListener("pointerdown", (event) => {
+    if (!event.isPrimary || event.button !== 0) return;
+
+    const control = findClickableControl(event.target);
+    if (!control || isUnavailable(control)) return;
+
+    playClickSound();
+  }, { capture: true });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.repeat) return;
+
+    const control = findClickableControl(event.target);
+    if (!control || isUnavailable(control)) return;
+
+    const supportsSpace = control.matches(
+      'button, summary, input[type="button"], input[type="submit"], [role="button"], [role="switch"]'
     );
+    if (event.key !== "Enter" && !(event.key === " " && supportsSpace)) return;
+
+    playClickSound();
+  }, { capture: true });
 
   if (!toggle || typeof window.quartoToggleColorScheme !== "function") return;
 

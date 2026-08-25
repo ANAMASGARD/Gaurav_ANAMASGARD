@@ -19,6 +19,12 @@ do
 done
 
 require_file _site/_redirects
+require_file _site/assets/click-003.mp3
+
+grep -q 'clickSound.volume = 1;' _site/index.html
+grep -q 'document.addEventListener("pointerdown"' _site/index.html
+grep -q 'document.addEventListener("keydown"' _site/index.html
+
 for legacy_visualization_route in /visualizations /visualizations/ /visualizations.html
 do
   grep -Eq "^${legacy_visualization_route} +/ +301!?$" _site/_redirects
@@ -49,6 +55,20 @@ grep -q "GAURAV CHAUDHARY" _site/index.html
 grep -q "Gaurav Chaudhary" _site/index.html
 grep -q "ANAMASGARD" _site/index.html
 grep -q 'rel="canonical" href="https://gaurav-anamasgard.netlify.app/journal/"' _site/journal/week-1/index.html
+grep -q "GSoC 2026 Project Timeline" _site/progress.html
+grep -q '>W01<' _site/progress.html
+grep -q '>W12<' _site/progress.html
+
+timeline_entries=$(grep -c 'class="progress-timeline-entry' _site/progress.html || true)
+test "$timeline_entries" -eq 12
+
+timeline_links=$(grep -c 'class="progress-journal-link' _site/progress.html || true)
+test "$timeline_links" -eq 12
+
+for week in 1 2 3 4 5 6 7 8 9 10 11 12
+do
+  grep -q "journal/week-${week}/" _site/progress.html
+done
 
 for removed_home_copy in "Visualizations" "Latest progress" "Interactive Animint2" "homepopulationanimint"
 do
@@ -63,8 +83,8 @@ if grep -R -n --include='*.html' '/posts/week-' _site; then
   exit 1
 fi
 
-if grep -E -R -n --include='*.html' '>W(0?[1-9]|1[0-2])<' _site; then
-  echo "Generated content still contains an abbreviated week label." >&2
+if grep -E -R -n --include='*.html' 'class="week-nav-link"[^>]*>W(0?[1-9]|1[0-2])<' _site; then
+  echo "Generated week navigation still contains an abbreviated label." >&2
   exit 1
 fi
 

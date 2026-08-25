@@ -6,7 +6,7 @@ main.content {
   padding-bottom: 6rem;
 }
 
-body:not(.home-page):not(.journal-listing-page):not(.week-page) main.content {
+body:not(.home-page):not(.journal-listing-page):not(.week-page):not(.progress-page) main.content {
   width: min(calc(100% - 2.5rem), $journal-reading-width);
   max-width: $journal-reading-width;
   margin-inline: auto;
@@ -21,7 +21,8 @@ body:not(.home-page):not(.journal-listing-page):not(.week-page) main.content {
 }
 
 .home-page main.content,
-.journal-listing-page main.content {
+.journal-listing-page main.content,
+.progress-page main.content {
   width: min(calc(100% - 2.5rem), $journal-wide-width);
   max-width: $journal-wide-width;
   margin-inline: auto;

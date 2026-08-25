@@ -1,86 +1,248 @@
 ---
-title: "Progress Report"
-description: "An updateable engineering summary for GSoC 2026 Animint2 work."
+title: "GSoC 2026 Project Timeline"
+description: "A week-by-week progress timeline for GSoC 2026 Animint2 work."
 body-classes: progress-page
-toc: true
+toc: false
+page-layout: full
 ---
 
-::: {.page-intro}
+:::: {.progress-hero}
+::: {.progress-hero-inner}
 ::: {.eyebrow}
-PROJECT STATUS
+GOOGLE SUMMER OF CODE 2026
 :::
 
-# Progress report
+# GSoC 2026 Project Timeline
 
-This page is ready to collect verified project outcomes as the GSoC period advances. Neutral starter values are used instead of invented statistics.
+A scrollable, week-by-week record of verified Animint2 project progress. Replace the neutral text below as each update is ready to publish.
 :::
+::::
 
-## Project overview
+:::::: {.progress-timeline aria-label="GSoC 2026 weekly project timeline"}
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 1: replace the title, status, and progress paragraph below. -->
+**Week 1**
 
-::: {.editorial-panel}
-**Contributor**<br>
-Gaurav Chaudhary
+## Add Week 1 title
 
-**Program**<br>
-Google Summer of Code 2026
+`UPDATE PENDING`{.progress-timeline-status}
 
-**Project**<br>
-Animint2 · R Project
+Add verified Week 1 progress here.
 
-**Detailed project title and mentor information**<br>
-Awaiting verified details
-:::
+[View journal entry](/journal/week-1/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W01
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
 
-## Objectives
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 2: replace the title, status, and progress paragraph below. -->
+**Week 2**
 
-- Document technical decisions and implementation outcomes.
-- Publish reproducible, interactive animint2 examples through Quarto.
-- Track verified contributions, testing evidence, and reviewer feedback.
-- Produce a clear final record without overstating unfinished work.
+## Add Week 2 title
 
-## Milestones
+`UPDATE PENDING`{.progress-timeline-status}
 
-::: {.milestone-list}
-::: {.milestone-item}
-**01 · FOUNDATION**
+Add verified Week 2 progress here.
 
-Journal infrastructure, reproducible builds, and project orientation.
-:::
-::: {.milestone-item}
-**02 · IMPLEMENTATION**
+[View journal entry](/journal/week-2/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W02
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
 
-Verified coding milestones and iterative mentor feedback.
-:::
-::: {.milestone-item}
-**03 · VALIDATION**
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 3: replace the title, status, and progress paragraph below. -->
+**Week 3**
 
-Testing, documentation, performance evidence, and release preparation.
-:::
-::: {.milestone-item}
-**04 · FINAL REPORT**
+## Add Week 3 title
 
-Outcomes, remaining work, and maintainership handoff.
-:::
-:::
+`UPDATE PENDING`{.progress-timeline-status}
 
-## Contributions
+Add verified Week 3 progress here.
 
-::: {.empty-state}
-No pull request or contribution is listed until its repository URL and status have been verified.
-:::
+[View journal entry](/journal/week-3/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W03
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
 
-## Testing
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 4: replace the title, status, and progress paragraph below. -->
+**Week 4**
 
-Testing commands, environments, and results will be recorded alongside the work they validate.
+## Add Week 4 title
 
-## Documentation
+`UPDATE PENDING`{.progress-timeline-status}
 
-Documentation changes will link to their source or rendered destination.
+Add verified Week 4 progress here.
 
-## Timeline
+[View journal entry](/journal/week-4/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W04
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
 
-The [Development Journal](/journal/) provides the week-by-week timeline.
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 5: replace the title, status, and progress paragraph below. -->
+**Week 5**
 
-## Final outcomes
+## Add Week 5 title
 
-This section remains intentionally open until final results are known.
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 5 progress here.
+
+[View journal entry](/journal/week-5/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W05
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 6: replace the title, status, and progress paragraph below. -->
+**Week 6**
+
+## Add Week 6 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 6 progress here.
+
+[View journal entry](/journal/week-6/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W06
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 7: replace the title, status, and progress paragraph below. -->
+**Week 7**
+
+## Add Week 7 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 7 progress here.
+
+[View journal entry](/journal/week-7/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W07
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 8: replace the title, status, and progress paragraph below. -->
+**Week 8**
+
+## Add Week 8 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 8 progress here.
+
+[View journal entry](/journal/week-8/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W08
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 9: replace the title, status, and progress paragraph below. -->
+**Week 9**
+
+## Add Week 9 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 9 progress here.
+
+[View journal entry](/journal/week-9/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W09
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 10: replace the title, status, and progress paragraph below. -->
+**Week 10**
+
+## Add Week 10 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 10 progress here.
+
+[View journal entry](/journal/week-10/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W10
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 11: replace the title, status, and progress paragraph below. -->
+**Week 11**
+
+## Add Week 11 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 11 progress here.
+
+[View journal entry](/journal/week-11/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W11
+::::
+<span class="progress-timeline-connector" aria-hidden="true"></span>
+:::::
+
+::::: {.progress-timeline-entry}
+:::: {.progress-timeline-copy}
+<!-- EDIT WEEK 12: replace the title, status, and progress paragraph below. -->
+**Week 12**
+
+## Add Week 12 title
+
+`UPDATE PENDING`{.progress-timeline-status}
+
+Add verified Week 12 progress here.
+
+[View journal entry](/journal/week-12/){.progress-journal-link}
+::::
+:::: {.progress-timeline-node aria-hidden="true"}
+W12
+::::
+:::::
+::::::
