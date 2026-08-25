@@ -140,7 +140,7 @@
 
 .snapshot-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-bottom: 5rem;
+  margin-bottom: 0;
 }
 
 .progress-report-intro {
@@ -202,7 +202,7 @@
   position: relative;
   width: min(100%, 76rem);
   margin-inline: auto;
-  padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem);
+  padding: clamp(3rem, 6vw, 5rem) 0 0;
 }
 
 .progress-timeline-entry {
@@ -406,10 +406,336 @@
   margin-top: 0;
 }
 
+.contact-page main.content {
+  width: min(calc(100% - 2.5rem), 68rem);
+  max-width: 68rem;
+}
+
+.contact-hero {
+  margin: clamp(3.5rem, 8vw, 6rem) auto clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.contact-hero h1 {
+  margin: 0 0 1rem;
+  color: var(--journal-accent);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.contact-hero > p {
+  max-width: 49rem;
+  margin: 0 auto;
+  color: var(--journal-text-secondary);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+.contact-panel {
+  margin-bottom: 0;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--journal-border-faint);
+  border-radius: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--journal-bg-elevated);
+  box-shadow: var(--journal-shadow);
+}
+
+.contact-panel-intro {
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--journal-text-secondary);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  text-align: center;
+}
+
+.contact-method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-method-grid > p,
+.contact-quick-link-grid > p {
+  display: contents;
+}
+
+.contact-method-card {
+  display: flex;
+  min-height: 13rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.35rem 1rem;
+  border: 1px solid var(--journal-border);
+  border-radius: 1.4rem;
+  background: var(--journal-bg);
+  color: var(--journal-text) !important;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.contact-method-card:hover {
+  border-color: var(--journal-accent);
+  background: var(--journal-surface-hover);
+  transform: translateY(-2px);
+}
+
+.contact-method-card:focus-visible,
+.contact-quick-link:focus-visible {
+  outline: 3px solid var(--journal-accent);
+  outline-offset: 4px;
+}
+
+.contact-method-icon {
+  margin-bottom: 1.15rem;
+  color: var(--journal-accent);
+  font-size: clamp(2.2rem, 4vw, 3.15rem);
+  line-height: 1;
+}
+
+.contact-method-name {
+  color: var(--journal-text);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  font-weight: 650;
+}
+
+.contact-method-detail {
+  margin-top: 0.5rem;
+  color: var(--journal-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.contact-quick-links {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  border-radius: 1.4rem;
+  background: var(--journal-surface);
+}
+
+.contact-quick-links > h2 {
+  margin: 0 0 1.4rem;
+  color: var(--journal-text);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 650;
+  text-align: center;
+}
+
+.contact-quick-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.contact-quick-link {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--journal-border);
+  border-radius: 999px;
+  background: var(--journal-bg-elevated);
+  color: var(--journal-accent) !important;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.contact-quick-link:hover {
+  border-color: var(--journal-accent);
+  background: var(--journal-surface-hover);
+  transform: translateY(-1px);
+}
+
 .tag-list code {
   display: inline-block;
   margin: 0 0.25rem 0.5rem 0;
   padding: 0.4rem 0.65rem;
+}
+
+.about-page main.content {
+  width: min(calc(100% - 2.5rem), 68rem);
+  max-width: 68rem;
+}
+
+.about-profile {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.45fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  margin: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(4rem, 8vw, 7rem);
+}
+
+.about-profile-media,
+.about-profile-media p {
+  margin: 0;
+}
+
+.about-profile-portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--journal-border);
+  border-radius: 1.4rem;
+  background: var(--journal-surface);
+  box-shadow: var(--journal-shadow);
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-profile-content > .eyebrow,
+.about-project-block > .eyebrow {
+  color: var(--journal-accent);
+}
+
+.about-profile-content > section.about-profile-name > h1 {
+  max-width: 14ch;
+  margin: 0.65rem 0 0.45rem;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.about-profile-handle {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.65rem;
+  color: var(--journal-accent) !important;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.about-profile-handle:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.about-profile-intro {
+  max-width: 43rem;
+  color: var(--journal-text-secondary);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.75;
+}
+
+.about-profile-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.about-project-block {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+  border-top: 2px solid var(--journal-accent);
+  border-bottom: 1px solid var(--journal-border);
+}
+
+.about-project-block > section.about-project-title > h2 {
+  max-width: 28ch;
+  margin: 0.7rem 0 clamp(1.5rem, 3vw, 2.25rem);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.about-project-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+}
+
+.about-project-detail h3,
+.about-tag-section > h3 {
+  margin: 0 0 0.45rem;
+  color: var(--journal-text-muted);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.about-project-detail p {
+  margin: 0;
+  color: var(--journal-text-secondary);
+  line-height: 1.55;
+}
+
+.about-tag-section {
+  margin-top: 1.75rem;
+}
+
+.about-tag-section .tag-list p {
+  margin: 0;
+}
+
+.about-tag-section .tag-list code {
+  border: 1px solid var(--journal-border-faint);
+  border-radius: 999px;
+  background: var(--journal-accent-soft);
+  color: var(--journal-text);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.about-page #contribution-links > h2 {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+}
+
+.about-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.5rem 0 0;
+  border-top: 1px solid var(--journal-border);
+}
+
+.about-links > p {
+  display: contents;
+}
+
+.about-link {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--journal-border);
+  color: var(--journal-text) !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.about-links > p:first-child .about-link {
+  padding-right: 1.5rem;
+}
+
+.about-links > p:last-child .about-link {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--journal-border);
+}
+
+.about-link:hover {
+  color: var(--journal-accent) !important;
 }
 
 .week-nav-shell {
@@ -584,6 +910,20 @@
   .snapshot-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .contact-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-profile {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .about-profile-media {
+    width: min(100%, 21rem);
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 1099px) {
@@ -594,6 +934,34 @@
 }
 
 @media (max-width: 767px) {
+  .contact-hero {
+    margin-top: 2.75rem;
+  }
+
+  .contact-quick-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile {
+    margin-top: 2.5rem;
+  }
+
+  .about-project-meta,
+  .about-links {
+    grid-template-columns: 1fr;
+  }
+
+  .about-project-detail + .about-project-detail {
+    padding-top: 1rem;
+    border-top: 1px solid var(--journal-border-faint);
+  }
+
+  .about-links > p:first-child .about-link,
+  .about-links > p:last-child .about-link {
+    padding-inline: 0;
+    border-left: 0;
+  }
+
   .progress-report-intro {
     padding-top: 2.25rem;
   }
@@ -709,7 +1077,12 @@
   .week-card-grid,
   .snapshot-grid,
   .metric-grid,
-  .contact-grid {
+  .contact-grid,
+  .contact-method-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-method-card {
+    min-height: 10.5rem;
   }
 }

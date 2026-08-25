@@ -87,14 +87,14 @@ Reserved for verified progress<br>
 WEEKS
 :::
 ::: {.metric-cell}
-**0**
+**10**
 
-VERIFIED PRS
+VERIFIED PR MERGES
 :::
 ::: {.metric-cell}
-**0**
+**10**
 
-VERIFIED ISSUES
+ISSUES CLOSED
 :::
 ::: {.metric-cell}
 **PLANNED**

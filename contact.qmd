@@ -1,39 +1,49 @@
 ---
 title: "Contact"
-description: "Project and contact links for Gaurav's GSoC 2026 journal."
+description: "Contact Gaurav Chaudhary and explore his Animint2 and GSoC 2026 project links."
 body-classes: contact-page
 toc: false
 ---
 
-::: {.page-intro}
-::: {.eyebrow}
-CONTACT & PROJECT LINKS
+::: {.contact-hero}
+# Contact Me
+
+Open to conversations around GSoC, Animint2, open source, and software engineering.
 :::
 
-# Get in touch
+::: {.contact-panel}
+<p class="contact-panel-intro">Feel free to reach out through any of the channels below.</p>
 
-Use the verified public links below. Private contact information is intentionally not guessed or exposed.
-:::
+<div class="contact-method-grid">
+  <a class="contact-method-card" href="mailto:chaudharygaurav2004@gmail.com" aria-label="Email Gaurav Chaudhary">
+    <i class="bi bi-envelope-at contact-method-icon" aria-hidden="true"></i>
+    <span class="contact-method-name">Email</span>
+    <span class="contact-method-detail">Open email client</span>
+  </a>
+  <a class="contact-method-card" href="https://github.com/ANAMASGARD" target="_blank" rel="noopener noreferrer" aria-label="Gaurav Chaudhary on GitHub">
+    <i class="bi bi-github contact-method-icon" aria-hidden="true"></i>
+    <span class="contact-method-name">GitHub</span>
+    <span class="contact-method-detail">&#64;ANAMASGARD</span>
+  </a>
+  <a class="contact-method-card" href="https://www.linkedin.com/in/gaurav-chaudhary-680baa215/" target="_blank" rel="noopener noreferrer" aria-label="Gaurav Chaudhary on LinkedIn">
+    <i class="bi bi-linkedin contact-method-icon" aria-hidden="true"></i>
+    <span class="contact-method-name">LinkedIn</span>
+    <span class="contact-method-detail">Gaurav Chaudhary</span>
+  </a>
+  <a class="contact-method-card" href="https://x.com/ANAMASGARD" target="_blank" rel="noopener noreferrer" aria-label="ANAMASGARD on X">
+    <i class="bi bi-twitter-x contact-method-icon" aria-hidden="true"></i>
+    <span class="contact-method-name">X</span>
+    <span class="contact-method-detail">&#64;ANAMASGARD</span>
+  </a>
+</div>
 
-::: {.contact-grid}
-::: {.contact-card}
-### GitHub
+::: {.contact-quick-links}
+## Quick Links
 
-[github.com/ANAMASGARD](https://github.com/ANAMASGARD)
-:::
-::: {.contact-card}
-### Journal source
-
-[ANAMASGARD/Gaurav_ANAMASGARD](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD)
-:::
-::: {.contact-card}
-### Email
-
-Add a verified public email address here.
-:::
-::: {.contact-card}
-### LinkedIn
-
-Add a verified public LinkedIn profile here.
+<div class="contact-quick-link-grid">
+  <a class="contact-quick-link" href="https://github.com/animint/animint2" target="_blank" rel="noopener noreferrer">Animint2 Repository</a>
+  <a class="contact-quick-link" href="https://github.com/animint/gallery" target="_blank" rel="noopener noreferrer">Gallery Repository</a>
+  <a class="contact-quick-link" href="https://summerofcode.withgoogle.com/programs/2026/projects/49BpsyvL" target="_blank" rel="noopener noreferrer">GSoC 2026 Project Selection</a>
+</div>
 :::
 :::

@@ -1,42 +1,74 @@
 ---
-title: "About Me"
-description: "About Gaurav Chaudhary and the GSoC 2026 Animint2 journal."
+title: "About Gaurav Chaudhary"
+description: "Gaurav Chaudhary's GSoC 2026 contributor profile and Animint2 project overview."
 body-classes: about-page
-toc: true
+toc: false
 ---
 
-::: {.page-intro}
+::: {.about-profile}
+::: {.about-profile-media}
+![](assets/gaurav-chaudhary-profile.jpeg){.about-profile-portrait loading="eager" fig-alt="Portrait of Gaurav Chaudhary"}
+:::
+
+::: {.about-profile-content}
 ::: {.eyebrow}
-CONTRIBUTOR PROFILE
+ABOUT
 :::
 
-# Gaurav Chaudhary
+# Gaurav Chaudhary {.about-profile-name}
 
-Google Summer of Code 2026 contributor working with Animint2 in the R Project ecosystem.
+[↗ ANAMASGARD](https://github.com/ANAMASGARD){.about-profile-handle}
+
+::: {.about-profile-intro}
+I'm a Google Summer of Code 2026 contributor working on Animint2 with the R Project for Statistical Computing. My engineering work focuses on improving performance, renderer behavior, testing, and new features for interactive data visualizations.
+
+This journal documents implementation progress, technical decisions, testing, learnings, and verified contributions throughout the project.
 :::
 
-## About this journal
-
-This site is a transparent record of weekly progress, engineering decisions, experiments, questions, and verified contributions. It is built with Quarto so technical writing and executable R visualizations live in the same maintainable project.
-
-## About Animint2
-
-Animint2 extends a grammar-of-graphics workflow with linked selections, animation, tooltips, and browser-based interactive output.
-
-## Project description
-
-::: {.empty-state}
-The accepted project title, detailed scope, and mentor names will be added when verified information is supplied.
+::: {.about-project-block}
+::: {.eyebrow}
+GSOC 2026 PROJECT
 :::
 
-## Technologies
+## Advancing Animint2 — Performance, Renderer and New Features {.about-project-title}
+
+::: {.about-project-meta}
+::: {.about-project-detail}
+### Organization
+
+R Project for Statistical Computing
+:::
+
+::: {.about-project-detail}
+### Mentors
+
+Toby Dylan Hocking · Yufan Fei · Suhaani Agarwal
+:::
+:::
+:::
+
+::: {.about-tag-section}
+### Technologies
 
 ::: {.tag-list}
-`R` `Animint2` `Quarto` `Knitr` `HTML` `SCSS` `GitHub Actions` `Netlify`
+`JavaScript` `C++` `R` `D3.js` `Rcpp`
+:::
 :::
 
-## Contribution links
+::: {.about-tag-section}
+### Focus Areas
 
-- [Animint2 repository](https://github.com/animint/animint2)
-- [This journal's source](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD)
-- Verified contribution links will be added here.
+::: {.tag-list}
+`Testing` `Data Visualization` `Performance Optimization`
+:::
+:::
+:::
+:::
+
+## Contribution Links
+
+::: {.about-links}
+[Animint2 Repository [↗]{aria-hidden="true"}](https://github.com/animint/animint2){.about-link}
+
+[Project Journal Source [↗]{aria-hidden="true"}](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD){.about-link}
+:::

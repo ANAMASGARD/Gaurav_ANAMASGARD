@@ -28,6 +28,22 @@ body:not(.home-page):not(.journal-listing-page):not(.week-page):not(.progress-pa
   margin-inline: auto;
 }
 
+.home-page #quarto-content,
+.progress-page #quarto-content,
+.about-page #quarto-content,
+.contact-page #quarto-content {
+  min-height: 0 !important;
+  grid-template-rows: [content-top] max-content [content-bottom] 0 [page-bottom];
+}
+
+.home-page main.content,
+.progress-page main.content,
+.about-page main.content,
+.contact-page main.content {
+  margin-bottom: 0;
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 .journal-hero {
   width: min(calc(100% - 1rem), 70rem);
   margin: 0 auto clamp(1.25rem, 2.5vw, 2rem);
