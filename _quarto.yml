@@ -3,6 +3,7 @@ project:
   execute-dir: project
   resources:
     - "_redirects"
+    - "assets/click-003.mp3"
   render:
     - "*.qmd"
     - "journal/**/*.qmd"

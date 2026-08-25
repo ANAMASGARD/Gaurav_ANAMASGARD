@@ -40,6 +40,7 @@ body:not(.home-page):not(.journal-listing-page):not(.week-page) main.content {
 .journal-hero h1 {
   max-width: 20ch;
   margin: 0.8rem auto 1rem;
+  color: var(--journal-accent);
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: clamp(2.8rem, 5.7vw, 5rem);
   font-weight: 650;

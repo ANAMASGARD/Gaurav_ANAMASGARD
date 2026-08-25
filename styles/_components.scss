@@ -31,6 +31,7 @@
   justify-content: center;
   padding: 0.75rem 1.15rem;
   border: 1px solid var(--journal-border);
+  border-radius: 8px;
   color: var(--journal-text) !important;
   font-size: 0.75rem;
   font-weight: 750;
@@ -194,7 +195,7 @@
   background: var(--journal-nav-bg);
   backdrop-filter: blur(16px);
   display: grid;
-  grid-template-columns: 70vw 30vw;
+  grid-template-columns: 1fr;
 }
 
 .week-nav {

@@ -1,6 +1,26 @@
 <script>
 window.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".quarto-color-scheme-toggle");
+  const clickSound = new Audio("/assets/click-003.mp3");
+
+  clickSound.preload = "auto";
+  clickSound.volume = 0.5;
+
+  const playClickSound = () => {
+    clickSound.currentTime = 0;
+    void clickSound.play().catch(() => {
+      // Browsers may block audio until the page receives a user gesture.
+    });
+  };
+
+  document
+    .querySelectorAll(
+      ".navbar-nav .nav-link, .week-nav-link, .quarto-color-scheme-toggle"
+    )
+    .forEach((control) =>
+      control.addEventListener("click", playClickSound, { capture: true })
+    );
+
   if (!toggle || typeof window.quartoToggleColorScheme !== "function") return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
