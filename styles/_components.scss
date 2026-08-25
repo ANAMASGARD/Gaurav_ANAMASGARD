@@ -143,42 +143,58 @@
   margin-bottom: 5rem;
 }
 
-.progress-hero {
-  width: 100%;
-  margin-inline: auto;
-  padding: clamp(3rem, 7vw, 5.5rem) max(1.25rem, calc((100vw - 76rem) / 2));
-  border-bottom: 0.55rem solid color-mix(in srgb, var(--journal-text) 22%, transparent);
-  background: var(--journal-accent);
-  color: var(--journal-accent-contrast);
-}
-
-.progress-hero-inner {
+.progress-report-intro {
   width: min(100%, 76rem);
   margin-inline: auto;
+  padding-top: clamp(2.25rem, 5vw, 4rem);
 }
 
-.progress-hero .eyebrow,
-.progress-hero .eyebrow p {
-  color: color-mix(in srgb, var(--journal-accent-contrast) 78%, transparent);
+.progress-report-heading {
+  text-align: center;
 }
 
-.progress-hero h1 {
-  max-width: 18ch;
-  margin: 0.65rem 0 1rem;
-  color: inherit;
-  font-size: clamp(2.7rem, 7vw, 5.8rem);
-  font-weight: 880;
-  letter-spacing: -0.06em;
-  line-height: 0.95;
-  text-transform: uppercase;
-  text-wrap: balance;
+.progress-report-heading h1 {
+  margin: 0;
+  color: var(--journal-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-align: center;
 }
 
-.progress-hero-inner > section > p:last-child {
-  max-width: 48rem;
-  margin-bottom: 0;
-  color: color-mix(in srgb, var(--journal-accent-contrast) 88%, transparent);
-  font-size: clamp(1rem, 1.7vw, 1.18rem);
+.progress-intro-panel {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding: clamp(2rem, 5vw, 3.25rem) clamp(1.25rem, 5vw, 3.5rem);
+  border: 1px solid color-mix(in srgb, var(--journal-accent) 28%, transparent);
+  border-radius: 1.75rem;
+  background: var(--journal-bg-elevated);
+  box-shadow: 0 18px 48px var(--journal-accent-soft);
+  text-align: center;
+}
+
+.progress-intro-panel h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--journal-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  text-transform: none;
+}
+
+.progress-intro-panel h2 .anchorjs-link {
+  display: none;
+}
+
+.progress-intro-panel p {
+  max-width: 70ch;
+  margin: 1rem auto 0;
+  color: var(--journal-text-secondary);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
   line-height: 1.65;
 }
 
@@ -578,13 +594,17 @@
 }
 
 @media (max-width: 767px) {
-  .progress-hero {
-    padding: 3rem 1.25rem;
+  .progress-report-intro {
+    padding-top: 2.25rem;
   }
 
-  .progress-hero h1 {
-    max-width: 12ch;
-    font-size: clamp(2.45rem, 13vw, 4rem);
+  .progress-report-heading h1 {
+    font-size: clamp(2.45rem, 12vw, 3.25rem);
+  }
+
+  .progress-intro-panel {
+    padding: 1.75rem 1.15rem;
+    border-radius: 1.25rem;
   }
 
   .progress-timeline {

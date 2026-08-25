@@ -21,9 +21,25 @@ done
 require_file _site/_redirects
 require_file _site/assets/click-003.mp3
 
-grep -q 'clickSound.volume = 1;' _site/index.html
+grep -q 'AudioContext || window.webkitAudioContext' _site/index.html
+grep -q 'decodeAudioData' _site/index.html
+grep -q 'createBufferSource' _site/index.html
+grep -q 'createGain' _site/index.html
+grep -q 'gain.gain.value = 1;' _site/index.html
+grep -q 'fallbackSound.cloneNode' _site/index.html
 grep -q 'document.addEventListener("pointerdown"' _site/index.html
 grep -q 'document.addEventListener("keydown"' _site/index.html
+grep -q 'input\[type="checkbox"\]' _site/index.html
+grep -q 'input\[type="radio"\]' _site/index.html
+grep -q 'input\[type="reset"\]' _site/index.html
+grep -q 'label\[for\]' _site/index.html
+grep -q '\[role="link"\]' _site/index.html
+grep -q '\[role="tab"\]' _site/index.html
+
+if grep -q 'document.addEventListener("click"' _site/index.html; then
+  echo "Global sound handling must not listen for click events." >&2
+  exit 1
+fi
 
 for legacy_visualization_route in /visualizations /visualizations/ /visualizations.html
 do
@@ -55,7 +71,17 @@ grep -q "GAURAV CHAUDHARY" _site/index.html
 grep -q "Gaurav Chaudhary" _site/index.html
 grep -q "ANAMASGARD" _site/index.html
 grep -q 'rel="canonical" href="https://gaurav-anamasgard.netlify.app/journal/"' _site/journal/week-1/index.html
-grep -q "GSoC 2026 Project Timeline" _site/progress.html
+grep -Eq 'class="[^"]*progress-report-heading' _site/progress.html
+grep -Eq 'class="[^"]*progress-intro-panel' _site/progress.html
+grep -q "Progress Report" _site/progress.html
+grep -q "Timeline of Contributions" _site/progress.html
+grep -q "A week-by-week record of my work, contributions, and verified progress throughout Google Summer of Code 2026." _site/progress.html
+
+if grep -q 'class="progress-hero"' _site/progress.html; then
+  echo "Oversized Progress hero is still present." >&2
+  exit 1
+fi
+
 grep -q '>W01<' _site/progress.html
 grep -q '>W12<' _site/progress.html
 

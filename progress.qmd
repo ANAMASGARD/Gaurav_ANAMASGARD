@@ -1,20 +1,20 @@
 ---
-title: "GSoC 2026 Project Timeline"
+title: "Progress Report"
 description: "A week-by-week progress timeline for GSoC 2026 Animint2 work."
 body-classes: progress-page
 toc: false
 page-layout: full
 ---
 
-:::: {.progress-hero}
-::: {.progress-hero-inner}
-::: {.eyebrow}
-GOOGLE SUMMER OF CODE 2026
+:::: {.progress-report-intro}
+::: {.progress-report-heading}
+# Progress Report
 :::
 
-# GSoC 2026 Project Timeline
+::: {.progress-intro-panel}
+## Timeline of Contributions
 
-A scrollable, week-by-week record of verified Animint2 project progress. Replace the neutral text below as each update is ready to publish.
+A week-by-week record of my work, contributions, and verified progress throughout Google Summer of Code 2026.
 :::
 ::::
 
