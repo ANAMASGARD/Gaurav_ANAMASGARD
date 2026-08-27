@@ -1,7 +1,7 @@
 ---
-title: "Week 3 — Deterministic Causes Behind Flaky CI"
+title: "Week 3 — Three Red CI Jobs, Three Different Causes"
 description: "June 8–14: browser timeout, permissions, multiline facets, and package-collision investigations."
-journal-title: "Finding deterministic causes behind flaky CI"
+journal-title: "Three red CI jobs, three different causes"
 entry: "week-3"
 week: 3
 date-start: "2026-06-08"
@@ -19,27 +19,28 @@ body-classes: "week-page journey-entry-page week-3-page"
 
 ## Outcome
 
-I merged a Chromote timeout fix and opened focused investigations covering GitHub Pages permissions, multiline facet strips, and the `atime` workflow.
+Several branches were failing in CI, but the failures only looked related from the outside.
+
+One came from an earlier renderer test leaving the shared Chromote timeout at one second. Another involved GitHub Pages tests running without the required organization token. A third came from the `atime` workflow loading the wrong package version while building an older baseline.
 
 ## What I Did
 
-- Opened Issue #334 and [PR #337](https://github.com/animint/animint2/pull/337) after finding that an early renderer test set a shared Chromote session’s `default_timeout` to one second.
-- Removed the unsafe setting and restored a safe page timeout. PR #337 merged June 12.
-- Opened Issue #335 and [PR #338](https://github.com/animint/animint2/pull/338) to investigate GitHub Pages tests when forked PRs lack the organization token.
-- Opened [PR #339](https://github.com/animint/animint2/pull/339), first adding a failing multiline facet-strip test, then joining labels with newlines and rendering lines as SVG `<tspan>` elements.
-- Opened Issue #340 and [PR #341](https://github.com/animint/animint2/pull/341) after tracing an `atime` failure to the workflow pre-installing current Animint2 before building an older baseline commit.
+- Removed the leaked one-second Chromote timeout in [PR #337](https://github.com/animint/animint2/pull/337); the fix merged June 12.
+- Opened [PR #338](https://github.com/animint/animint2/pull/338) to investigate GitHub Pages tests on forked pull requests without the organization token.
+- Traced the `atime` failure to the workflow loading current Animint2 while testing an older baseline and opened [PR #341](https://github.com/animint/animint2/pull/341).
+- Opened [PR #339](https://github.com/animint/animint2/pull/339) with a failing multiline strip test, then rendered each line as an SVG `<tspan>`.
 
 ## Learnings
 
-“Flaky” often describes appearance rather than cause. Shared browser state, shared external repositories, missing credentials, and the wrong package in a library can each produce intermittent-looking failures with deterministic roots.
+I first treated the red CI jobs as one reliability problem. Tracing them separately showed that shared browser state, missing credentials, and package installation order needed different fixes.
 
 ## Challenges / Notes
 
-Not every diagnosis belongs in Animint2 or in `testthat`. Workflow failures may require a workflow-level guard, an upstream fix, or a documented closure instead of more package code.
+Finding the cause did not yet tell me where each fix belonged. That decision continued into the next few weeks.
 
 ## Next Week Targets
 
-Decide which proposals belong in Animint2, which should be simplified, and which should move to another maintenance boundary.
+Check which proposals belong in Animint2, which should be simplified, and which should move elsewhere.
 
 ## Demo / Media
 

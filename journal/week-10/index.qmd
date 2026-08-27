@@ -1,7 +1,7 @@
 ---
-title: "Week 10 — Panel Margins and coord_equal"
+title: "Week 10 — panel.margin Merged; Then I Focused on Wide and Tall Plots"
 description: "July 27–August 2: positive panel margins merged and collaborative aspect-ratio work advanced."
-journal-title: "Positive panel margins merged and coord_equal improved"
+journal-title: "panel.margin merged; then I focused on wide and tall plots"
 entry: "week-10"
 week: 10
 date-start: "2026-07-27"
@@ -19,35 +19,30 @@ body-classes: "week-page journey-entry-page week-10-page"
 
 ## Outcome
 
-Positive `panel.margin` support merged, and I made substantial implementation and test contributions to the collaborative `coord_equal` branch.
+PR #286 finally merged after a long review cycle. I then spent most of the week contributing to Toby Hocking’s PR #253, where fixed-aspect plots were preserving the data ratio but not making good use of wide or tall viewports.
 
 ## Context
 
-The panel-margin branch began before GSoC. During Week 10, I completed its review changes and merge. PR #253 is owned by `tdhock`; my work is recorded as a collaborative contribution rather than an authored PR.
+The panel-margin branch began before GSoC. During Week 10, I completed its review changes and merge. PR #253 is owned by Toby Hocking; my contribution covered implementation, tests, documentation, and later simplification work.
 
 ## What I Did
 
 - Merged [PR #286](https://github.com/animint/animint2/pull/286) on July 29.
-- Contributed to [PR #253](https://github.com/animint/animint2/pull/253):
-  - fixed scale-to-fit behavior for non-square viewports;
-  - preserved data aspect ratio while using available panel space;
-  - removed an R normalization that squared the aspect effect;
-  - added a non-square viewport test;
-  - added a y-axis-height case with `coord_fixed(10)`;
-  - clarified NEWS and width/height cases.
-- Synchronized the long-running facet-strip branch with changed main-branch text behavior.
+- Added scale-to-fit behavior and wide/tall viewport tests to [PR #253](https://github.com/animint/animint2/pull/253).
+- Preserved the data aspect ratio while allowing the panel to use the largest available area.
+- Updated the long-running facet-strip branch after the main-branch text behavior changed.
 
 ## Learnings
 
-`coord_equal` is not only a one-to-one unit relationship. The renderer must preserve the data ratio and choose the largest panel that fits a wide, tall, or faceted viewport.
+I initially focused on preserving the relationship between x and y. The remaining problem was choosing the largest panel that fit the viewport without stretching that relationship.
 
 ## Challenges / Notes
 
-Floating-point SVG coordinates made exact assertions brittle. The test needed enough tolerance for roughly 0.001 rendering noise without hiding a real aspect-ratio error.
+Browser coordinates differed by tiny floating-point amounts. I had to ignore harmless SVG noise without making the test too loose to catch the real aspect-ratio bug.
 
 ## Next Week Targets
 
-Run broad verification across the open renderer branches and prepare the final feature push.
+Rerun the open renderer branches after the recent upstream changes and record what still needed review.
 
 ## Demo / Media
 

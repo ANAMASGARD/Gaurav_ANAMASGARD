@@ -1,7 +1,7 @@
 ---
-title: "Week 12 — Interactive stat_bin Proof of Concept"
-description: "August 10–16: fixed histogram breaks and browser-side count recomputation after selection."
-journal-title: "Interactive stat_bin proof of concept"
+title: "Week 12 — Making a Histogram Recompute After Selection"
+description: "August 10–16: defining and beginning an interactive stat_bin proof of concept."
+journal-title: "Making a histogram recompute after selection"
 entry: "week-12"
 week: 12
 date-start: "2026-08-10"
@@ -19,30 +19,26 @@ body-classes: "week-page journey-entry-page week-12-page"
 
 ## Outcome
 
-I started PR #343, exploring how histogram bins can update after an interactive selection.
+`showSelected` could filter the rows displayed in a visualization, but the histogram counts had already been calculated before the user clicked. I opened PR #343 to test whether `stat_bin` could recompute those counts in the browser.
 
 ## What I Did
 
-- Began from [Issue #158](https://github.com/animint/animint2/issues/158).
-- Added a failing acceptance test first.
-- Required both changing counts after selection and fixed bin boundaries for meaningful comparison.
-- Exported raw values and a stable set of breaks from R.
-- Added a JavaScript `stat-bin.js` path to recompute counts in the browser.
-- Refreshed affected histogram geometry after selection.
-- Continued review updates on PR #336 and PR #261.
-- Synchronized PR #339 and collaborative PR #253 with current `master`.
+- Started from [Issue #158](https://github.com/animint/animint2/issues/158) and added a failing browser test on August 12.
+- Required the bar counts to change after selection while the bin boundaries stayed fixed.
+- Began designing the raw-value and fixed-break data that the browser implementation would need.
+- Continued review work on PR #336 and PR #261 while the proof of concept was taking shape.
 
 ## Learnings
 
-Interactive statistical transforms are not equivalent to filtering precomputed rows. When selected data changes, the statistic may need to be recomputed. For histograms, fixed breaks are essential; otherwise a changing bin grid prevents meaningful visual comparison.
+Filtering precomputed bars was not enough because the statistic itself depended on the selected rows. Fixed breaks were also necessary; otherwise both the counts and the bin grid could change at the same time.
 
 ## Challenges / Notes
 
-This was a proof of concept, not a finished general framework for browser-side statistical transforms. Its open status and limitations remain visible.
+This was still a proof of concept. The complete JavaScript path, test cleanup, and coverage work continued into Final Submission, and the result was not a general system for every ggplot statistic.
 
 ## Next Week Targets
 
-Finish the acceptance path, stabilize coverage, merge multiline text, and prepare the final report.
+Complete the JavaScript path, stabilize the tests, finish the multiline-text review, and prepare the final report.
 
 ## Demo / Media
 

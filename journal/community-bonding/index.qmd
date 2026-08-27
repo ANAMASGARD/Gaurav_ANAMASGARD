@@ -1,5 +1,5 @@
 ---
-title: "Community Bonding — From Backlog to Work Plan"
+title: "Community Bonding — Sorting the Branches I Had Already Started"
 description: "May 1–24: early merges, honest closures, project planning, and the first CI race investigation."
 entry: "community-bonding"
 date-start: "2026-05-01"
@@ -18,7 +18,7 @@ body-classes: "week-page journey-entry-page community-bonding-page"
 COMMUNITY BONDING · MAY 1–24, 2026
 :::
 
-# Turning an accepted proposal into a practical work plan
+# Sorting the branches I had already started
 
 ::: {.entry-summary-strip}
 `2 LASTING MERGES`{.entry-status .status-merged} `2 EXPERIMENTS CLOSED`{.entry-status .status-closed} `PUBLIC PLAN OPENED`{.entry-status}
@@ -26,11 +26,13 @@ COMMUNITY BONDING · MAY 1–24, 2026
 
 ## Outcome
 
-I entered GSoC with several Animint2 contributions already under review. Community Bonding was therefore not only environment setup: I audited those branches, completed two visible contributions, closed two experiments honestly, organized the remaining work, and identified the CI race that became my first coding-period task.
+I did not enter Community Bonding with an empty task list. Several of my Animint2 pull requests were already under review, so I used these three weeks to decide what I should finish first, what needed a redesign, and what was no longer worth pursuing.
+
+The ChIP-seq gallery work and download-size feature merged during this period. I also opened Issue #327 to keep my GSoC updates public and began investigating the GitHub Pages race that became my first coding-period fix.
 
 ## Context
 
-Before GSoC, I had already started work across selector behavior, renderer tests, text rendering, facets, layout, and gallery maintenance. During May 1–24, the important work was deciding which branches should be completed first, which needed redesign, and which should stop rather than remain open indefinitely.
+Before GSoC, I had already worked on selectors, renderer tests, text rendering, facets, layout, and the gallery. The point of this entry is not to retell March and April; it records the decisions and outcomes from May 1–24.
 
 ## What I Did
 
@@ -38,7 +40,7 @@ Before GSoC, I had already started work across selector behavior, renderer tests
 
 - Merged [gallery PR #51](https://github.com/animint/gallery/pull/51), which ported the ChIP-seq Large Margin visualization to the current Animint2 gallery.
 - Merged [PR #272](https://github.com/animint/animint2/pull/272), adding file count, row count, total size, and mean size to download-status output.
-- Closed [PR #310](https://github.com/animint/animint2/pull/310), the k-fold renderer hard-test experiment, without merge after documenting its test-design lessons.
+- [PR #310](https://github.com/animint/animint2/pull/310) closed without merge after review. The public record gives no final closure reason, so I do not assign one here.
 
 ### May 10–16 — Scope and compatibility review
 
@@ -49,26 +51,22 @@ Before GSoC, I had already started work across selector behavior, renderer tests
 ### May 17–24 — Public plan and CI race
 
 - Opened [Issue #327](https://github.com/animint/animint2/issues/327) as my public GSoC plan and update log.
-- Closed PR #291 after preserving the useful compatibility research.
+- Closed/reprioritized PR #291 after the maintainer asked us to focus on more important issues. The compatibility tests remained useful research.
 - Opened [Issue #324](https://github.com/animint/animint2/issues/324) after tracing `R_coverage` and `JS_coverage` to the same mutable GitHub Pages test repository.
 - Opened [PR #330](https://github.com/animint/animint2/pull/330) with a test-first guard and job-specific repository names derived from `TEST_SUITE`.
 - Organized the active backlog into likely-to-merge, review-heavy, collaborative, exploratory, pre-midterm, and post-midterm workstreams.
 
 ## Learnings
 
-A closed PR can still be useful when it exposes weak assertions, animation timing problems, compatibility risks, or a better repository boundary. PR #272 also reinforced that application output should explain technical state in user terms: “how many files?” and “how much data?” are more useful than an internal renderer value.
-
-The CI race showed that two individually correct jobs can fail when they share mutable external state. “Flaky” described the symptom, not the cause.
+PR #291 and PR #310 did not merge, but they still left useful evidence about compatibility and browser-test design. The CI investigation also gave me a more specific explanation than “flaky”: two jobs were changing the same external repository at the same time.
 
 ## Challenges / Notes
 
-The largest challenge was prioritization. The accepted project continued earlier work, but that did not mean every existing branch belonged in the coding plan. Community Bonding converted a GitHub backlog into a sequence: stabilize CI, finish review-heavy branches, work on larger interaction changes after the midterm, and publish evidence for every outcome—including closures.
+The difficult part was deciding what not to carry into the coding period. Existing work did not automatically deserve more implementation time simply because I had already started it.
 
 ## Next Week Targets
 
-- Merge the isolated-repository CI fix.
-- Complete the remaining PR #292 legend opt-out review.
-- Continue focused revisions on PR #288 and PR #285.
+Merge the isolated-repository CI fix, finish the PR #292 review, and continue the focused revisions on PR #288 and PR #285.
 
 ## Demo / Media
 
@@ -79,8 +77,8 @@ The largest challenge was prioritization. The accepted project continued earlier
 |---|---|---|
 | Gallery #51 | Under review | Merge the ChIP-seq port |
 | PR #272 | Under review | Merge download-size information |
-| PR #291 | Broad migration | Close after compatibility research |
-| PR #310 | Hard-test experiment | Close and preserve test lessons |
+| PR #291 | Broad migration | Reprioritize after maintainer feedback |
+| PR #310 | Hard-test experiment | Closed after review; no final public reason |
 | Issue #324 / PR #330 | New CI diagnosis | Make it the first coding-period task |
 :::
 

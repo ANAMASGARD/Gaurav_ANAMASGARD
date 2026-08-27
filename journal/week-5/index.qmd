@@ -1,7 +1,7 @@
 ---
-title: "Week 5 — Review-Driven Scope Cleanup"
+title: "Week 5 — Reducing Scope While Waiting for Review"
 description: "June 22–28: reducing scope and preparing branches for clear maintainer decisions."
-journal-title: "Review-driven cleanup before decisions"
+journal-title: "Reducing scope while waiting for review"
 entry: "week-5"
 week: 5
 date-start: "2026-06-22"
@@ -19,27 +19,25 @@ body-classes: "week-page journey-entry-page week-5-page"
 
 ## Outcome
 
-I reduced scope and prepared the active branches for clear maintainer decisions rather than adding more code to uncertain solutions.
+Most of this week was cleanup and waiting for maintainer decisions. I kept the renderer work small and stopped expanding the two CI proposals while their ownership was still unclear.
 
 ## What I Did
 
-- Kept [PR #306](https://github.com/animint/animint2/pull/306) limited to removing redundant selector existence checks.
-- Avoided mixing new behavior into a cleanup PR.
-- Reviewed maintainer feedback on PR #338 and PR #341.
-- Prepared to close proposals that were no longer the preferred solution.
-- Kept PR #339 separate from CI work because it changed user-visible facet rendering.
+- Kept [PR #306](https://github.com/animint/animint2/pull/306) limited to removing redundant selector checks without changing behavior.
+- Paused further expansion of PR #338 and PR #341 while waiting for feedback about where those fixes belonged.
+- Kept PR #339 separate because it changed visible facet rendering rather than CI infrastructure.
 
 ## Learnings
 
-A small cleanup is valuable when it removes duplicate conditions without changing behavior. It becomes harder to review when it also tries to solve unrelated features or infrastructure. A closed investigation can remain useful documentation and prevent future contributors from repeating the same root-cause analysis.
+The clearest version of PR #306 was also the smallest one. Adding another feature or a workflow policy would only have made the review harder.
 
 ## Challenges / Notes
 
-Progress during review can look quieter than implementation work. The useful output was a smaller mergeable branch, explicit closure criteria, and a clearer boundary around the feature work.
+There was no large public milestone. The useful result was a smaller branch and a clearer separation between renderer work and infrastructure questions.
 
 ## Next Week Targets
 
-Merge the selector cleanup, close or rehome the two CI proposals, and keep the facet-strip feature current.
+Finish the PR #306 review and act on the maintainer feedback for PR #338 and PR #341.
 
 ## Demo / Media
 

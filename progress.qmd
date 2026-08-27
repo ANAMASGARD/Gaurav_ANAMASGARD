@@ -23,13 +23,13 @@ Fourteen official-program entries: Community Bonding, twelve coding weeks, and t
 :::: {.progress-timeline-copy}
 **Community Bonding · May 1–24**
 
-## Starting backlog to practical plan
+## Sorting the starting backlog
 
 `2 MERGED · 2 CLOSED`{.progress-timeline-status}
 
-Merged the ChIP-seq gallery port and download-size reporting, organized the active backlog in Issue #327, and traced the shared GitHub Pages repository race.
+The ChIP-seq gallery port and download-size reporting merged. I opened **Issue #327** to organize the branches already under review and traced the shared GitHub Pages repository race that became my first coding-period fix.
 
-[PR #51](https://github.com/animint/gallery/pull/51) · [PR #272](https://github.com/animint/animint2/pull/272) · [Read journal →](/journal/community-bonding/){.progress-journal-link}
+**[PR #51](https://github.com/animint/gallery/pull/51)** · **[PR #272](https://github.com/animint/animint2/pull/272)** · [Read journal →](/journal/community-bonding/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 CB
@@ -41,13 +41,13 @@ CB
 :::: {.progress-timeline-copy}
 **Week 1 · May 25–31**
 
-## CI isolation and legend control
+## CI race removed; first legend opt-out merged
 
 `2 MERGED · 2 REVISED`{.progress-timeline-status}
 
-PR #330 removed a shared-repository race, PR #292 delivered the first legend opt-out behavior, and review continued on custom facet-height and error-message work.
+**PR #330** stopped the R and JavaScript coverage jobs from changing the same test repository. **PR #292**, which had started before GSoC, completed review and merged with the first legend opt-out behavior.
 
-[PR #330](https://github.com/animint/animint2/pull/330) · [PR #292](https://github.com/animint/animint2/pull/292) · [Read journal →](/journal/week-1/){.progress-journal-link}
+**[PR #330](https://github.com/animint/animint2/pull/330)** · **[PR #292](https://github.com/animint/animint2/pull/292)** · [Read journal →](/journal/week-1/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W01
@@ -59,13 +59,13 @@ W01
 :::: {.progress-timeline-copy}
 **Week 2 · June 1–7**
 
-## Precise legend-selection opt-out
+## Keeping year selection without the colour legend
 
 `OPEN AT AUG 24 CUTOFF`{.progress-timeline-status}
 
-Designed `showSelected.legend = FALSE` so an explicit selector remains active while automatic legend-variable injection is disabled. The completed PR merged August 25.
+**PR #336** added `showSelected.legend = FALSE`, preserving explicit `year` selection while preventing the colour legend from silently adding `region`. It was open and ready on August 24 and merged August 25.
 
-[PR #336](https://github.com/animint/animint2/pull/336) · [Issue #333](https://github.com/animint/animint2/issues/333) · [Read journal →](/journal/week-2/){.progress-journal-link}
+**[PR #336](https://github.com/animint/animint2/pull/336)** · **[Issue #333](https://github.com/animint/animint2/issues/333)** · [Read journal →](/journal/week-2/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W02
@@ -77,13 +77,13 @@ W02
 :::: {.progress-timeline-copy}
 **Week 3 · June 8–14**
 
-## Deterministic causes behind flaky CI
+## Three red CI jobs, three different causes
 
 `1 MERGED · 3 INVESTIGATIONS`{.progress-timeline-status}
 
-Merged the Chromote timeout fix and opened focused work on GitHub Pages credentials, multiline facet strips, and an `atime` package collision.
+**PR #337** fixed a leaked one-second Chromote timeout and merged. Separate investigations traced other failures to fork credentials and `atime` package loading, while **PR #339** began the multiline facet-strip work.
 
-[PR #337](https://github.com/animint/animint2/pull/337) · [PR #339](https://github.com/animint/animint2/pull/339) · [Read journal →](/journal/week-3/){.progress-journal-link}
+**[PR #337](https://github.com/animint/animint2/pull/337)** · **[PR #339](https://github.com/animint/animint2/pull/339)** · [Read journal →](/journal/week-3/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W03
@@ -95,13 +95,13 @@ W03
 :::: {.progress-timeline-copy}
 **Week 4 · June 15–21**
 
-## Choosing where each fix belongs
+## Checking where the CI fixes belonged
 
 `VALIDATION · SCOPE`{.progress-timeline-status}
 
-Separated browser-state, credentials, workflow, and SVG-layout problems instead of combining unrelated failures into a generic stability patch.
+There was no major feature commit. I checked whether the browser-state, credentials, package-loading, and SVG-layout problems belonged in Animint2, its workflows, or another project before expanding the proposed fixes.
 
-[Issue #334](https://github.com/animint/animint2/issues/334) · [Issue #340](https://github.com/animint/animint2/issues/340) · [Read journal →](/journal/week-4/){.progress-journal-link}
+**[Issue #334](https://github.com/animint/animint2/issues/334)** · **[Issue #340](https://github.com/animint/animint2/issues/340)** · [Read journal →](/journal/week-4/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W04
@@ -113,13 +113,13 @@ W04
 :::: {.progress-timeline-copy}
 **Week 5 · June 22–28**
 
-## Review-driven scope cleanup
+## Reducing scope while waiting for review
 
 `MERGE PREPARATION`{.progress-timeline-status}
 
-Kept PR #306 behavior-preserving, prepared two CI proposals for closure or relocation, and protected PR #339 from unrelated infrastructure scope.
+I kept **PR #306** limited to redundant selector checks and paused further work on **PR #338** and **PR #341** while waiting for ownership feedback. The visible facet work in **PR #339** stayed separate from CI infrastructure.
 
-[PR #306](https://github.com/animint/animint2/pull/306) · [PR #338](https://github.com/animint/animint2/pull/338) · [Read journal →](/journal/week-5/){.progress-journal-link}
+**[PR #306](https://github.com/animint/animint2/pull/306)** · **[PR #338](https://github.com/animint/animint2/pull/338)** · [Read journal →](/journal/week-5/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W05
@@ -131,13 +131,13 @@ W05
 :::: {.progress-timeline-copy}
 **Week 6 · June 29–July 5**
 
-## One merge, two documented closures
+## One merge and two PRs closed
 
 `1 MERGED · 2 CLOSED`{.progress-timeline-status}
 
-Merged the renderer guard cleanup, closed two investigations at the correct repository boundary, and updated multiline facet work against current upstream changes.
+**PR #306** merged. **PR #338** closed because its skip logic was more complex than the preferred fork-specific solution, while **PR #341** closed because the fix belonged in `atime`, not Animint2.
 
-[PR #306](https://github.com/animint/animint2/pull/306) · [PR #341](https://github.com/animint/animint2/pull/341) · [Read journal →](/journal/week-6/){.progress-journal-link}
+**[PR #306](https://github.com/animint/animint2/pull/306)** · **[PR #341](https://github.com/animint/animint2/pull/341)** · [Read journal →](/journal/week-6/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W06
@@ -149,13 +149,13 @@ W06
 :::: {.progress-timeline-copy}
 **Week 7 · July 6–12**
 
-## Midterm checkpoint
+## Midterm: choosing what to finish
 
 `REVIEW · ROADMAP`{.progress-timeline-status}
 
-Reviewed the connected text, facet, selector, and aspect-ratio branches and prioritized geometry tests and review resolution for the second half.
+Public activity was light, so I used the midpoint to narrow the remaining work. Text and facet reviews came first, followed by selector and aspect-ratio work, with time reserved for one small interaction experiment.
 
-[Issue #327](https://github.com/animint/animint2/issues/327) · [PR #253](https://github.com/animint/animint2/pull/253) · [Read journal →](/journal/week-7/){.progress-journal-link}
+**[Issue #327](https://github.com/animint/animint2/issues/327)** · **[PR #253](https://github.com/animint/animint2/pull/253)** · [Read journal →](/journal/week-7/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W07
@@ -167,13 +167,13 @@ W07
 :::: {.progress-timeline-copy}
 **Week 8 · July 13–19**
 
-## Multiline strips reserve panel space
+## The labels split, but still covered the plot
 
 `OPEN · GEOMETRY VERIFIED`{.progress-timeline-status}
 
-Added browser-geometry regression coverage and fixed multiline facet strips so every text line is measured and placed outside the data panel.
+**PR #339** already split facet labels into SVG lines, but the extra line could overlap the panel. A browser-geometry test exposed that problem, and the renderer was updated to measure and reserve space for every line.
 
-[PR #339](https://github.com/animint/animint2/pull/339) · [Read journal →](/journal/week-8/){.progress-journal-link}
+**[PR #339](https://github.com/animint/animint2/pull/339)** · [Read journal →](/journal/week-8/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W08
@@ -185,13 +185,13 @@ W08
 :::: {.progress-timeline-copy}
 **Week 9 · July 20–26**
 
-## Smaller and stronger regression tests
+## Three PRs, mostly smaller review fixes
 
 `3 PRS REVISED`{.progress-timeline-status}
 
-Removed unrelated setup, strengthened facet-height assertions, guarded selector partial matching, and rewrote NEWS around user-visible behavior.
+Review on **PR #288**, **PR #336**, and **PR #286** mostly removed unrelated setup, clarified names, and strengthened assertions. The branches became smaller and their intended behavior easier to see.
 
-[PR #288](https://github.com/animint/animint2/pull/288) · [PR #286](https://github.com/animint/animint2/pull/286) · [Read journal →](/journal/week-9/){.progress-journal-link}
+**[PR #288](https://github.com/animint/animint2/pull/288)** · **[PR #286](https://github.com/animint/animint2/pull/286)** · [Read journal →](/journal/week-9/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W09
@@ -203,13 +203,13 @@ W09
 :::: {.progress-timeline-copy}
 **Week 10 · July 27–August 2**
 
-## Panel margins and fixed aspect ratios
+## Positive panel margins merged
 
 `1 MERGED · 1 COLLABORATIVE PR`{.progress-timeline-status}
 
-Merged positive `panel.margin` coverage and contributed scale-to-fit logic plus wide/tall viewport tests to the collaborative `coord_equal` branch.
+**PR #286** merged with positive `panel.margin` coverage. On Toby Hocking’s **PR #253**, I contributed scale-to-fit implementation, tests, documentation, and simplification for wide and tall fixed-aspect plots.
 
-[PR #286](https://github.com/animint/animint2/pull/286) · [PR #253](https://github.com/animint/animint2/pull/253) · [Read journal →](/journal/week-10/){.progress-journal-link}
+**[PR #286](https://github.com/animint/animint2/pull/286)** · **[PR #253](https://github.com/animint/animint2/pull/253)** · [Read journal →](/journal/week-10/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W10
@@ -221,13 +221,13 @@ W10
 :::: {.progress-timeline-copy}
 **Week 11 · August 3–9**
 
-## Deliberate open-branch verification
+## Rerunning the open branches
 
 `5 ACTIVE WORKSTREAMS CHECKED`{.progress-timeline-status}
 
-Verified selector semantics, multiline measurement, custom-height assertions, aspect-ratio coverage, and the scope of a final interactive-statistics proof of concept.
+There was no major public commit. I reran selector, multiline-text, custom-height, and aspect-ratio branches after upstream changes, then chose a small `stat_bin` selection experiment for the final coding week.
 
-[PR #285](https://github.com/animint/animint2/pull/285) · [PR #288](https://github.com/animint/animint2/pull/288) · [Read journal →](/journal/week-11/){.progress-journal-link}
+**[PR #285](https://github.com/animint/animint2/pull/285)** · **[PR #288](https://github.com/animint/animint2/pull/288)** · [Read journal →](/journal/week-11/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W11
@@ -239,13 +239,13 @@ W11
 :::: {.progress-timeline-copy}
 **Week 12 · August 10–16**
 
-## Interactive histogram proof of concept
+## Making a histogram recompute after selection
 
 `POC · OPEN AT CUTOFF`{.progress-timeline-status}
 
-Added a failing acceptance test, exported raw values and fixed breaks, and recomputed histogram counts in the browser after interactive selection.
+**PR #343** began with a failing browser test: selecting different rows should change histogram counts without moving the bin boundaries. The raw-value and fixed-break design started here; the complete JavaScript path followed during Final Submission.
 
-[PR #343](https://github.com/animint/animint2/pull/343) · [Issue #158](https://github.com/animint/animint2/issues/158) · [Read journal →](/journal/week-12/){.progress-journal-link}
+**[PR #343](https://github.com/animint/animint2/pull/343)** · **[Issue #158](https://github.com/animint/animint2/issues/158)** · [Read journal →](/journal/week-12/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 W12
@@ -257,62 +257,16 @@ W12
 :::: {.progress-timeline-copy}
 **Final Submission · August 17–24**
 
-## One major merge and an honest cutoff
+## What merged and what stayed open
 
 `11 LASTING MERGES · 5 OPEN`{.progress-timeline-status}
 
-Merged multiline text, strengthened open renderer branches, reviewed Codecov failure behavior, and separated the August 24 record from PR #336’s August 25 merge.
+**PR #261** merged with multiline text support. The histogram PoC and several renderer branches remained open, and **PR #336**’s August 25 merge stayed separate from the August 24 total of eleven lasting merges.
 
-[PR #261](https://github.com/animint/animint2/pull/261) · [PR #344](https://github.com/animint/animint2/pull/344) · [Read journal →](/journal/final-submission/){.progress-journal-link}
+**[PR #261](https://github.com/animint/animint2/pull/261)** · **[PR #344](https://github.com/animint/animint2/pull/344)** · [Read journal →](/journal/final-submission/){.progress-journal-link}
 ::::
 :::: {.progress-timeline-node aria-hidden="true"}
 FS
 ::::
 :::::
 ::::::
-
-## Project at the August 24 cutoff
-
-::: {.progress-analytics-grid}
-::: {.progress-analytics-card}
-**21**
-
-### Authored workstreams
-
-Eleven lasting merges, five open, four closed or reprioritized, and one merged/reverted/split gallery workstream.
-:::
-::: {.progress-analytics-card}
-**11 → 12**
-
-### Lasting merges
-
-Eleven at the cutoff. PR #336 is the separately dated August 25 post-cutoff merge.
-:::
-::: {.progress-analytics-card}
-**5**
-
-### Open authored PRs
-
-#285, #288, #336, #339, and #343 were open at the August 24 cutoff.
-:::
-::: {.progress-analytics-card}
-**5**
-
-### Issues opened / tracked
-
-Infrastructure, selection semantics, browser state, workflow isolation, and project coordination.
-:::
-:::
-
-### Status breakdown
-
-::: {.status-ledger}
-| Status at August 24 | Count | Meaning |
-|---|---:|---|
-| Lasting merged PRs | **11** | Nine Animint2 and two gallery contributions |
-| Open authored PRs | **5** | Active review or proof-of-concept work |
-| Closed/reprioritized | **4** | Useful investigations not merged |
-| Merged, reverted, split | **1** | Gallery PR #46 |
-| Collaborative contribution | **1** | PR #253, owned by another contributor |
-| External review | **1** | PR #344 |
-:::

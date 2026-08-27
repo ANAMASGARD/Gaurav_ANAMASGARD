@@ -1,7 +1,7 @@
 ---
-title: "Week 7 — Midterm Checkpoint"
+title: "Week 7 — Midterm: Choosing What to Finish"
 description: "July 6–12: reviewing the connected renderer work and planning the second half."
-journal-title: "Midterm checkpoint and review of the open work"
+journal-title: "Midterm: choosing what to finish"
 entry: "week-7"
 week: 7
 date-start: "2026-07-06"
@@ -19,29 +19,26 @@ body-classes: "week-page journey-entry-page week-7-page"
 
 ## Outcome
 
-The standard GSoC midterm evaluation window fell in this week. Public commit activity was light, so I used the checkpoint to review project state rather than inventing a milestone.
+Public commit activity was light. I used the midpoint to review the open branches and decide what I could realistically finish in the second half.
 
 ## What I Did
 
-- Reviewed PR #285’s clearer facet errors.
-- Reviewed PR #288’s custom-height facet layout tests.
-- Reviewed PR #286’s positive `panel.margin` coverage.
-- Reviewed PR #336’s legend-injection control.
-- Reviewed PR #339’s multiline facet labels.
-- Revisited the long-running PR #261 multiline-text feature.
-- Reviewed collaborative PR #253’s `coord_equal` work.
+- Prioritized the text and facet branches that already had focused review feedback.
+- Kept selector semantics and positive panel margins in the near-term review set.
+- Revisited the long-running multiline-text branch and Toby Hocking’s collaborative `coord_equal` PR.
+- Reserved time after those reviews for one small interactive-statistics experiment.
 
 ## Learnings
 
-The open set was no longer a list of independent issues. Text measurement, panel spacing, selector behavior, aspect ratios, and browser layout tests shared renderer boundaries. That connection made the second-half plan more coherent.
+Several branches touched the same renderer boundaries, so finishing one could change another. That made the order of the work more important than the number of open PRs.
 
 ## Challenges / Notes
 
-Several branches had been open for a long time. The next useful step was often to simplify a test or answer one review question, not add more implementation.
+No major blocker appeared this week. The main constraint was choosing a smaller set of branches instead of treating every open PR as an equal priority.
 
 ## Next Week Targets
 
-Create a browser-geometry regression test for multiline facet-strip overlap and fix the layout, not only the text splitting.
+Add a browser-geometry test for multiline facet-strip overlap and fix the layout around the new lines.
 
 ## Demo / Media
 

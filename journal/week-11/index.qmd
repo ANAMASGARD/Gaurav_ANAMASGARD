@@ -1,7 +1,7 @@
 ---
-title: "Week 11 — Open-Branch Verification"
-description: "August 3–9: a deliberate verification week before the final proof of concept."
-journal-title: "A deliberate verification week"
+title: "Week 11 — Rerunning the Open Branches Before the Final Push"
+description: "August 3–9: rerunning open branches before the final proof of concept."
+journal-title: "Rerunning the open branches before the final push"
 entry: "week-11"
 week: 11
 date-start: "2026-08-03"
@@ -19,28 +19,26 @@ body-classes: "week-page journey-entry-page week-11-page"
 
 ## Outcome
 
-There was no major new public feature commit. I used the week to verify open branches before the final coding push.
+There was no major public commit this week. I reran the open renderer branches after the recent upstream changes and wrote down what was still failing, what was ready for review, and what could wait until after the final evaluation.
 
 ## What I Did
 
-- Checked that PR #336 preserved explicit `showSelected` in all tested variants.
-- Checked that PR #339 measured and placed multiple strip lines after upstream changes.
-- Checked that PR #288 assertions were independent of one output height.
-- Checked that PR #253 covered both wide and tall viewports.
-- Evaluated which final feature could be explored without misrepresenting unfinished work.
-- Clarified PR #285’s error path: `facet_wrap(~Species)` works, while `. ~ Species` produces the confusing unsupported-notation behavior.
+- Checked that PR #336 still preserved explicit `showSelected` behavior.
+- Rechecked multiline measurement in PR #339 and the wide/tall viewport cases in PR #253.
+- Confirmed the custom-height assertion in PR #288 and clarified the unsupported facet notation in PR #285.
+- Chose one final experiment: testing whether `stat_bin` could recompute after an interactive selection.
 
 ## Learnings
 
-A quiet GitHub week can prevent a noisy final week. Verifying assumptions before opening another large branch led to a focused final proof of concept: recomputing `stat_bin` after selection.
+The reruns gave me enough confidence to keep the last experiment small instead of opening another broad renderer branch.
 
 ## Challenges / Notes
 
-Verification is easy to under-report because it produces fewer new commits. The useful outcome was knowing which behavior and test boundaries were ready for the final week.
+No major blocker appeared; most of the work was checking existing branches rather than creating new code.
 
 ## Next Week Targets
 
-Build a failing `stat_bin + showSelected` acceptance test, then implement the smallest browser-side proof of concept that passes it.
+Write a failing `stat_bin + showSelected` acceptance test and begin the smallest browser-side proof of concept that could pass it.
 
 ## Demo / Media
 

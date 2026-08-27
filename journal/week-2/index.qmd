@@ -1,7 +1,7 @@
 ---
-title: "Week 2 — Designing showSelected.legend"
+title: "Week 2 — Keeping Year Selection Without Inheriting the Colour Legend"
 description: "June 1–7: a precise replacement for the original legend opt-out behavior."
-journal-title: "Designing showSelected.legend = FALSE"
+journal-title: "Keeping year selection without inheriting the colour legend"
 entry: "week-2"
 week: 2
 date-start: "2026-06-01"
@@ -19,32 +19,32 @@ body-classes: "week-page journey-entry-page week-2-page"
 
 ## Outcome
 
-I built a more precise replacement for the original legend opt-out behavior.
+PR #292 could turn off automatic legend-based selection, but it also removed an explicit selection that the layer still needed. I wanted a narrower option.
+
+I built a WorldBank example where a layer should continue filtering by `year`, keep the `region` colour legend visible, and avoid silently adding `region` to `showSelected`.
 
 ## Context
 
-PR #292 had delivered the first opt-out in Week 1, but it disabled too much. Issue #333 clarified the needed distinction between explicit selection chosen by a user and selection variables injected automatically from an interactive legend.
+Issue #333 separated two behaviors that PR #292 had treated together: the selection named by the user and the selection variable added automatically because a legend is interactive.
 
 ## What I Did
 
-- Worked from [Issue #333](https://github.com/animint/animint2/issues/333) and opened [PR #336](https://github.com/animint/animint2/pull/336).
-- Added a failing WorldBank test where a layer keeps `showSelected = "year"`, color uses `region`, and `showSelected.legend = FALSE` prevents `region` from being appended.
-- Implemented the new parameter in the compiler path.
-- Removed the temporary compiler parameter before visualization data is exported.
-- Began retiring the earlier `showSelected = character()` special case so the API would have one clear opt-out path.
-- Continued reviewer-driven cleanup in PR #286.
+- Opened [PR #336](https://github.com/animint/animint2/pull/336) from the behavior described in [Issue #333](https://github.com/animint/animint2/issues/333).
+- Added a failing WorldBank test for explicit `year` selection with a visible `region` legend.
+- Implemented `showSelected.legend = FALSE` in the compiler and removed that compiler-only parameter before export.
+- Began replacing the earlier `showSelected = character()` special case and continued review cleanup in PR #286.
 
 ## Learnings
 
-Explicit selection and legend-driven injection are separate behaviors. The new argument controls only the second and leaves the first untouched. I also learned that compiler-only parameters should influence compilation and then disappear rather than leak into generated visualization data.
+The example made the bug clearer than the compiler code did: I asked the layer to filter by `year`, but the colour legend was quietly adding `region` as well. The new argument controls only that automatic addition.
 
 ## Challenges / Notes
 
-Because `showSelected.legend` begins with `showSelected`, R partial matching could make `extra_params$showSelected` read the wrong parameter. Later regression tests explicitly guarded this boundary.
+Because `showSelected.legend` begins with `showSelected`, R could partially match the wrong parameter. I later added a regression test for that exact case.
 
 ## Next Week Targets
 
-Stabilize browser CI and extend multiline behavior to facet-strip labels.
+Stabilize the browser CI failures and begin testing multiline facet-strip labels.
 
 ## Demo / Media
 

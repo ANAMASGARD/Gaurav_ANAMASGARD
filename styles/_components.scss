@@ -146,7 +146,7 @@
 .progress-report-intro {
   width: min(100%, 76rem);
   margin-inline: auto;
-  padding-top: clamp(2.25rem, 5vw, 4rem);
+  padding-top: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .progress-report-heading {
@@ -202,12 +202,12 @@
   position: relative;
   width: min(100%, 76rem);
   margin-inline: auto;
-  padding: clamp(3rem, 6vw, 5rem) 0 0;
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(7rem, 12vw, 10rem);
 }
 
 .progress-timeline-entry {
   position: relative;
-  min-height: clamp(13rem, 22vw, 16rem);
+  min-height: clamp(16rem, 25vw, 19rem);
 }
 
 .progress-timeline-copy {
@@ -253,6 +253,11 @@
   line-height: 1.55;
 }
 
+.progress-timeline-copy strong,
+.progress-timeline-copy strong > a {
+  font-weight: 700;
+}
+
 .progress-timeline-status {
   display: inline-flex;
   margin-bottom: 0.35rem;
@@ -288,21 +293,25 @@
 .progress-timeline-entry::before {
   position: absolute;
   top: 50%;
+  left: 33%;
   z-index: 1;
+  width: 67%;
   height: 0.2rem;
+  border-radius: 999px;
   background: var(--journal-accent);
   content: "";
   transform: translateY(-50%);
+  opacity: 0.88;
 }
 
 .progress-timeline-entry:nth-child(odd)::before {
-  left: 0;
-  width: 33%;
+  right: auto;
+  left: 33%;
 }
 
 .progress-timeline-entry:nth-child(even)::before {
-  right: 0;
-  width: 33%;
+  right: auto;
+  left: 0;
 }
 
 .progress-timeline-node {
@@ -327,6 +336,26 @@
 
 .progress-timeline-node p {
   margin: 0;
+}
+
+.progress-timeline-node::after {
+  position: absolute;
+  top: 50%;
+  width: 0.62rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--journal-accent);
+  box-shadow: 0 0 0 0.2rem var(--journal-bg);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.progress-timeline-entry:nth-child(odd) .progress-timeline-node::after {
+  right: -0.45rem;
+}
+
+.progress-timeline-entry:nth-child(even) .progress-timeline-node::after {
+  left: -0.45rem;
 }
 
 .progress-timeline-entry:hover .progress-timeline-node {
@@ -963,7 +992,7 @@
   }
 
   .progress-report-intro {
-    padding-top: 2.25rem;
+    padding-top: 0.75rem;
   }
 
   .progress-report-heading h1 {
@@ -976,13 +1005,13 @@
   }
 
   .progress-timeline {
-    padding: 3rem 0 4rem;
+    padding: 3rem 0 6rem;
   }
 
   .progress-timeline::before {
     position: absolute;
     top: 3rem;
-    bottom: 4rem;
+    bottom: 6rem;
     left: 2rem;
     z-index: 0;
     width: 0.18rem;
@@ -1019,6 +1048,7 @@
   .progress-timeline-entry::before,
   .progress-timeline-entry:nth-child(odd)::before,
   .progress-timeline-entry:nth-child(even)::before {
+    display: block;
     top: 2rem;
     right: auto;
     left: 2rem;
@@ -1037,6 +1067,10 @@
 
   .progress-timeline-entry:hover .progress-timeline-node {
     transform: translate(-50%, -50%) scale(1.04);
+  }
+
+  .progress-timeline-node::after {
+    display: none;
   }
 
   .progress-timeline-connector {

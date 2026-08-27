@@ -1,5 +1,5 @@
 ---
-title: "Final Submission — Merges, Open Work, and the August 24 Cutoff"
+title: "Final Submission — What Merged, What Stayed Open, and What I Learned"
 description: "August 17–24: multiline text merged, open renderer branches strengthened, and final project evidence prepared."
 entry: "final-submission"
 date-start: "2026-08-17"
@@ -18,7 +18,7 @@ body-classes: "week-page journey-entry-page final-submission-page"
 FINAL SUBMISSION · AUGUST 17–24, 2026
 :::
 
-# Merging multiline text, stabilizing open work, and writing the final story
+# What merged, what stayed open, and what I learned
 
 ::: {.entry-summary-strip}
 `11 LASTING MERGES AT CUTOFF`{.entry-status .status-merged} `5 OPEN AUTHORED PRS`{.entry-status .status-open}
@@ -26,39 +26,36 @@ FINAL SUBMISSION · AUGUST 17–24, 2026
 
 ## Outcome
 
-The final period combined one important merge, continued histogram implementation, collaborative renderer cleanup, external CI review, and preparation of an evidence-backed journal.
+The main completed result was PR #261. The multiline-text branch had started before GSoC and gone through several rounds of review. After the final test and formatting cleanup, it merged on August 19.
+
+Not everything merged by August 24. Several branches were still under review, and the histogram work remained a proof of concept. I record those states directly instead of treating every branch as finished.
 
 ## Context
 
-Multiline text had been a long-running branch from before GSoC. During this period I completed its final review changes, cleaned the tests and branch scope, verified the behavior, and the feature merged on August 19.
+During this period, I completed the remaining PR #261 review changes and verified multiline plot titles, axis titles, legend titles, and `geom_text()` labels. I also finished the JavaScript recomputation path that had begun in Week 12.
 
 ## What I Did
 
-- Continued [PR #343](https://github.com/animint/animint2/pull/343), completing dynamic histogram updates, capturing pre-refresh test state, preserving fixed breaks, and checking JavaScript coverage.
-- Merged [PR #261](https://github.com/animint/animint2/pull/261) on August 19. Multiline text now works in plot titles, axis titles, legend titles, and `geom_text()` labels.
-- Continued collaborative [PR #253](https://github.com/animint/animint2/pull/253), replacing duplicated panel loops and adjusting precision tolerance without hiding real aspect errors.
-- Revised [PR #288](https://github.com/animint/animint2/pull/288) to use `animint()`, a clearer loop, and named theme values.
-- Repaired [PR #339](https://github.com/animint/animint2/pull/339) after the merged multiline-text pipeline changed shared newline rendering.
-- Reviewed [PR #344](https://github.com/animint/animint2/pull/344), requesting failure-path coverage and questioning misleading 0.00% project-change results.
-- Clarified PR #285’s supported and unsupported facet notation and stabilized an unrelated browser-timing failure locally.
-- Verified all 71 instrumented lines in the new PR #343 `stat-bin.js` path locally.
-- Prepared the final Quarto journal and recorded an honest extension request as a project-management challenge.
+- Merged [PR #261](https://github.com/animint/animint2/pull/261) on August 19 after completing its final review cleanup.
+- Completed the browser-side histogram recomputation path in [PR #343](https://github.com/animint/animint2/pull/343), repaired its tests, and collected coverage for the new JavaScript file.
+- Continued contributing implementation, tests, documentation, and simplification to Toby Hocking’s [PR #253](https://github.com/animint/animint2/pull/253).
+- Revised PR #288 and PR #339 after review and upstream text-rendering changes, and reviewed PR #344’s failure-path coverage.
 
 ## Learnings
 
-Visualization changes cross compiler output, SVG structure, text measurement, panel spacing, transitions, browser tests, documentation, and adjacent feature branches. I also learned that careful review is a contribution: a question about a failure path or misleading coverage result can improve CI even when I did not author the PR.
+At the beginning of the project, I often changed the code closest to the visible failure. By the final week, I was more likely to stop first and ask where the state came from: the R compiler, JavaScript renderer, shared browser session, or CI workflow.
+
+Reviewing someone else’s PR also became a normal part of the work. I did not author PR #344, but checking its failure path and coverage output was still useful project work.
 
 ## Challenges / Notes
 
-Academics and hackathons reduced my available time, so I requested a two-week final-evaluation extension. This belongs in the record as project management, not a technical accomplishment.
+Academic work and hackathons reduced the time I could give the project near the end, so I requested a two-week extension. I include that as a project-management challenge, not a technical result.
 
-The cutoff is explicit: PR #336 was complete and open on August 24. It merged August 25 and is not included in the cutoff’s eleven lasting merges.
+PR #336 was open and ready at the August 24 cutoff. It merged August 25 and is not included in the cutoff total of eleven lasting merges.
 
 ## Next Week Targets
 
-- Publish short technical posts for features already merged into `master`.
-- Continue review on open renderer and interaction branches.
-- Keep post-cutoff outcomes dated separately from the submitted report.
+Publish short technical notes for merged features, continue the open renderer reviews, and keep every post-cutoff outcome dated separately from this submission.
 
 ## Demo / Media
 

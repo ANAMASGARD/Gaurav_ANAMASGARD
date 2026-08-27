@@ -1,7 +1,7 @@
 ---
-title: "Week 1 — CI Isolation and Legend Control"
+title: "Week 1 — Fixing a CI Race and Finishing the First Legend Opt-Out"
 description: "May 25–31: two merges and focused review on custom facets and error messages."
-journal-title: "A strong start: CI isolation, facet tests, clearer errors, and legend control"
+journal-title: "Fixing a CI race and finishing the first legend opt-out"
 entry: "week-1"
 week: 1
 date-start: "2026-05-25"

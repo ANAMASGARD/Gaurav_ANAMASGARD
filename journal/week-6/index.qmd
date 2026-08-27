@@ -1,7 +1,7 @@
 ---
-title: "Week 6 — One Merge and Two Documented Closures"
+title: "Week 6 — One Merge, Two PRs Closed, and Clearer Boundaries"
 description: "June 29–July 5: renderer cleanup merged and two CI investigations closed at the right boundary."
-journal-title: "One cleanup merged and two investigations closed"
+journal-title: "One merge, two PRs closed, and clearer boundaries"
 entry: "week-6"
 week: 6
 date-start: "2026-06-29"
@@ -19,31 +19,30 @@ body-classes: "week-page journey-entry-page week-6-page"
 
 ## Outcome
 
-The renderer cleanup merged, two CI proposals closed without merge, and multiline facet work was updated against current upstream changes.
+PR #306 merged after I kept the change limited to redundant selector checks. Two CI pull requests also closed after review, but not for the same reason: one solution was more complicated than necessary, while the other fix belonged in a different project.
 
 ## Context
 
-PR #306 began before GSoC. This week completed its focused review and merge without expanding it into a behavior change.
+PR #306 began before GSoC. This week I completed its focused review and merge without turning it into a behavior change.
 
 ## What I Did
 
-- Merged [PR #306](https://github.com/animint/animint2/pull/306) on June 29, removing unnecessary `Selectors.hasOwnProperty()` guards while preserving existing selector behavior.
-- Closed [PR #338](https://github.com/animint/animint2/pull/338) without merge.
-- Closed [PR #341](https://github.com/animint/animint2/pull/341) without merge.
-- Updated [PR #339](https://github.com/animint/animint2/pull/339) with current upstream changes.
-- Reviewed the remaining midterm set: #285, #286, #288, #336, and #339.
+- Merged [PR #306](https://github.com/animint/animint2/pull/306) on June 29 without changing selector behavior.
+- Closed [PR #338](https://github.com/animint/animint2/pull/338) because its skip logic was more complex than the maintainer’s preferred solution: remove the GitHub Pages test for fork PRs.
+- Closed [PR #341](https://github.com/animint/animint2/pull/341) because the maintainer considered the fix to belong in `atime`, not Animint2.
+- Updated [PR #339](https://github.com/animint/animint2/pull/339) with the current upstream changes.
 
 ## Learnings
 
-Repository progress is not only a merge count. One safe cleanup landed, two investigations stopped at the correct boundary, and one feature branch remained current. Closing a patch after learning its solution belongs elsewhere is better than carrying an unnecessary change into the main branch.
+Closing two branches after spending time debugging them was disappointing. The review was still useful and specific: one patch was too complicated, and the other was in the wrong repository.
 
 ## Challenges / Notes
 
-Closing work after a detailed investigation can feel disappointing. The stronger measure is whether the repository, issue history, and next decision are clearer afterward.
+The closures did not erase the debugging work, but they changed what I should do next. I did not replace either public explanation with a vague “not preferred” label.
 
 ## Next Week Targets
 
-Use the midterm checkpoint to separate remaining implementation needs from review cleanup.
+Use the midterm checkpoint to decide which remaining branches I could realistically finish.
 
 ## Demo / Media
 
@@ -56,12 +55,12 @@ OPEN → REVIEWED → **MERGED**
 ::: {.pr-transition-item .status-closed}
 **#338**
 
-INVESTIGATED → REPOSITORY BOUNDARY → **CLOSED**
+INVESTIGATED → SOLUTION TOO COMPLEX → **CLOSED**
 :::
 ::: {.pr-transition-item .status-closed}
 **#341**
 
-ROOT CAUSE FOUND → WORKFLOW BOUNDARY → **CLOSED**
+ROOT CAUSE FOUND → FIX BELONGS IN `atime` → **CLOSED**
 :::
 :::
 

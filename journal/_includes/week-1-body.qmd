@@ -1,31 +1,31 @@
 ## Outcome
 
-The coding period began with two merges and focused review work on two open facet PRs.
+My first coding week began with a CI failure that appeared across unrelated pull requests. The R and JavaScript coverage jobs were using the same temporary GitHub Pages repository, so either job could delete it while the other was still running.
+
+[PR #330](https://github.com/animint/animint2/pull/330) gave each job its own repository and merged on May 25. Later in the week, [PR #292](https://github.com/animint/animint2/pull/292)—the legend opt-out work I had started before GSoC—also merged.
 
 ## Context
 
-PR #292 began before GSoC. During Week 1, I completed the remaining review cycle and it merged. The earlier work established the first opt-out behavior; its semantic limitations later motivated Issue #333 and PR #336.
+PR #292 began before GSoC. This week I completed its remaining review cycle. It provided the first opt-out behavior, but its limitations later led to Issue #333 and PR #336.
 
 ## What I Did
 
-- Merged [PR #330](https://github.com/animint/animint2/pull/330) on May 25. `R_coverage`, `JS_coverage`, and local runs now use separate GitHub Pages test repositories instead of mutating one shared repository.
-- Revised [PR #288](https://github.com/animint/animint2/pull/288), addressing four review comments and keeping the regression test focused on `height_proportion` across multiple output heights.
-- Revised [PR #285](https://github.com/animint/animint2/pull/285) so invalid facet-variable errors identify missing names instead of failing later with a generic message.
-- Merged [PR #292](https://github.com/animint/animint2/pull/292) on May 28, providing the first way to opt out of automatic legend-driven `showSelected` behavior.
+- Merged PR #330 on May 25 after separating the repositories used by `R_coverage`, `JS_coverage`, and local runs.
+- Addressed four review comments on [PR #288](https://github.com/animint/animint2/pull/288) and kept its regression test focused on custom output heights.
+- Revised [PR #285](https://github.com/animint/animint2/pull/285) so an invalid facet variable produces a useful error instead of failing later with a generic message.
+- Finished the review cycle for PR #292, which merged on May 28.
 
 ## Learnings
 
-This week connected three kinds of quality: infrastructure jobs must not share mutable resources; layout tests should measure layout rather than incidental browser setup; and API errors/options should describe what the user is trying to do.
-
-I also refined my use of test-first commits. A failing behavior test is valuable, but it should not be forced when the PR itself concerns tests or CI—the evidence must match the change.
+I had been adding a failing test first because that pattern worked well for behavior fixes. Toby pointed out that a PR whose purpose is already testing or CI does not need an artificial red first commit. That small review comment changed how I structured later infrastructure work.
 
 ## Challenges / Notes
 
-The facet-height test ran through browser layout and could pass for the wrong reason if unrelated setup was changed. Removing those accidental influences was as important as adding assertions.
+The facet-height test passed through browser layout and could succeed for the wrong reason if unrelated setup changed. I had to remove those accidental influences before trusting the assertion.
 
 ## Next Week Targets
 
-Replace the broad PR #292 opt-out with a precise design that preserves explicit `showSelected` while disabling only automatic legend-variable injection.
+Design a narrower replacement for PR #292 that preserves an explicit `showSelected` value while disabling only automatic legend-variable injection.
 
 ## Demo / Media
 

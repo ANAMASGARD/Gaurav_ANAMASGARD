@@ -105,7 +105,7 @@ done
 
 for page in _site/journal/index.html _site/journal/week-1/index.html
 do
-  grep -q "A strong start: CI isolation, facet tests, clearer errors, and legend control" "$page"
+  grep -q "Fixing a CI race and finishing the first legend opt-out" "$page"
   grep -q '/journal/week-1/week1-legend-optout-demo/index.html' "$page"
 done
 
@@ -126,12 +126,15 @@ grep -q ">CB<" _site/progress.html
 grep -q ">W01<" _site/progress.html
 grep -q ">W12<" _site/progress.html
 grep -q ">FS<" _site/progress.html
-grep -q "11 → 12" _site/progress.html
 
 for removed_progress_copy in \
+  "Project at the August 24 cutoff" \
+  "11 → 12" \
   "Technical areas" \
   "Issue → PR map" \
   "Post-cutoff note" \
+  'class="progress-analytics-grid"' \
+  'class="progress-analytics-card"' \
   'class="technical-area-list"' \
   'class="issue-pr-map"' \
   'class="progress-cutoff-note"'
@@ -174,7 +177,7 @@ if grep -R -n --include='*.html' '/posts/week-' _site; then
   exit 1
 fi
 
-echo "Verified Home, Journal, 14-entry Progress, About, Contact, audio, routes, metrics, and placeholder removal."
+echo "Verified Home, Journal, 14-entry Progress, About, Contact, audio, routes, and placeholder removal."
 
 while IFS=, read -r id profile sha status route bundle function_name; do
   if [ "$id" = "id" ]; then

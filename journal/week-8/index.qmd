@@ -1,7 +1,7 @@
 ---
-title: "Week 8 — Multiline Facet Geometry"
+title: "Week 8 — The Labels Split Correctly, but They Still Covered the Plot"
 description: "July 13–19: measuring multiline strip labels and reserving the space they need."
-journal-title: "Multiline facet labels now reserve the space they need"
+journal-title: "The labels split correctly, but they still covered the plot"
 entry: "week-8"
 week: 8
 date-start: "2026-07-13"
@@ -19,31 +19,30 @@ body-classes: "week-page journey-entry-page week-8-page"
 
 ## Outcome
 
-I added a browser-geometry regression test that detected multiline facet strips overlapping the panel and then fixed their placement.
+My first version of multiline facet labels created separate SVG lines, but the extra line could still overlap the data panel. I added a browser-geometry test that exposed the problem and then fixed the strip placement.
 
 ## Context
 
-PR #339 began in Week 3 by splitting multiline labels into SVG `<tspan>` elements. Week 8 addressed the separate layout problem revealed after the lines existed.
+PR #339 began in Week 3 by splitting labels into SVG `<tspan>` elements. That solved “draw every line,” but it did not yet reserve enough space for those lines.
 
 ## What I Did
 
 - Added a browser-geometry test to [PR #339](https://github.com/animint/animint2/pull/339) on July 18.
-- Measured strip-text and panel positions instead of only checking that multiple `<tspan>` elements existed.
-- Updated the renderer so multiline strips sit outside the panel area.
-- Improved text measurement to include the height of every line.
-- Preserved the behavior across both `facet_grid()` and `facet_wrap()` paths.
+- Compared strip and panel positions instead of only checking that multiple `<tspan>` elements existed.
+- Updated the strip offset and text measurement to include every rendered line.
+- Checked the change through both `facet_grid()` and `facet_wrap()` paths.
 
 ## Learnings
 
-Multiline rendering has two distinct requirements: draw every line and reserve enough layout space for every line. DOM-existence tests can pass even when SVG elements overlap the visualization; geometric relationships are the meaningful acceptance condition.
+I had solved “draw more than one line,” but not “leave room for more than one line.” The failing geometry test made that distinction visible.
 
 ## Challenges / Notes
 
-Font metrics and browser text rendering vary. The test needed to assert a stable relationship between strip and panel boundaries without depending on one exact pixel value.
+Browser font measurements vary slightly, so the test compares the strip and panel boundaries instead of depending on one exact pixel value.
 
 ## Next Week Targets
 
-Address review across custom-height facets, legend control, and positive panel margins.
+Work through the review comments on custom-height facets, legend control, and positive panel margins.
 
 ## Demo / Media
 

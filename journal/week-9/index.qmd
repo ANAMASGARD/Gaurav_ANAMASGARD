@@ -1,7 +1,7 @@
 ---
-title: "Week 9 — Smaller, Stronger Regression Tests"
+title: "Week 9 — Three PRs, Mostly Smaller Review Fixes"
 description: "July 20–26: focused review revisions across facet heights, legend control, and panel margins."
-journal-title: "Making tests smaller, clearer, and more user-focused"
+journal-title: "Three PRs, mostly smaller review fixes"
 entry: "week-9"
 week: 9
 date-start: "2026-07-20"
@@ -19,29 +19,29 @@ body-classes: "week-page journey-entry-page week-9-page"
 
 ## Outcome
 
-I addressed review across three PRs, mostly by removing unrelated setup, strengthening assertions, and making user-facing changes clearer.
+This was not a week of new features. I worked through review comments on PR #288, PR #336, and PR #286. Most of the useful changes were deletions, clearer names, and stronger assertions.
 
 ## Context
 
-PRs #288 and #286 began before GSoC, while #336 began in Week 2. This week records the specific review revisions rather than claiming their entire implementation.
+PRs #288 and #286 began before GSoC, while PR #336 began in Week 2. This entry records only the review revisions I made during Week 9.
 
 ## What I Did
 
-- Revised [PR #288](https://github.com/animint/animint2/pull/288): removed an unrelated change, removed skips that hid behavior, strengthened custom-height assertions, and used named theme-height values.
-- Revised [PR #336](https://github.com/animint/animint2/pull/336): stripped the parameter before variant validation, renamed unclear objects, preserved coverage for `FALSE` and default `TRUE`, and guarded against partial matching.
-- Revised [PR #286](https://github.com/animint/animint2/pull/286): removed redundant numeric checks and rewrote NEWS around user-visible positive `panel.margin` support.
+- In [PR #288](https://github.com/animint/animint2/pull/288), removed unrelated setup and skips, then checked the actual space below custom-height facets.
+- In [PR #336](https://github.com/animint/animint2/pull/336), removed the compiler-only parameter before validation and added default-`TRUE` and partial-matching coverage.
+- In [PR #286](https://github.com/animint/animint2/pull/286), removed redundant type checks and rewrote NEWS around the visible `panel.margin` behavior.
 
 ## Learnings
 
-Review often improves a change by deleting code. A strong test states a layout relationship rather than inspecting an incidental helper type. A strong changelog describes what users can rely on rather than what test file changed.
+Review improved these branches mostly by making them smaller. None of the changes looked dramatic, but the purpose of each test became easier to see.
 
 ## Challenges / Notes
 
-The branches needed to preserve their test-first history while presenting the final problem and solution without every temporary experiment.
+The main difficulty was keeping the useful test history without carrying every temporary experiment into the final branch.
 
 ## Next Week Targets
 
-Finish the panel-margin merge and continue collaborative `coord_equal` work for non-square viewports.
+Finish the panel-margin review and continue the collaborative `coord_equal` work for wide and tall viewports.
 
 ## Demo / Media
 

@@ -23,7 +23,7 @@ Follow my journey through Google Summer of Code 2026, where I, **Gaurav Chaudhar
 ## About the project
 
 ::: {.editorial-panel}
-Animint2 extends the grammar of graphics with animated, linked, interactive visualizations for the web. This Quarto site documents verified outcomes, engineering decisions, and project progress from my GSoC 2026 work.
+My GSoC project focuses on improving Animint2, an R package for animated and interactive data visualizations. I worked on its renderer, interactive features, layout behavior, testing, and CI reliability. The goal was to make Animint2 more reliable, easier to use, and better tested.
 :::
 
 ## Development journey

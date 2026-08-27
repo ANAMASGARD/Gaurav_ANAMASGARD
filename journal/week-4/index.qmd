@@ -1,7 +1,7 @@
 ---
-title: "Week 4 — Finding the Correct Fix Boundary"
+title: "Week 4 — Checking Where Each CI Fix Actually Belonged"
 description: "June 15–21: separating package bugs, browser state, and infrastructure problems."
-journal-title: "Separating package bugs from infrastructure problems"
+journal-title: "Checking where each CI fix actually belonged"
 entry: "week-4"
 week: 4
 date-start: "2026-06-15"
@@ -19,26 +19,26 @@ body-classes: "week-page journey-entry-page week-4-page"
 
 ## Outcome
 
-This week focused on validating the four workstreams opened in Week 3 and avoiding patches that solved the right symptom in the wrong repository.
+I did not push a major feature this week. Most of my time went into checking the proposals from Week 3 and waiting for feedback.
 
 ## What I Did
 
-- Rechecked that PR #337 repaired shared browser state rather than merely increasing every timeout.
-- Compared the GitHub Pages permissions problem with the earlier shared-repository race; similar CI output came from different causes.
-- Evaluated whether the `atime` failure belonged in Animint2 or in external workflow behavior.
-- Continued reviewing multiline facet-strip layout, where a second rendered line also changes the space required beside or above the panel.
+- Confirmed that PR #337 repaired leaked browser state instead of increasing every timeout.
+- Compared the GitHub Pages permissions failure with the earlier shared-repository race.
+- Checked whether the `atime` problem belonged in Animint2 or upstream workflow behavior.
+- Continued checking how a second facet-label line changes the space around a panel.
 
 ## Learnings
 
-A useful root-cause report answers both “why did this fail?” and “where should the fix live?” A technically valid patch can still be the wrong maintenance decision.
+Finding a cause and choosing the repository that should own the fix turned out to be two separate decisions.
 
 ## Challenges / Notes
 
-The main challenge was resisting a single broad “CI stability” patch. Browser state, credentials, package libraries, and SVG geometry each required their own evidence and repository boundary.
+The CI page made unrelated failures look like one problem. I kept the browser, credentials, package, and SVG work separate while review continued.
 
 ## Next Week Targets
 
-Reduce scope, prepare the renderer cleanup for merge, and resolve which CI proposals should close or move.
+Reduce the open branches to the smallest reviewable changes and wait for maintainer decisions on the two CI proposals.
 
 ## Demo / Media
 
