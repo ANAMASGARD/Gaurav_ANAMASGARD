@@ -4,6 +4,7 @@ project:
   resources:
     - "_redirects"
     - "assets/click-003.mp3"
+    - "journal/**/**-demo/**"
   render:
     - "*.qmd"
     - "journal/**/*.qmd"

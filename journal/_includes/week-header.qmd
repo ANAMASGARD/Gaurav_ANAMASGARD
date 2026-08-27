@@ -1,0 +1,39 @@
+::: {.week-header}
+::: {.week-badge}
+WEEK {{< meta week >}}
+:::
+
+::: {.week-title}
+{{< meta journal-title >}}
+:::
+
+::: {.week-date}
+::: {.week-date-icon aria-hidden="true"}
+□
+:::
+{{< meta date-start >}} – {{< meta date-end >}}
+:::
+
+::: {.metric-grid}
+::: {.metric-cell}
+**{{< meta sprint >}}**
+
+SPRINT
+:::
+::: {.metric-cell}
+**{{< meta status >}}**
+
+STATUS
+:::
+::: {.metric-cell}
+**{{< meta pull-requests >}}**
+
+PULL REQUESTS
+:::
+::: {.metric-cell}
+**{{< meta issues >}}**
+
+ISSUES
+:::
+:::
+:::

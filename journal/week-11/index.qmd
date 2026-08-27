@@ -1,16 +1,71 @@
 ---
-title: "Week 11 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 11 Animint2 progress."
+title: "Week 11 — Open-Branch Verification"
+description: "August 3–9: a deliberate verification week before the final proof of concept."
+journal-title: "A deliberate verification week"
+entry: "week-11"
 week: 11
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-08-03"
+date-end: "2026-08-09"
+status: "Complete"
 sprint: "Week 11"
-pull-requests: 0
+pull-requests: 5
 issues: 0
-categories: [Planned]
-body-classes: "week-page week-11-page"
+categories: [Verification, Review, Facets, Selectors]
+body-classes: "week-page journey-entry-page week-11-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+There was no major new public feature commit. I used the week to verify open branches before the final coding push.
+
+## What I Did
+
+- Checked that PR #336 preserved explicit `showSelected` in all tested variants.
+- Checked that PR #339 measured and placed multiple strip lines after upstream changes.
+- Checked that PR #288 assertions were independent of one output height.
+- Checked that PR #253 covered both wide and tall viewports.
+- Evaluated which final feature could be explored without misrepresenting unfinished work.
+- Clarified PR #285’s error path: `facet_wrap(~Species)` works, while `. ~ Species` produces the confusing unsupported-notation behavior.
+
+## Learnings
+
+A quiet GitHub week can prevent a noisy final week. Verifying assumptions before opening another large branch led to a focused final proof of concept: recomputing `stat_bin` after selection.
+
+## Challenges / Notes
+
+Verification is easy to under-report because it produces fewer new commits. The useful outcome was knowing which behavior and test boundaries were ready for the final week.
+
+## Next Week Targets
+
+Build a failing `stat_bin + showSelected` acceptance test, then implement the smallest browser-side proof of concept that passes it.
+
+## Demo / Media
+
+::: {.verification-board}
+| Workstream | Verification question | August 24 status |
+|---|---|---|
+| #336 | Explicit selector preserved? | Open and ready |
+| #339 | Multiline geometry still valid? | Open |
+| #288 | Height assertions independent? | Open |
+| #253 | Wide and tall viewports covered? | Open, collaborative |
+| #285 | Error points to notation? | Open |
+:::
+
+::: {.error-ux-comparison}
+**PR #285 ERROR UX**
+
+**Before:** “At least one layer must contain all variables used for facetting.”
+
+**Proposed branch behavior:** identify the unsupported `. ~ Species` notation and point toward the supported string/formula path.
+:::
+
+## Evidence and Links
+
+- [PR #285 — clearer facet errors](https://github.com/animint/animint2/pull/285)
+- [PR #288 — custom-height facets](https://github.com/animint/animint2/pull/288)
+- [PR #336 — legend control](https://github.com/animint/animint2/pull/336)
+- [PR #339 — multiline facet strips](https://github.com/animint/animint2/pull/339)
+- [PR #253 — collaborative `coord_equal`](https://github.com/animint/animint2/pull/253)

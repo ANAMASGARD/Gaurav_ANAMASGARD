@@ -23,59 +23,59 @@ Follow my journey through Google Summer of Code 2026, where I, **Gaurav Chaudhar
 ## About the project
 
 ::: {.editorial-panel}
-Animint2 extends the grammar of graphics with animated, linked, interactive visualizations for the web. This Quarto site is structured to document the work without inventing contributions: only verified outcomes, links, and project details will replace the starter entries.
+Animint2 extends the grammar of graphics with animated, linked, interactive visualizations for the web. This Quarto site documents verified outcomes, engineering decisions, and project progress from my GSoC 2026 work.
 :::
 
 ## Development journey
 
 ::: {.week-card-grid}
 [**Week 1**<br>
-Journal structure and project setup<br>
-`PLANNED`](/journal/week-1/)
+CI isolation and legend control<br>
+`COMPLETE`](/journal/week-1/)
 
 [**Week 2**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-2/)
+Precise legend selection control<br>
+`COMPLETE`](/journal/week-2/)
 
 [**Week 3**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-3/)
+Browser and CI reliability<br>
+`COMPLETE`](/journal/week-3/)
 
 [**Week 4**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-4/)
+Choosing the right fix boundary<br>
+`COMPLETE`](/journal/week-4/)
 
 [**Week 5**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-5/)
+Focused scope and review cleanup<br>
+`COMPLETE`](/journal/week-5/)
 
 [**Week 6**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-6/)
+Renderer cleanup and branch decisions<br>
+`COMPLETE`](/journal/week-6/)
 
 [**Week 7**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-7/)
+Midpoint roadmap<br>
+`COMPLETE`](/journal/week-7/)
 
 [**Week 8**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-8/)
+Multiline facet geometry<br>
+`COMPLETE`](/journal/week-8/)
 
 [**Week 9**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-9/)
+Stronger regression tests<br>
+`COMPLETE`](/journal/week-9/)
 
 [**Week 10**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-10/)
+Panel margins and coord_equal<br>
+`COMPLETE`](/journal/week-10/)
 
 [**Week 11**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-11/)
+Open-branch verification<br>
+`COMPLETE`](/journal/week-11/)
 
 [**Week 12**<br>
-Reserved for verified progress<br>
-`PLANNED`](/journal/week-12/)
+Interactive histogram proof of concept<br>
+`COMPLETE`](/journal/week-12/)
 :::
 
 ## Project snapshot
@@ -87,18 +87,18 @@ Reserved for verified progress<br>
 WEEKS
 :::
 ::: {.metric-cell}
-**10**
+**11**
 
-VERIFIED PR MERGES
+LASTING MERGES BY AUG 24
 :::
 ::: {.metric-cell}
-**10**
+**5**
 
-ISSUES CLOSED
+OPEN PRS AT CUTOFF
 :::
 ::: {.metric-cell}
-**PLANNED**
+**COMPLETE**
 
-CURRENT STATUS
+FINAL STATUS
 :::
 :::

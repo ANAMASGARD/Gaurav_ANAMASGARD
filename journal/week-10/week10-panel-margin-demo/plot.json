@@ -1,0 +1,1084 @@
+{
+ "geoms": {
+ "geom1_point_zero": {
+ "geom": "point",
+"classed": "geom1_point_zero",
+"aes": {
+"x": "Sepal.Width",
+"y": "Sepal.Length",
+"colour": "Species"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        3 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"PANEL": "factor",
+"group": "character",
+"fill": "rgb"
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom1_point_zero_chunk1.tsv": {
+ "bytes":     3832,
+"rows": 150 
+} 
+} 
+},
+"geom2_point_one": {
+ "geom": "point",
+"classed": "geom2_point_one",
+"aes": {
+"x": "Sepal.Width",
+"y": "Sepal.Length",
+"colour": "Species"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        3 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"PANEL": "factor",
+"group": "character",
+"fill": "rgb"
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom2_point_one_chunk1.tsv": {
+ "bytes":     3832,
+"rows": 150 
+} 
+} 
+},
+"geom3_point_two": {
+ "geom": "point",
+"classed": "geom3_point_two",
+"aes": {
+"x": "Sepal.Width",
+"y": "Sepal.Length",
+"colour": "Species"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        3 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"PANEL": "factor",
+"group": "character",
+"fill": "rgb"
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom3_point_two_chunk1.tsv": {
+ "bytes":     3832,
+"rows": 150 
+} 
+} 
+} 
+},
+"selectors": [],
+"plots": {
+ "zero": {
+ "panel_margin_lines":        0,
+"legend": {},
+"strips": {
+ "top": [ "setosa", "versicolor", "virginica" ],
+"right": [
+ "" 
+],
+"n": {
+ "top": 1,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ "1", "2", "3" ],
+"ROW": [ 1, 1, 1 ],
+"COL": [ 1, 2, 3 ],
+"Species": [ "setosa", "versicolor", "virginica" ],
+"SCALE_X": [ 1, 1, 1 ],
+"SCALE_Y": [ 1, 1, 1 ],
+"AXIS_X": [ true, true, true ],
+"AXIS_Y": [ true, false, false ],
+"coord_fixed": [ false, false, false ],
+"width_proportion": [ 0.3333333, 0.3333333, 0.3333333 ],
+"height_proportion": [        1,        1,        1 ] 
+},
+"panel_background": {
+ "fill": "#FFFFFF",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": {
+ "fill": "transparent",
+"colour": "#7F7F7F",
+"size":      0.5,
+"linetype":        1 
+},
+"grid_major": {
+ "colour": "#E5E5E5",
+"size":      0.2,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+[
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+[
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+] 
+],
+"y": [
+ [
+        5,
+       6,
+       7,
+       8 
+],
+[
+        5,
+       6,
+       7,
+       8 
+],
+[
+        5,
+       6,
+       7,
+       8 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FAFAFA",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+],
+[
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+],
+[
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+] 
+],
+"y": [
+ [
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+],
+[
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+],
+[
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"axis2": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"axis3": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"xtitle": "Sepal.Width",
+"xtitle_size": "12pt",
+"strip_text_xsize": "12pt",
+"xsize": "12pt",
+"xangle":        0,
+"xanchor": "middle",
+"ytitle": "Sepal.Length",
+"ytitle_size": "12pt",
+"strip_text_ysize": "12pt",
+"ysize": "12pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"ylabs": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"title": "panel.margin = 0 lines",
+"title_size": "14.4pt",
+"options": {
+ "width":      760,
+"height":      360 
+},
+"span": {
+ "rowspan": null,
+"colspan": null,
+"last_in_row": true 
+},
+"geoms": [
+ "geom1_point_zero" 
+] 
+},
+"one": {
+ "panel_margin_lines":        1,
+"legend": {},
+"strips": {
+ "top": [ "setosa", "versicolor", "virginica" ],
+"right": [
+ "" 
+],
+"n": {
+ "top": 1,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ "1", "2", "3" ],
+"ROW": [ 1, 1, 1 ],
+"COL": [ 1, 2, 3 ],
+"Species": [ "setosa", "versicolor", "virginica" ],
+"SCALE_X": [ 1, 1, 1 ],
+"SCALE_Y": [ 1, 1, 1 ],
+"AXIS_X": [ true, true, true ],
+"AXIS_Y": [ true, false, false ],
+"coord_fixed": [ false, false, false ],
+"width_proportion": [ 0.3333333, 0.3333333, 0.3333333 ],
+"height_proportion": [        1,        1,        1 ] 
+},
+"panel_background": {
+ "fill": "#FFFFFF",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": {
+ "fill": "transparent",
+"colour": "#7F7F7F",
+"size":      0.5,
+"linetype":        1 
+},
+"grid_major": {
+ "colour": "#E5E5E5",
+"size":      0.2,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+[
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+[
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+] 
+],
+"y": [
+ [
+        5,
+       6,
+       7,
+       8 
+],
+[
+        5,
+       6,
+       7,
+       8 
+],
+[
+        5,
+       6,
+       7,
+       8 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FAFAFA",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+],
+[
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+],
+[
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+] 
+],
+"y": [
+ [
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+],
+[
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+],
+[
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"axis2": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"axis3": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"xtitle": "Sepal.Width",
+"xtitle_size": "12pt",
+"strip_text_xsize": "12pt",
+"xsize": "12pt",
+"xangle":        0,
+"xanchor": "middle",
+"ytitle": "Sepal.Length",
+"ytitle_size": "12pt",
+"strip_text_ysize": "12pt",
+"ysize": "12pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"ylabs": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"title": "panel.margin = 1 line",
+"title_size": "14.4pt",
+"options": {
+ "width":      760,
+"height":      360 
+},
+"span": {
+ "rowspan": null,
+"colspan": null,
+"last_in_row": true 
+},
+"geoms": [
+ "geom2_point_one" 
+] 
+},
+"two": {
+ "panel_margin_lines":        2,
+"legend": {},
+"strips": {
+ "top": [ "setosa", "versicolor", "virginica" ],
+"right": [
+ "" 
+],
+"n": {
+ "top": 1,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ "1", "2", "3" ],
+"ROW": [ 1, 1, 1 ],
+"COL": [ 1, 2, 3 ],
+"Species": [ "setosa", "versicolor", "virginica" ],
+"SCALE_X": [ 1, 1, 1 ],
+"SCALE_Y": [ 1, 1, 1 ],
+"AXIS_X": [ true, true, true ],
+"AXIS_Y": [ true, false, false ],
+"coord_fixed": [ false, false, false ],
+"width_proportion": [ 0.3333333, 0.3333333, 0.3333333 ],
+"height_proportion": [        1,        1,        1 ] 
+},
+"panel_background": {
+ "fill": "#FFFFFF",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": {
+ "fill": "transparent",
+"colour": "#7F7F7F",
+"size":      0.5,
+"linetype":        1 
+},
+"grid_major": {
+ "colour": "#E5E5E5",
+"size":      0.2,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+[
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+[
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+] 
+],
+"y": [
+ [
+        5,
+       6,
+       7,
+       8 
+],
+[
+        5,
+       6,
+       7,
+       8 
+],
+[
+        5,
+       6,
+       7,
+       8 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FAFAFA",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+],
+[
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+],
+[
+        2,
+    2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75,
+       4,
+    4.25,
+     4.5 
+] 
+],
+"y": [
+ [
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+],
+[
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+],
+[
+      4.5,
+       5,
+     5.5,
+       6,
+     6.5,
+       7,
+     7.5,
+       8 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"axis2": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"axis3": {
+ "x": [
+        2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+],
+"xlab": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"xrange": [     1.88,     4.52 ],
+"xline": false,
+"xticks": true,
+"y": [
+        5,
+       6,
+       7,
+       8 
+],
+"ylab": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"yrange": [     4.12,     8.08 ],
+"yline": false,
+"yticks": true 
+},
+"xtitle": "Sepal.Width",
+"xtitle_size": "12pt",
+"strip_text_xsize": "12pt",
+"xsize": "12pt",
+"xangle":        0,
+"xanchor": "middle",
+"ytitle": "Sepal.Length",
+"ytitle_size": "12pt",
+"strip_text_ysize": "12pt",
+"ysize": "12pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "2.0",
+"2.5",
+"3.0",
+"3.5",
+"4.0",
+"4.5" 
+],
+"ylabs": [
+ "5",
+"6",
+"7",
+"8" 
+],
+"title": "panel.margin = 2 lines",
+"title_size": "14.4pt",
+"options": {
+ "width":      760,
+"height":      360 
+},
+"span": {
+ "rowspan": null,
+"colspan": null,
+"last_in_row": true 
+},
+"geoms": [
+ "geom3_point_two" 
+] 
+} 
+} 
+}

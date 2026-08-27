@@ -1,16 +1,65 @@
 ---
-title: "Week 7 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 7 Animint2 progress."
+title: "Week 7 — Midterm Checkpoint"
+description: "July 6–12: reviewing the connected renderer work and planning the second half."
+journal-title: "Midterm checkpoint and review of the open work"
+entry: "week-7"
 week: 7
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-07-06"
+date-end: "2026-07-12"
+status: "Complete"
 sprint: "Week 7"
-pull-requests: 0
-issues: 0
-categories: [Planned]
-body-classes: "week-page week-7-page"
+pull-requests: 7
+issues: 1
+categories: [Midterm, Planning, Review, Renderer]
+body-classes: "week-page journey-entry-page week-7-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+The standard GSoC midterm evaluation window fell in this week. Public commit activity was light, so I used the checkpoint to review project state rather than inventing a milestone.
+
+## What I Did
+
+- Reviewed PR #285’s clearer facet errors.
+- Reviewed PR #288’s custom-height facet layout tests.
+- Reviewed PR #286’s positive `panel.margin` coverage.
+- Reviewed PR #336’s legend-injection control.
+- Reviewed PR #339’s multiline facet labels.
+- Revisited the long-running PR #261 multiline-text feature.
+- Reviewed collaborative PR #253’s `coord_equal` work.
+
+## Learnings
+
+The open set was no longer a list of independent issues. Text measurement, panel spacing, selector behavior, aspect ratios, and browser layout tests shared renderer boundaries. That connection made the second-half plan more coherent.
+
+## Challenges / Notes
+
+Several branches had been open for a long time. The next useful step was often to simplify a test or answer one review question, not add more implementation.
+
+## Next Week Targets
+
+Create a browser-geometry regression test for multiline facet-strip overlap and fix the layout, not only the text splitting.
+
+## Demo / Media
+
+::: {.roadmap-board}
+**SECOND-HALF ROADMAP**
+
+`SELECTORS #336` → precise semantics
+
+`FACETS #288 #339` → measurable layout relationships
+
+`TEXT #261` → shared multiline pipeline
+
+`ASPECT RATIO #253` → wide and tall viewport proof
+:::
+
+## Evidence and Links
+
+- [Issue #327 — public midpoint record](https://github.com/animint/animint2/issues/327)
+- [PR #261 — multiline text](https://github.com/animint/animint2/pull/261)
+- [PR #253 — collaborative `coord_equal`](https://github.com/animint/animint2/pull/253)
+- [PR #285](https://github.com/animint/animint2/pull/285) · [PR #288](https://github.com/animint/animint2/pull/288) · [PR #336](https://github.com/animint/animint2/pull/336) · [PR #339](https://github.com/animint/animint2/pull/339)

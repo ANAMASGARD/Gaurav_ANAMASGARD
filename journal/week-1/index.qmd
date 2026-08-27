@@ -1,17 +1,20 @@
 ---
-title: "Week 1 — Journal Foundation"
-description: "A neutral starter entry reserved for verified Week 1 Animint2 progress."
+title: "Week 1 — CI Isolation and Legend Control"
+description: "May 25–31: two merges and focused review on custom facets and error messages."
+journal-title: "A strong start: CI isolation, facet tests, clearer errors, and legend control"
+entry: "week-1"
 week: 1
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-05-25"
+date-end: "2026-05-31"
+status: "Complete"
 sprint: "Week 1"
-pull-requests: 0
-issues: 0
-categories: [Planned, Journal Infrastructure]
-body-classes: "week-page week-1-page"
+pull-requests: 4
+issues: 1
+categories: [CI, Selectors, Facets, Testing]
+body-classes: "week-page journey-entry-page week-1-page"
 include-in-header: ../_includes/canonical-journal.html
 ---
 
 {{< include ../_includes/week-nav.html >}}
+{{< include ../_includes/week-header.qmd >}}
 {{< include ../_includes/week-1-body.qmd >}}

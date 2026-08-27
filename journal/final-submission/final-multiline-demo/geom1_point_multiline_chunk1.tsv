@@ -1,0 +1,4 @@
+colour	x	y	key	clickSelects	showSelected1	fill
+#F8766D	1.4	2.2	Compiler	Compiler	Compiler	#F8766D
+#00BA38	2.6	3.6	Renderer	Renderer	Renderer	#00BA38
+#619CFF	3.8	2.8	Tests	Tests	Tests	#619CFF

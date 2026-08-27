@@ -115,6 +115,22 @@ window.addEventListener("DOMContentLoaded", () => {
     playClickSound();
   }, { capture: true });
 
+  window.addEventListener("message", (event) => {
+    if (event.origin !== window.location.origin) return;
+    if (event.data?.type !== "animint:resize") return;
+
+    const frame = Array.from(
+      document.querySelectorAll(".animint-live-demo iframe")
+    ).find((candidate) => candidate.contentWindow === event.source);
+    if (!frame) return;
+
+    const requestedHeight = Number(event.data.height);
+    if (!Number.isFinite(requestedHeight)) return;
+
+    const safeHeight = Math.min(2400, Math.max(420, Math.ceil(requestedHeight + 8)));
+    frame.style.height = `${safeHeight}px`;
+  });
+
   if (!toggle || typeof window.quartoToggleColorScheme !== "function") return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

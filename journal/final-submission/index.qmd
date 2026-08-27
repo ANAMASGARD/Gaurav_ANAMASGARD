@@ -1,0 +1,148 @@
+---
+title: "Final Submission — Merges, Open Work, and the August 24 Cutoff"
+description: "August 17–24: multiline text merged, open renderer branches strengthened, and final project evidence prepared."
+entry: "final-submission"
+date-start: "2026-08-17"
+date-end: "2026-08-24"
+status: "Complete"
+sprint: "Final Submission"
+pull-requests: 8
+issues: 1
+categories: [Final Submission, Multiline Text, Review, Evaluation]
+body-classes: "week-page journey-entry-page final-submission-page"
+---
+
+{{< include ../_includes/week-nav.html >}}
+
+::: {.entry-kicker}
+FINAL SUBMISSION · AUGUST 17–24, 2026
+:::
+
+# Merging multiline text, stabilizing open work, and writing the final story
+
+::: {.entry-summary-strip}
+`11 LASTING MERGES AT CUTOFF`{.entry-status .status-merged} `5 OPEN AUTHORED PRS`{.entry-status .status-open}
+:::
+
+## Outcome
+
+The final period combined one important merge, continued histogram implementation, collaborative renderer cleanup, external CI review, and preparation of an evidence-backed journal.
+
+## Context
+
+Multiline text had been a long-running branch from before GSoC. During this period I completed its final review changes, cleaned the tests and branch scope, verified the behavior, and the feature merged on August 19.
+
+## What I Did
+
+- Continued [PR #343](https://github.com/animint/animint2/pull/343), completing dynamic histogram updates, capturing pre-refresh test state, preserving fixed breaks, and checking JavaScript coverage.
+- Merged [PR #261](https://github.com/animint/animint2/pull/261) on August 19. Multiline text now works in plot titles, axis titles, legend titles, and `geom_text()` labels.
+- Continued collaborative [PR #253](https://github.com/animint/animint2/pull/253), replacing duplicated panel loops and adjusting precision tolerance without hiding real aspect errors.
+- Revised [PR #288](https://github.com/animint/animint2/pull/288) to use `animint()`, a clearer loop, and named theme values.
+- Repaired [PR #339](https://github.com/animint/animint2/pull/339) after the merged multiline-text pipeline changed shared newline rendering.
+- Reviewed [PR #344](https://github.com/animint/animint2/pull/344), requesting failure-path coverage and questioning misleading 0.00% project-change results.
+- Clarified PR #285’s supported and unsupported facet notation and stabilized an unrelated browser-timing failure locally.
+- Verified all 71 instrumented lines in the new PR #343 `stat-bin.js` path locally.
+- Prepared the final Quarto journal and recorded an honest extension request as a project-management challenge.
+
+## Learnings
+
+Visualization changes cross compiler output, SVG structure, text measurement, panel spacing, transitions, browser tests, documentation, and adjacent feature branches. I also learned that careful review is a contribution: a question about a failure path or misleading coverage result can improve CI even when I did not author the PR.
+
+## Challenges / Notes
+
+Academics and hackathons reduced my available time, so I requested a two-week final-evaluation extension. This belongs in the record as project management, not a technical accomplishment.
+
+The cutoff is explicit: PR #336 was complete and open on August 24. It merged August 25 and is not included in the cutoff’s eleven lasting merges.
+
+## Next Week Targets
+
+- Publish short technical posts for features already merged into `master`.
+- Continue review on open renderer and interaction branches.
+- Keep post-cutoff outcomes dated separately from the submitted report.
+
+## Demo / Media
+
+::: {.evidence-panel .multiline-feature-preview}
+### Multiline text shipped in PR #261
+
+**Plot title**<br>Second line
+
+**Axis title**<br>Second line
+
+**Legend title**<br>Second line
+
+**`geom_text()` label**<br>Second line
+:::
+
+<div class="animint-demo-reference">
+  <a class="animint-pr-link" href="https://github.com/animint/animint2/pull/261" target="_blank" rel="noopener noreferrer">PR #261 <span aria-hidden="true">↗</span><span class="visually-hidden"> opens in a new tab</span></a>
+</div>
+<p class="animint-demo-label">Live Animint2 multiline rendering demo.</p>
+
+::: {.animint-live-demo .animint-demo-final}
+<iframe src="final-multiline-demo/index.html" title="Interactive Animint demonstration of multiline titles, axes, legend title, and geom text labels" loading="lazy"></iframe>
+:::
+
+The plot exercises the shipped multiline behavior in one place: the plot title, both axis titles, the legend title, and every `geom_text()` label render on multiple lines without overlap or cropping.
+
+<details class="demo-code">
+<summary>View the essential R code</summary>
+
+```r
+animint(
+  multiline = ggplot(label_data, aes(x, y, colour = group)) +
+    geom_point(aes(key = group), clickSelects = "group") +
+    geom_text(
+      aes(y = label_y, label = label, key = group),
+      clickSelects = "group",
+      showSelected = character()
+    ) +
+    scale_color_discrete(name = "Feature\nworkstream") +
+    ggtitle("Multi-line text in Animint2\nMerged in PR #261") +
+    xlab("Interactive labels\nclick a point or legend entry") +
+    ylab("Renderer output\nwith measured spacing")
+)
+```
+
+</details>
+
+## Final Feature and Investigation Gallery
+
+:::: {.final-status-columns}
+::: {.final-status-column}
+### Shipped by August 24
+
+- **#261 — Multi-line text** `MERGED`
+- **#286 — Positive panel margins** `MERGED`
+- **#306 — Renderer cleanup** `MERGED`
+- **#330 — CI repository isolation** `MERGED`
+- **#337 — Chromote timeout repair** `MERGED`
+:::
+::: {.final-status-column}
+### Still under review August 24
+
+- **#253 — `coord_equal`** `OPEN · COLLABORATIVE`
+- **#288 — Facet-height regression** `OPEN`
+- **#339 — Multiline facet strips** `OPEN`
+- **#343 — Interactive `stat_bin`** `POC · OPEN`
+- **#285 — Facet errors** `OPEN`
+:::
+::::
+
+::: {.post-cutoff-card}
+### Post-cutoff
+
+**#336 — `showSelected.legend`**
+
+Open and ready at the August 24 cutoff; merged **August 25, 2026**.
+:::
+
+## Evidence and Links
+
+- [PR #261 — merged multiline text](https://github.com/animint/animint2/pull/261)
+- [PR #343 — interactive histogram PoC](https://github.com/animint/animint2/pull/343)
+- [PR #253 — collaborative `coord_equal`](https://github.com/animint/animint2/pull/253)
+- [PR #288 — custom-height facet tests](https://github.com/animint/animint2/pull/288)
+- [PR #339 — multiline facet strips](https://github.com/animint/animint2/pull/339)
+- [PR #344 — Codecov workflow review](https://github.com/animint/animint2/pull/344)
+- [PR #336 — merged August 25 post-cutoff](https://github.com/animint/animint2/pull/336)

@@ -1,0 +1,4 @@
+colour	x	y	label	key	clickSelects
+#F8766D	1.4	2.45	Compiler<br/>conversion	Compiler	Compiler
+#00BA38	2.6	3.85	SVG<br/>line layout	Renderer	Renderer
+#619CFF	3.8	3.05	Browser<br/>coverage	Tests	Tests

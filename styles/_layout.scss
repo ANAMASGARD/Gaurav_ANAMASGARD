@@ -13,6 +13,7 @@ body:not(.home-page):not(.journal-listing-page):not(.week-page):not(.progress-pa
 }
 
 .home-page #title-block-header,
+.journal-listing-page #title-block-header,
 .week-page #title-block-header,
 .progress-page #title-block-header,
 .about-page #title-block-header,
@@ -29,6 +30,7 @@ body:not(.home-page):not(.journal-listing-page):not(.week-page):not(.progress-pa
 }
 
 .home-page #quarto-content,
+.journal-listing-page #quarto-content,
 .progress-page #quarto-content,
 .about-page #quarto-content,
 .contact-page #quarto-content {
@@ -37,11 +39,20 @@ body:not(.home-page):not(.journal-listing-page):not(.week-page):not(.progress-pa
 }
 
 .home-page main.content,
+.journal-listing-page main.content,
 .progress-page main.content,
 .about-page main.content,
 .contact-page main.content {
   margin-bottom: 0;
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+@media (max-width: 767px) {
+  .progress-page main.content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 }
 
 .journal-hero {
@@ -104,6 +115,10 @@ body.week-page main.content {
   max-width: none;
   margin: 0;
   padding: 0 1.5rem 7rem;
+}
+
+body.journey-entry-page main.content {
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 body.week-page #quarto-margin-sidebar {

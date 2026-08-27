@@ -1,16 +1,74 @@
 ---
-title: "Week 12 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 12 Animint2 progress."
+title: "Week 12 — Interactive stat_bin Proof of Concept"
+description: "August 10–16: fixed histogram breaks and browser-side count recomputation after selection."
+journal-title: "Interactive stat_bin proof of concept"
+entry: "week-12"
 week: 12
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-08-10"
+date-end: "2026-08-16"
+status: "Complete"
 sprint: "Week 12"
-pull-requests: 0
-issues: 0
-categories: [Planned]
-body-classes: "week-page week-12-page"
+pull-requests: 4
+issues: 1
+categories: [Interactive Statistics, Compiler, Renderer, Testing]
+body-classes: "week-page journey-entry-page week-12-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+I started PR #343, exploring how histogram bins can update after an interactive selection.
+
+## What I Did
+
+- Began from [Issue #158](https://github.com/animint/animint2/issues/158).
+- Added a failing acceptance test first.
+- Required both changing counts after selection and fixed bin boundaries for meaningful comparison.
+- Exported raw values and a stable set of breaks from R.
+- Added a JavaScript `stat-bin.js` path to recompute counts in the browser.
+- Refreshed affected histogram geometry after selection.
+- Continued review updates on PR #336 and PR #261.
+- Synchronized PR #339 and collaborative PR #253 with current `master`.
+
+## Learnings
+
+Interactive statistical transforms are not equivalent to filtering precomputed rows. When selected data changes, the statistic may need to be recomputed. For histograms, fixed breaks are essential; otherwise a changing bin grid prevents meaningful visual comparison.
+
+## Challenges / Notes
+
+This was a proof of concept, not a finished general framework for browser-side statistical transforms. Its open status and limitations remain visible.
+
+## Next Week Targets
+
+Finish the acceptance path, stabilize coverage, merge multiline text, and prepare the final report.
+
+## Demo / Media
+
+::: {.histogram-proof aria-label="Histogram recomputation model"}
+::: {.histogram-stage}
+**1 · FIX BREAKS**
+
+R exports one stable bin grid.
+:::
+::: {.histogram-stage}
+**2 · SELECT DATA**
+
+The browser changes the active subset.
+:::
+::: {.histogram-stage}
+**3 · RECOMPUTE**
+
+`stat-bin.js` updates counts without moving bin boundaries.
+:::
+:::
+
+**POC · OPEN AT AUGUST 24 CUTOFF.** The three-stage model is used instead of a current-`master` live demo because the browser-side statistical transform remained an open proof of concept. The exact branch and review history are linked below.
+
+## Evidence and Links
+
+- [Issue #158 — interactive `stat_bin`](https://github.com/animint/animint2/issues/158)
+- [PR #343 — `stat_bin + showSelected` proof of concept](https://github.com/animint/animint2/pull/343)
+- [PR #336 — legend control](https://github.com/animint/animint2/pull/336)
+- [PR #261 — multiline text](https://github.com/animint/animint2/pull/261)

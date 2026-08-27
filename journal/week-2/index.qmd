@@ -1,16 +1,100 @@
 ---
-title: "Week 2 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 2 Animint2 progress."
+title: "Week 2 — Designing showSelected.legend"
+description: "June 1–7: a precise replacement for the original legend opt-out behavior."
+journal-title: "Designing showSelected.legend = FALSE"
+entry: "week-2"
 week: 2
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-06-01"
+date-end: "2026-06-07"
+status: "Complete"
 sprint: "Week 2"
-pull-requests: 0
-issues: 0
-categories: [Planned]
-body-classes: "week-page week-2-page"
+pull-requests: 2
+issues: 1
+categories: [Compiler, Selectors, API Design, Testing]
+body-classes: "week-page journey-entry-page week-2-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+I built a more precise replacement for the original legend opt-out behavior.
+
+## Context
+
+PR #292 had delivered the first opt-out in Week 1, but it disabled too much. Issue #333 clarified the needed distinction between explicit selection chosen by a user and selection variables injected automatically from an interactive legend.
+
+## What I Did
+
+- Worked from [Issue #333](https://github.com/animint/animint2/issues/333) and opened [PR #336](https://github.com/animint/animint2/pull/336).
+- Added a failing WorldBank test where a layer keeps `showSelected = "year"`, color uses `region`, and `showSelected.legend = FALSE` prevents `region` from being appended.
+- Implemented the new parameter in the compiler path.
+- Removed the temporary compiler parameter before visualization data is exported.
+- Began retiring the earlier `showSelected = character()` special case so the API would have one clear opt-out path.
+- Continued reviewer-driven cleanup in PR #286.
+
+## Learnings
+
+Explicit selection and legend-driven injection are separate behaviors. The new argument controls only the second and leaves the first untouched. I also learned that compiler-only parameters should influence compilation and then disappear rather than leak into generated visualization data.
+
+## Challenges / Notes
+
+Because `showSelected.legend` begins with `showSelected`, R partial matching could make `extra_params$showSelected` read the wrong parameter. Later regression tests explicitly guarded this boundary.
+
+## Next Week Targets
+
+Stabilize browser CI and extend multiline behavior to facet-strip labels.
+
+## Demo / Media
+
+::: {.evidence-panel .historical-behavior-panel}
+### WorldBank selection semantics
+
+**Explicit behavior:** `showSelected = "year"` remains active.
+
+**Legend behavior:** `showSelected.legend = FALSE` prevents `region` from being added automatically.
+
+**Historical status:** Open and ready at the August 24 cutoff; merged August 25, 2026.
+:::
+
+<div class="animint-demo-reference">
+  <a class="animint-pr-link" href="https://github.com/animint/animint2/pull/336" target="_blank" rel="noopener noreferrer">PR #336 <span aria-hidden="true">↗</span><span class="visually-hidden"> opens in a new tab</span></a>
+  <span class="animint-pr-status">· merged Aug 25</span>
+</div>
+<p class="animint-history-note">OPEN AT AUG 24 CUTOFF · MERGED AUG 25</p>
+<p class="animint-demo-label">Interactive Animint2 demo — select a year and observe the filtering semantics.</p>
+
+::: {.animint-live-demo .animint-demo-week-2}
+<iframe src="week2-showselected-legend-demo/index.html" title="Interactive WorldBank visualization demonstrating showSelected.legend false" loading="lazy"></iframe>
+:::
+
+Choose a year in the lower plot or a region in the legend. The scatterplot still filters explicitly by `year`, while the visible `region` legend is not injected into that layer's `showSelected` variables.
+
+<details class="demo-code">
+<summary>View the essential R code</summary>
+
+```r
+animint(
+  scatter = ggplot() +
+    geom_point(
+      aes(fertility.rate, life.expectancy, colour = region, key = country),
+      showSelected = "year",
+      showSelected.legend = FALSE,
+      clickSelects = "country",
+      data = WorldBank
+    ),
+  timeline = ggplot() + make_tallrect(WorldBank, "year"),
+  selector.types = list(year = "single")
+)
+```
+
+</details>
+
+This bundle is isolated from the cutoff demos and is never included in the August 24 merge total.
+
+## Evidence and Links
+
+- [Issue #333 — legend injection semantics](https://github.com/animint/animint2/issues/333)
+- [PR #336 — `showSelected.legend`](https://github.com/animint/animint2/pull/336)
+- [PR #286 — positive panel-margin tests](https://github.com/animint/animint2/pull/286)

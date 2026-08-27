@@ -1,74 +1,83 @@
-::: {.week-header}
-::: {.week-badge}
-WEEK 1
-:::
-
-::: {.week-title}
-Journal foundation and project setup
-:::
-
-::: {.week-date}
-::: {.week-date-icon aria-hidden="true"}
-□
-:::
-Schedule pending
-:::
-
-::: {.metric-grid}
-::: {.metric-cell}
-**Week 1**
-
-SPRINT
-:::
-::: {.metric-cell}
-**Planned**
-
-STATUS
-:::
-::: {.metric-cell}
-**0**
-
-PULL REQUESTS
-:::
-::: {.metric-cell}
-**0**
-
-ISSUES
-:::
-:::
-:::
-
 ## Outcome
 
-This entry is reserved for verified Week 1 progress. Replace this starter paragraph only after the outcome can be supported by project links, code, or mentor feedback.
+The coding period began with two merges and focused review work on two open facet PRs.
+
+## Context
+
+PR #292 began before GSoC. During Week 1, I completed the remaining review cycle and it merged. The earlier work established the first opt-out behavior; its semantic limitations later motivated Issue #333 and PR #336.
 
 ## What I Did
 
-- Add completed tasks only when their result is verifiable.
-- Link implementation work to its repository, pull request, issue, or rendered artifact.
-- Distinguish exploration from merged or completed work.
+- Merged [PR #330](https://github.com/animint/animint2/pull/330) on May 25. `R_coverage`, `JS_coverage`, and local runs now use separate GitHub Pages test repositories instead of mutating one shared repository.
+- Revised [PR #288](https://github.com/animint/animint2/pull/288), addressing four review comments and keeping the regression test focused on `height_proportion` across multiple output heights.
+- Revised [PR #285](https://github.com/animint/animint2/pull/285) so invalid facet-variable errors identify missing names instead of failing later with a generic message.
+- Merged [PR #292](https://github.com/animint/animint2/pull/292) on May 28, providing the first way to opt out of automatic legend-driven `showSelected` behavior.
 
 ## Learnings
 
-Record technical lessons, project conventions, and decisions that would help a future contributor understand the work.
+This week connected three kinds of quality: infrastructure jobs must not share mutable resources; layout tests should measure layout rather than incidental browser setup; and API errors/options should describe what the user is trying to do.
 
-## Confusions / Issues
+I also refined my use of test-first commits. A failing behavior test is valuable, but it should not be forced when the PR itself concerns tests or CI—the evidence must match the change.
 
-Document blockers and unresolved questions honestly. Include the current state and the next evidence needed to resolve each item.
+## Challenges / Notes
+
+The facet-height test ran through browser layout and could pass for the wrong reason if unrelated setup was changed. Removing those accidental influences was as important as adding assertions.
 
 ## Next Week Targets
 
-- Replace this list with scoped, reviewable targets.
-- Keep planned work separate from completed outcomes.
+Replace the broad PR #292 opt-out with a precise design that preserves explicit `showSelected` while disabling only automatic legend-variable injection.
 
 ## Demo / Media
 
-::: {.media-placeholder}
-Add a captioned screenshot, short demonstration, or interactive artifact after verifying that it belongs to this project and contains no private information.
+::: {.ci-race-diagram aria-label="Shared and isolated CI repository comparison"}
+::: {.ci-race-column .is-risk}
+**BEFORE · SHARED STATE**
+
+`R_coverage` → one test repository ← `JS_coverage`
+
+Either job could delete or recreate state while the other was still running.
+:::
+::: {.ci-race-arrow aria-hidden="true"}
+→
+:::
+::: {.ci-race-column .is-safe}
+**AFTER · ISOLATED STATE**
+
+`R_coverage` → R-specific repository
+
+`JS_coverage` → JS-specific repository
+:::
 :::
 
-## Links
+<div class="animint-demo-reference">
+  <a class="animint-pr-link" href="https://github.com/animint/animint2/pull/292" target="_blank" rel="noopener noreferrer">PR #292 <span aria-hidden="true">↗</span><span class="visually-hidden"> opens in a new tab</span></a>
+</div>
+<p class="animint-demo-label">Interactive Animint2 demo — click a legend entry.</p>
 
-- [Animint2 repository](https://github.com/animint/animint2)
-- [Journal source](https://github.com/ANAMASGARD/Gaurav_ANAMASGARD)
-- Add verified Week 1 links here.
+::: {.animint-live-demo .animint-demo-week-1}
+<iframe src="/journal/week-1/week1-legend-optout-demo/index.html" title="Interactive comparison of default legend filtering and the PR 292 opt-out behavior" loading="lazy"></iframe>
+:::
+
+Click a legend entry. The default plot filters to the selected series; the PR #292 plot keeps both series visible while preserving the legend. This is intentionally rendered with the August 24 cutoff environment because PR #336 retired `showSelected = character()` on August 25.
+
+<details class="demo-code">
+<summary>View the essential R code</summary>
+
+```r
+animint(
+  default = ggplot(test_data, aes(x, y, colour = comparison)) +
+    geom_point(),
+  optedout = ggplot(test_data, aes(x, y, colour = comparison)) +
+    geom_point(showSelected = character()),
+  selector.types = list(comparison = "single")
+)
+```
+
+</details>
+
+## Evidence and Links
+
+- [PR #330 — merged CI race fix](https://github.com/animint/animint2/pull/330)
+- [PR #288 — custom facet-height tests](https://github.com/animint/animint2/pull/288)
+- [PR #285 — clearer facet errors](https://github.com/animint/animint2/pull/285)
+- [PR #292 — first legend opt-out API](https://github.com/animint/animint2/pull/292)

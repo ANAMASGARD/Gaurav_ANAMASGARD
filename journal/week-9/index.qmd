@@ -1,16 +1,78 @@
 ---
-title: "Week 9 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 9 Animint2 progress."
+title: "Week 9 — Smaller, Stronger Regression Tests"
+description: "July 20–26: focused review revisions across facet heights, legend control, and panel margins."
+journal-title: "Making tests smaller, clearer, and more user-focused"
+entry: "week-9"
 week: 9
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-07-20"
+date-end: "2026-07-26"
+status: "Complete"
 sprint: "Week 9"
-pull-requests: 0
+pull-requests: 3
 issues: 0
-categories: [Planned]
-body-classes: "week-page week-9-page"
+categories: [Review, Facets, Testing, API Design]
+body-classes: "week-page journey-entry-page week-9-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+I addressed review across three PRs, mostly by removing unrelated setup, strengthening assertions, and making user-facing changes clearer.
+
+## Context
+
+PRs #288 and #286 began before GSoC, while #336 began in Week 2. This week records the specific review revisions rather than claiming their entire implementation.
+
+## What I Did
+
+- Revised [PR #288](https://github.com/animint/animint2/pull/288): removed an unrelated change, removed skips that hid behavior, strengthened custom-height assertions, and used named theme-height values.
+- Revised [PR #336](https://github.com/animint/animint2/pull/336): stripped the parameter before variant validation, renamed unclear objects, preserved coverage for `FALSE` and default `TRUE`, and guarded against partial matching.
+- Revised [PR #286](https://github.com/animint/animint2/pull/286): removed redundant numeric checks and rewrote NEWS around user-visible positive `panel.margin` support.
+
+## Learnings
+
+Review often improves a change by deleting code. A strong test states a layout relationship rather than inspecting an incidental helper type. A strong changelog describes what users can rely on rather than what test file changed.
+
+## Challenges / Notes
+
+The branches needed to preserve their test-first history while presenting the final problem and solution without every temporary experiment.
+
+## Next Week Targets
+
+Finish the panel-margin merge and continue collaborative `coord_equal` work for non-square viewports.
+
+## Demo / Media
+
+::: {.height-comparison-grid}
+::: {.height-comparison-card}
+**400 PX**
+
+Compact facet layout
+
+<span class="height-gap height-gap-small"></span>
+:::
+::: {.height-comparison-card}
+**600 PX**
+
+Scaled facet layout
+
+<span class="height-gap height-gap-medium"></span>
+:::
+::: {.height-comparison-card}
+**800 PX**
+
+Tall facet layout
+
+<span class="height-gap height-gap-large"></span>
+:::
+:::
+
+The highlighted lower region represents the regression boundary. PR #288 adds tests to ensure custom heights scale without excessive space below the facets; it does not claim a new layout engine.
+
+## Evidence and Links
+
+- [PR #288 — custom-height facet regression tests](https://github.com/animint/animint2/pull/288)
+- [PR #336 — legend injection control](https://github.com/animint/animint2/pull/336)
+- [PR #286 — positive panel margins](https://github.com/animint/animint2/pull/286)

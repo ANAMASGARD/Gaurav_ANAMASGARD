@@ -1,85 +1,96 @@
 # GSoC 2026 Animint2 Development Journal
 
-A Quarto website for Gaurav Chaudhary's Google Summer of Code 2026 development journal. It uses native Quarto pages and navigation, responsive SCSS themes, and a static Netlify deployment. No SPA framework or runtime application server is required.
+Gaurav Chaudhary's evidence-backed Google Summer of Code 2026 journal for Animint2 and the R Project for Statistical Computing. The static Quarto site covers Community Bonding, all 12 coding weeks, the August 17–24 final-submission period, and the exact August 24 evaluation cutoff.
 
-## Live website
+The site distinguishes lasting merges, open work, closed or reprioritized experiments, collaborative work, and the August 25 post-cutoff merge. The headline metric is **21 authored PR workstreams, including 11 lasting merges by August 24**—not 21 merged PRs.
 
-[gaurav-anamasgard.netlify.app](https://gaurav-anamasgard.netlify.app)
+## Site structure
 
-The production site is deployed from the rendered `_site/` directory. It includes the responsive weekly journal and accessible light and dark themes.
+- `/journal/` — story-map landing page and 14 official-program entries.
+- `/progress/` — concise 14-node timeline, final metrics, technical areas, and issue-to-PR map.
+- `/about/` — contributor, project, mentors, technologies, and focus areas.
+- `/contact/` — contact cards and project links.
+
+There is no separate Pre-GSoC route. Earlier work appears only as concise context when it explains a workstream continued during the official program.
 
 ## Local setup
 
-Install [Quarto](https://quarto.org/docs/get-started/) and R 4.6 or later, then restore the locked R environment:
+Install Quarto and R, then restore the cutoff environment when required:
 
 ```bash
 Rscript -e 'renv::restore()'
 ```
 
-The lockfile pins Animint2 2026.7.29 from commit `a112290eb5df72b60c4afd6c09eb1062d50bc44e`.
+The root `renv.lock` pins the August 24 cutoff commit:
 
-## Preview website
+```text
+a112290eb5df72b60c4afd6c09eb1062d50bc44e
+```
+
+PR #336 is intentionally isolated at its August 25 merge commit:
+
+```text
+8f009edb9556e6acf10059d01a76d2d99a06b39c
+```
+
+## Rebuild the live Animint2 evidence
+
+Prepare both exact source trees and temporary R libraries:
 
 ```bash
-quarto preview
+scripts/prepare-animint-environments.sh
 ```
 
-## Production render
+Then generate the bundles declared in `visualizations/manifest.csv`:
 
 ```bash
-Rscript scripts/validate-weeks.R
-quarto render
-scripts/verify-site.sh
+R_PROFILE_USER=/dev/null Rscript --vanilla scripts/build-animint-demos.R .
 ```
 
-The static production artifact is written to `_site/`, which is intentionally ignored by Git.
+Each demo is built from one `animint()` object. The manifest records its route, historical status, exact commit, output bundle, and generating function. The current priority live demos cover:
 
-## Add a weekly journal entry
+- Week 1 — historical PR #292 legend opt-out behavior at the cutoff commit.
+- Week 2 — `showSelected.legend = FALSE` in an isolated August 25 environment.
+- Week 10 — merged positive `panel.margin` behavior.
+- Final Submission — merged multiline plot, axis, legend, and `geom_text()` output.
 
-Edit the matching `journal/week-N/index.qmd`. Week 1's body is shared by
-`journal/index.qmd` and `journal/week-1/index.qmd`; Weeks 2–12 use the shared
-planned body until verified progress replaces it. Keep this front matter contract:
+Open or collaborative branches are represented by clearly labeled static evidence unless a branch-pinned artifact is available; they are never rendered from current `master` and presented as shipped.
 
-```yaml
----
-title: "Verified weekly title"
-week: 1
-date-start: "May 26, 2026"
-date-end: "June 1, 2026"
-status: "Complete"
-sprint: "Week 1"
-pull-requests: 0
-issues: 0
-categories: [Animint2]
----
-```
-
-Allowed statuses are `Planned`, `In Progress`, `Complete`, and `Blocked`. Replace the reserved copy only with verified work and retain the standard Outcome, What I Did, Learnings, Confusions / Issues, Next Week Targets, Demo / Media, and Links headings.
-
-## Animint2
-
-Reusable Animint2 plot helpers remain in `R/animint-demos.R` for future verified project work. They are not currently executed or published by the website build.
-
-## Netlify deployment
-
-The repository is linked locally to the `gaurav-anamasgard` Netlify project. For automated deployments:
-
-1. In the GitHub repository, add Actions secrets named `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
-2. Confirm that `site-url` in `_quarto.yml` remains `https://gaurav-anamasgard.netlify.app`.
-3. Push to `main` for production deployment. Same-repository pull requests receive a draft deployment and an updated preview comment; fork pull requests build without receiving secrets.
-
-Netlify publishes `_site/`. The workflow restores R dependencies, installs Quarto, validates all weekly entries, renders the site, verifies the artifact, and deploys it.
-
-For a verified manual deployment:
+## Validate and render
 
 ```bash
-quarto render
-scripts/verify-site.sh
-netlify deploy --dir _site --prod --no-build
+Rscript --vanilla scripts/validate-weeks.R
+R_PROFILE_USER=/dev/null Rscript --vanilla render.R
+git diff --check
 ```
 
-The OAuth token created by `netlify login` remains in Netlify CLI's global configuration and must not be copied into the repository. Local `.env` and `.netlify/` files are Git-ignored.
+`render.R` runs Quarto, mirrors every expected Animint bundle into its matching `_site/journal/...` route, and runs `scripts/verify-site.sh`. The verifier fails when a route, date, required journal section, metric, iframe, SHA label, or core Animint asset is missing.
 
-## Editable placeholders
+For a read-only local demo of the verified artifact:
 
-Update the contact placeholders in `contact.qmd`, the project copy in `about.qmd`, and weekly entries as verified information becomes available. No contribution statistics or achievements are fabricated in the starter content.
+```bash
+python3 -m http.server 4311 --bind 127.0.0.1 --directory _site
+```
+
+Then open <http://127.0.0.1:4311/>.
+
+## Writing contract
+
+Every official entry uses:
+
+```text
+Outcome
+Context (only when needed)
+What I Did
+Learnings
+Challenges / Notes
+Next Week Targets
+Demo / Media
+Evidence and Links
+```
+
+Do not assign an entire long-running implementation to its merge week. State when it began earlier, what changed in the current week, and the status reached during that week.
+
+## Deployment boundary
+
+The site can be deployed from `_site`, but local rendering does not stage, commit, push, create a Netlify preview, or deploy production. Those actions are separate, explicit publication steps. Never copy local `.env` or `.netlify/` credentials into the repository.

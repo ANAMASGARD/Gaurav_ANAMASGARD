@@ -1,16 +1,125 @@
 ---
-title: "Week 10 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 10 Animint2 progress."
+title: "Week 10 — Panel Margins and coord_equal"
+description: "July 27–August 2: positive panel margins merged and collaborative aspect-ratio work advanced."
+journal-title: "Positive panel margins merged and coord_equal improved"
+entry: "week-10"
 week: 10
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-07-27"
+date-end: "2026-08-02"
+status: "Complete"
 sprint: "Week 10"
-pull-requests: 0
+pull-requests: 2
 issues: 0
-categories: [Planned]
-body-classes: "week-page week-10-page"
+categories: [Facets, Layout, SVG, Collaboration]
+body-classes: "week-page journey-entry-page week-10-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+Positive `panel.margin` support merged, and I made substantial implementation and test contributions to the collaborative `coord_equal` branch.
+
+## Context
+
+The panel-margin branch began before GSoC. During Week 10, I completed its review changes and merge. PR #253 is owned by `tdhock`; my work is recorded as a collaborative contribution rather than an authored PR.
+
+## What I Did
+
+- Merged [PR #286](https://github.com/animint/animint2/pull/286) on July 29.
+- Contributed to [PR #253](https://github.com/animint/animint2/pull/253):
+  - fixed scale-to-fit behavior for non-square viewports;
+  - preserved data aspect ratio while using available panel space;
+  - removed an R normalization that squared the aspect effect;
+  - added a non-square viewport test;
+  - added a y-axis-height case with `coord_fixed(10)`;
+  - clarified NEWS and width/height cases.
+- Synchronized the long-running facet-strip branch with changed main-branch text behavior.
+
+## Learnings
+
+`coord_equal` is not only a one-to-one unit relationship. The renderer must preserve the data ratio and choose the largest panel that fits a wide, tall, or faceted viewport.
+
+## Challenges / Notes
+
+Floating-point SVG coordinates made exact assertions brittle. The test needed enough tolerance for roughly 0.001 rendering noise without hiding a real aspect-ratio error.
+
+## Next Week Targets
+
+Run broad verification across the open renderer branches and prepare the final feature push.
+
+## Demo / Media
+
+::: {.panel-margin-demo aria-label="Positive panel margin comparison"}
+::: {.panel-margin-case .margin-zero}
+**0 LINES**
+
+<span></span><span></span><span></span><span></span>
+:::
+::: {.panel-margin-case .margin-one}
+**1 LINE**
+
+<span></span><span></span><span></span><span></span>
+:::
+::: {.panel-margin-case .margin-two}
+**2 LINES**
+
+<span></span><span></span><span></span><span></span>
+:::
+:::
+
+<div class="animint-demo-reference">
+  <a class="animint-pr-link" href="https://github.com/animint/animint2/pull/286" target="_blank" rel="noopener noreferrer">PR #286 <span aria-hidden="true">↗</span><span class="visually-hidden"> opens in a new tab</span></a>
+</div>
+<p class="animint-demo-label">Live Animint2 layout demo.</p>
+
+::: {.animint-live-demo .animint-demo-week-10}
+<iframe src="week10-panel-margin-demo/index.html" title="Three Animint facet plots comparing zero, one, and two lines of panel margin" loading="lazy"></iframe>
+:::
+
+The three plots use identical Iris data. Only `panel.margin` changes, so the increasing space between facet panels is directly visible.
+
+<details class="demo-code">
+<summary>View the essential R code</summary>
+
+```r
+margin_plot <- function(lines) {
+  ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
+    geom_point() +
+    facet_wrap(~Species, nrow = 1) +
+    theme(panel.margin = grid::unit(lines, "lines"))
+}
+
+animint(
+  zero = margin_plot(0),
+  one = margin_plot(1),
+  two = margin_plot(2)
+)
+```
+
+</details>
+
+::: {.coord-equal-evidence aria-label="Wide and tall viewport scale-to-fit model"}
+::: {.coord-equal-case .is-wide}
+**WIDE VIEWPORT**
+
+<span aria-hidden="true"></span>
+
+Largest square panel that fits the available height.
+:::
+::: {.coord-equal-case .is-tall}
+**TALL VIEWPORT**
+
+<span aria-hidden="true"></span>
+
+Largest square panel that fits the available width.
+:::
+:::
+
+**OPEN · COLLABORATIVE AT AUGUST 24 CUTOFF.** The `coord_equal` model above records the wide/tall invariant and links to PR #253; it is not presented as a merged live feature.
+
+## Evidence and Links
+
+- [PR #286 — merged positive panel-margin coverage](https://github.com/animint/animint2/pull/286)
+- [PR #253 — collaborative `coord_equal` work](https://github.com/animint/animint2/pull/253)

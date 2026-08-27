@@ -1,16 +1,74 @@
 ---
-title: "Week 3 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 3 Animint2 progress."
+title: "Week 3 — Deterministic Causes Behind Flaky CI"
+description: "June 8–14: browser timeout, permissions, multiline facets, and package-collision investigations."
+journal-title: "Finding deterministic causes behind flaky CI"
+entry: "week-3"
 week: 3
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-06-08"
+date-end: "2026-06-14"
+status: "Complete"
 sprint: "Week 3"
-pull-requests: 0
-issues: 0
-categories: [Planned]
-body-classes: "week-page week-3-page"
+pull-requests: 4
+issues: 3
+categories: [CI, Browser Testing, Facets, SVG]
+body-classes: "week-page journey-entry-page week-3-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+I merged a Chromote timeout fix and opened focused investigations covering GitHub Pages permissions, multiline facet strips, and the `atime` workflow.
+
+## What I Did
+
+- Opened Issue #334 and [PR #337](https://github.com/animint/animint2/pull/337) after finding that an early renderer test set a shared Chromote session’s `default_timeout` to one second.
+- Removed the unsafe setting and restored a safe page timeout. PR #337 merged June 12.
+- Opened Issue #335 and [PR #338](https://github.com/animint/animint2/pull/338) to investigate GitHub Pages tests when forked PRs lack the organization token.
+- Opened [PR #339](https://github.com/animint/animint2/pull/339), first adding a failing multiline facet-strip test, then joining labels with newlines and rendering lines as SVG `<tspan>` elements.
+- Opened Issue #340 and [PR #341](https://github.com/animint/animint2/pull/341) after tracing an `atime` failure to the workflow pre-installing current Animint2 before building an older baseline commit.
+
+## Learnings
+
+“Flaky” often describes appearance rather than cause. Shared browser state, shared external repositories, missing credentials, and the wrong package in a library can each produce intermittent-looking failures with deterministic roots.
+
+## Challenges / Notes
+
+Not every diagnosis belongs in Animint2 or in `testthat`. Workflow failures may require a workflow-level guard, an upstream fix, or a documented closure instead of more package code.
+
+## Next Week Targets
+
+Decide which proposals belong in Animint2, which should be simplified, and which should move to another maintenance boundary.
+
+## Demo / Media
+
+::: {.ci-lane-grid}
+::: {.ci-lane-card}
+**BROWSER STATE**
+
+One-second shared Chromote timeout → restore a safe session timeout.
+:::
+::: {.ci-lane-card}
+**CREDENTIALS**
+
+Forked PR without organization token → gate or relocate integration behavior.
+:::
+::: {.ci-lane-card}
+**SVG LAYOUT**
+
+Multiple strip lines → split with `<tspan>` and reserve geometry.
+:::
+::: {.ci-lane-card}
+**PACKAGE LIBRARY**
+
+Current package shadows baseline → isolate installation/evaluation order.
+:::
+:::
+
+## Evidence and Links
+
+- [Issue #334](https://github.com/animint/animint2/issues/334) · [PR #337 — merged timeout fix](https://github.com/animint/animint2/pull/337)
+- [Issue #335](https://github.com/animint/animint2/issues/335) · [PR #338 — credentials investigation](https://github.com/animint/animint2/pull/338)
+- [PR #339 — multiline facet strips](https://github.com/animint/animint2/pull/339)
+- [Issue #340](https://github.com/animint/animint2/issues/340) · [PR #341 — `atime` investigation](https://github.com/animint/animint2/pull/341)

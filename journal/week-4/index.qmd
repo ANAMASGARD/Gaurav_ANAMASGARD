@@ -1,16 +1,56 @@
 ---
-title: "Week 4 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 4 Animint2 progress."
+title: "Week 4 — Finding the Correct Fix Boundary"
+description: "June 15–21: separating package bugs, browser state, and infrastructure problems."
+journal-title: "Separating package bugs from infrastructure problems"
+entry: "week-4"
 week: 4
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-06-15"
+date-end: "2026-06-21"
+status: "Complete"
 sprint: "Week 4"
-pull-requests: 0
-issues: 0
-categories: [Planned]
-body-classes: "week-page week-4-page"
+pull-requests: 4
+issues: 3
+categories: [Root Cause, Maintenance, CI, SVG Layout]
+body-classes: "week-page journey-entry-page week-4-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+This week focused on validating the four workstreams opened in Week 3 and avoiding patches that solved the right symptom in the wrong repository.
+
+## What I Did
+
+- Rechecked that PR #337 repaired shared browser state rather than merely increasing every timeout.
+- Compared the GitHub Pages permissions problem with the earlier shared-repository race; similar CI output came from different causes.
+- Evaluated whether the `atime` failure belonged in Animint2 or in external workflow behavior.
+- Continued reviewing multiline facet-strip layout, where a second rendered line also changes the space required beside or above the panel.
+
+## Learnings
+
+A useful root-cause report answers both “why did this fail?” and “where should the fix live?” A technically valid patch can still be the wrong maintenance decision.
+
+## Challenges / Notes
+
+The main challenge was resisting a single broad “CI stability” patch. Browser state, credentials, package libraries, and SVG geometry each required their own evidence and repository boundary.
+
+## Next Week Targets
+
+Reduce scope, prepare the renderer cleanup for merge, and resolve which CI proposals should close or move.
+
+## Demo / Media
+
+::: {.decision-path}
+**SYMPTOM** → reproduce and isolate → **ROOT CAUSE** → identify owner → **FIX LOCATION**
+
+`R COMPILER` · `JAVASCRIPT RENDERER` · `BROWSER TEST` · `CI WORKFLOW` · `EXTERNAL ACTION`
+:::
+
+## Evidence and Links
+
+- [PR #337 — shared Chromote timeout](https://github.com/animint/animint2/pull/337)
+- [PR #338 — GitHub Pages credentials](https://github.com/animint/animint2/pull/338)
+- [PR #339 — multiline facet strips](https://github.com/animint/animint2/pull/339)
+- [PR #341 — `atime` package collision](https://github.com/animint/animint2/pull/341)

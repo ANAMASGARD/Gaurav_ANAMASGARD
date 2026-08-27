@@ -1,0 +1,572 @@
+{
+ "geoms": {
+ "geom1_line_default": {
+ "geom": "line",
+"classed": "geom1_line_default",
+"aes": {
+"x": "x",
+"y": "y",
+"colour": "comparison",
+"showSelected1": "comparison"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        3,
+"showSelected": "comparison",
+"help_showSelected": "comparison" 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"showSelected1": "character",
+"PANEL": "integer",
+"group": "character"
+},
+"chunk_order": [],
+"nest_order": [
+ "showSelected1" 
+],
+"subset_order": [
+ "showSelected1" 
+],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom1_line_default_chunk1.tsv": {
+ "bytes":      249,
+"rows": 10 
+} 
+} 
+},
+"geom2_point_default": {
+ "geom": "point",
+"classed": "geom2_point_default",
+"aes": {
+"x": "x",
+"y": "y",
+"colour": "comparison",
+"showSelected1": "comparison"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        5,
+"showSelected": "comparison",
+"help_showSelected": "comparison" 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"showSelected1": "character",
+"PANEL": "integer",
+"group": "character",
+"fill": "rgb"
+},
+"chunk_order": [],
+"nest_order": [
+ "showSelected1" 
+],
+"subset_order": [
+ "showSelected1" 
+],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom2_point_default_chunk1.tsv": {
+ "bytes":      334,
+"rows": 10 
+} 
+} 
+},
+"geom3_line_optedout": {
+ "geom": "line",
+"classed": "geom3_line_optedout",
+"aes": {
+"x": "x",
+"y": "y",
+"colour": "comparison"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        3,
+"showSelected": [ ],
+"help_showSelected": [ ] 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"PANEL": "integer",
+"group": "character"
+},
+"chunk_order": [],
+"nest_order": [],
+"subset_order": [],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom3_line_optedout_chunk1.tsv": {
+ "bytes":      145,
+"rows": 10 
+} 
+} 
+},
+"geom4_point_optedout": {
+ "geom": "point",
+"classed": "geom4_point_optedout",
+"aes": {
+"x": "x",
+"y": "y",
+"colour": "comparison"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        5,
+"showSelected": [ ],
+"help_showSelected": [ ] 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"PANEL": "integer",
+"group": "character",
+"fill": "rgb"
+},
+"chunk_order": [],
+"nest_order": [],
+"subset_order": [],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom4_point_optedout_chunk1.tsv": {
+ "bytes":      230,
+"rows": 10 
+} 
+} 
+} 
+},
+"selectors": {
+ "comparison": {
+ "legend": true,
+"is.variable.value": false,
+"type": "single",
+"showSelected": true,
+"selected": "control",
+"levels": [ "control", "treatment" ],
+"update": [
+ "geom1_line_default",
+"geom2_point_default" 
+] 
+} 
+},
+"plots": {
+ "default": {
+ "panel_margin_lines":     0.25,
+"legend": {
+ "comparison": {
+ "guide": "legend",
+"geoms": [ "path", "point" ],
+"title": "comparison",
+"class": "comparison",
+"selector": "comparison",
+"is_discrete": true,
+"legend_type": "colour",
+"text_size": "8.8pt",
+"title_size": "11pt",
+"entries": [
+ {
+ "pathcolour": "#F8766D",
+"pathsize":        3,
+"pathlinetype":        1,
+"label": "control",
+"pointcolour": "#F8766D",
+"pointshape":       21,
+"pointsize":        5,
+"pointstroke":      0.5 
+},
+{
+ "pathcolour": "#00BFC4",
+"pathsize":        3,
+"pathlinetype":        1,
+"label": "treatment",
+"pointcolour": "#00BFC4",
+"pointshape":       21,
+"pointsize":        5,
+"pointstroke":      0.5 
+} 
+] 
+} 
+},
+"strips": {
+ "top": [
+ "" 
+],
+"right": [
+ "" 
+],
+"n": {
+ "top":        0,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ 1 ],
+"ROW": [ 1 ],
+"COL": [ 1 ],
+"SCALE_X": [ 1 ],
+"SCALE_Y": [ 1 ],
+"AXIS_X": [ true ],
+"AXIS_Y": [ true ],
+"coord_fixed": [ false ],
+"width_proportion": [        1 ],
+"height_proportion": [        1 ] 
+},
+"panel_background": {
+ "fill": "#EBEBEB",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": [],
+"grid_major": {
+ "colour": "#FFFFFF",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        1,
+       2,
+       3,
+       4,
+       5 
+] 
+],
+"y": [
+ [
+        1,
+       2,
+       3,
+       4 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FFFFFF",
+"size":     0.25,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        1,
+     1.5,
+       2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5,
+       5 
+] 
+],
+"y": [
+ [
+        1,
+     1.5,
+       2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+        1,
+       2,
+       3,
+       4,
+       5 
+],
+"xlab": [
+ "1",
+"2",
+"3",
+"4",
+"5" 
+],
+"xrange": [      0.8,      5.2 ],
+"xline": true,
+"xticks": true,
+"y": [
+        1,
+       2,
+       3,
+       4 
+],
+"ylab": [
+ "1",
+"2",
+"3",
+"4" 
+],
+"yrange": [    0.825,    4.675 ],
+"yline": true,
+"yticks": true 
+},
+"xtitle": "Click a legend entry",
+"xtitle_size": "11pt",
+"strip_text_xsize": "11pt",
+"xsize": "11pt",
+"xangle":        0,
+"xanchor": "middle",
+"ytitle": "Selected series remains",
+"ytitle_size": "11pt",
+"strip_text_ysize": "11pt",
+"ysize": "11pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "1",
+"2",
+"3",
+"4",
+"5" 
+],
+"ylabs": [
+ "1",
+"2",
+"3",
+"4" 
+],
+"title": "Default legend behavior",
+"title_size": "13.2pt",
+"options": {
+ "width":      760,
+"height":      420 
+},
+"span": {
+ "rowspan": null,
+"colspan": null,
+"last_in_row": true 
+},
+"geoms": [
+ "geom1_line_default",
+"geom2_point_default" 
+] 
+},
+"optedout": {
+ "panel_margin_lines":     0.25,
+"legend": {
+ "comparison": {
+ "guide": "legend",
+"geoms": [ "path", "point" ],
+"title": "comparison",
+"class": "comparison",
+"selector": "comparison",
+"is_discrete": true,
+"legend_type": "colour",
+"text_size": "8.8pt",
+"title_size": "11pt",
+"entries": [
+ {
+ "pathcolour": "#F8766D",
+"pathsize":        3,
+"pathlinetype":        1,
+"label": "control",
+"pointcolour": "#F8766D",
+"pointshape":       21,
+"pointsize":        5,
+"pointstroke":      0.5 
+},
+{
+ "pathcolour": "#00BFC4",
+"pathsize":        3,
+"pathlinetype":        1,
+"label": "treatment",
+"pointcolour": "#00BFC4",
+"pointshape":       21,
+"pointsize":        5,
+"pointstroke":      0.5 
+} 
+] 
+} 
+},
+"strips": {
+ "top": [
+ "" 
+],
+"right": [
+ "" 
+],
+"n": {
+ "top":        0,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ 1 ],
+"ROW": [ 1 ],
+"COL": [ 1 ],
+"SCALE_X": [ 1 ],
+"SCALE_Y": [ 1 ],
+"AXIS_X": [ true ],
+"AXIS_Y": [ true ],
+"coord_fixed": [ false ],
+"width_proportion": [        1 ],
+"height_proportion": [        1 ] 
+},
+"panel_background": {
+ "fill": "#EBEBEB",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": [],
+"grid_major": {
+ "colour": "#FFFFFF",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        1,
+       2,
+       3,
+       4,
+       5 
+] 
+],
+"y": [
+ [
+        1,
+       2,
+       3,
+       4 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FFFFFF",
+"size":     0.25,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        1,
+     1.5,
+       2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5,
+       5 
+] 
+],
+"y": [
+ [
+        1,
+     1.5,
+       2,
+     2.5,
+       3,
+     3.5,
+       4,
+     4.5 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+        1,
+       2,
+       3,
+       4,
+       5 
+],
+"xlab": [
+ "1",
+"2",
+"3",
+"4",
+"5" 
+],
+"xrange": [      0.8,      5.2 ],
+"xline": true,
+"xticks": true,
+"y": [
+        1,
+       2,
+       3,
+       4 
+],
+"ylab": [
+ "1",
+"2",
+"3",
+"4" 
+],
+"yrange": [    0.825,    4.675 ],
+"yline": true,
+"yticks": true 
+},
+"xtitle": "Legend remains clickable",
+"xtitle_size": "11pt",
+"strip_text_xsize": "11pt",
+"xsize": "11pt",
+"xangle":        0,
+"xanchor": "middle",
+"ytitle": "Both series remain visible",
+"ytitle_size": "11pt",
+"strip_text_ysize": "11pt",
+"ysize": "11pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "1",
+"2",
+"3",
+"4",
+"5" 
+],
+"ylabs": [
+ "1",
+"2",
+"3",
+"4" 
+],
+"title": "PR #292 opt-out behavior",
+"title_size": "13.2pt",
+"options": {
+ "width":      760,
+"height":      420 
+},
+"span": {
+ "rowspan": null,
+"colspan": null,
+"last_in_row": true 
+},
+"geoms": [
+ "geom3_line_optedout",
+"geom4_point_optedout" 
+] 
+} 
+} 
+}

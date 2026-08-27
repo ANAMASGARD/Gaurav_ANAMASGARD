@@ -1,16 +1,68 @@
 ---
-title: "Week 5 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 5 Animint2 progress."
+title: "Week 5 — Review-Driven Scope Cleanup"
+description: "June 22–28: reducing scope and preparing branches for clear maintainer decisions."
+journal-title: "Review-driven cleanup before decisions"
+entry: "week-5"
 week: 5
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-06-22"
+date-end: "2026-06-28"
+status: "Complete"
 sprint: "Week 5"
-pull-requests: 0
+pull-requests: 4
 issues: 0
-categories: [Planned]
-body-classes: "week-page week-5-page"
+categories: [Review, Scope, Renderer, Maintenance]
+body-classes: "week-page journey-entry-page week-5-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+I reduced scope and prepared the active branches for clear maintainer decisions rather than adding more code to uncertain solutions.
+
+## What I Did
+
+- Kept [PR #306](https://github.com/animint/animint2/pull/306) limited to removing redundant selector existence checks.
+- Avoided mixing new behavior into a cleanup PR.
+- Reviewed maintainer feedback on PR #338 and PR #341.
+- Prepared to close proposals that were no longer the preferred solution.
+- Kept PR #339 separate from CI work because it changed user-visible facet rendering.
+
+## Learnings
+
+A small cleanup is valuable when it removes duplicate conditions without changing behavior. It becomes harder to review when it also tries to solve unrelated features or infrastructure. A closed investigation can remain useful documentation and prevent future contributors from repeating the same root-cause analysis.
+
+## Challenges / Notes
+
+Progress during review can look quieter than implementation work. The useful output was a smaller mergeable branch, explicit closure criteria, and a clearer boundary around the feature work.
+
+## Next Week Targets
+
+Merge the selector cleanup, close or rehome the two CI proposals, and keep the facet-strip feature current.
+
+## Demo / Media
+
+::: {.scope-comparison}
+::: {.scope-card .is-focused}
+**FOCUSED**
+
+PR #306
+
+Remove redundant guards. Preserve selector behavior. Keep review surface small.
+:::
+::: {.scope-card .is-mixed}
+**AVOIDED**
+
+Cleanup + new feature + workflow policy
+
+Multiple ownership boundaries and no single acceptance test.
+:::
+:::
+
+## Evidence and Links
+
+- [PR #306 — selector cleanup](https://github.com/animint/animint2/pull/306)
+- [PR #338 — GitHub Pages gating investigation](https://github.com/animint/animint2/pull/338)
+- [PR #341 — `atime` investigation](https://github.com/animint/animint2/pull/341)
+- [PR #339 — multiline facet strips](https://github.com/animint/animint2/pull/339)

@@ -1,0 +1,105 @@
+---
+title: "Community Bonding — From Backlog to Work Plan"
+description: "May 1–24: early merges, honest closures, project planning, and the first CI race investigation."
+entry: "community-bonding"
+date-start: "2026-05-01"
+date-end: "2026-05-24"
+status: "Complete"
+sprint: "Community Bonding"
+pull-requests: 6
+issues: 2
+categories: [Community Bonding, Planning, Gallery, CI]
+body-classes: "week-page journey-entry-page community-bonding-page"
+---
+
+{{< include ../_includes/week-nav.html >}}
+
+::: {.entry-kicker}
+COMMUNITY BONDING · MAY 1–24, 2026
+:::
+
+# Turning an accepted proposal into a practical work plan
+
+::: {.entry-summary-strip}
+`2 LASTING MERGES`{.entry-status .status-merged} `2 EXPERIMENTS CLOSED`{.entry-status .status-closed} `PUBLIC PLAN OPENED`{.entry-status}
+:::
+
+## Outcome
+
+I entered GSoC with several Animint2 contributions already under review. Community Bonding was therefore not only environment setup: I audited those branches, completed two visible contributions, closed two experiments honestly, organized the remaining work, and identified the CI race that became my first coding-period task.
+
+## Context
+
+Before GSoC, I had already started work across selector behavior, renderer tests, text rendering, facets, layout, and gallery maintenance. During May 1–24, the important work was deciding which branches should be completed first, which needed redesign, and which should stop rather than remain open indefinitely.
+
+## What I Did
+
+### May 1–9 — Visible results and useful closure
+
+- Merged [gallery PR #51](https://github.com/animint/gallery/pull/51), which ported the ChIP-seq Large Margin visualization to the current Animint2 gallery.
+- Merged [PR #272](https://github.com/animint/animint2/pull/272), adding file count, row count, total size, and mean size to download-status output.
+- Closed [PR #310](https://github.com/animint/animint2/pull/310), the k-fold renderer hard-test experiment, without merge after documenting its test-design lessons.
+
+### May 10–16 — Scope and compatibility review
+
+- Re-evaluated [PR #291](https://github.com/animint/animint2/pull/291), the broad `RJSONIO` to `jsonlite` migration.
+- Reviewed compatibility risks across scalars, vectors, data frames, `NULL`, nested lists, and automatic unboxing.
+- Rechecked open multiline, facet, selector, renderer, and CI branches instead of treating all of them as equally ready.
+
+### May 17–24 — Public plan and CI race
+
+- Opened [Issue #327](https://github.com/animint/animint2/issues/327) as my public GSoC plan and update log.
+- Closed PR #291 after preserving the useful compatibility research.
+- Opened [Issue #324](https://github.com/animint/animint2/issues/324) after tracing `R_coverage` and `JS_coverage` to the same mutable GitHub Pages test repository.
+- Opened [PR #330](https://github.com/animint/animint2/pull/330) with a test-first guard and job-specific repository names derived from `TEST_SUITE`.
+- Organized the active backlog into likely-to-merge, review-heavy, collaborative, exploratory, pre-midterm, and post-midterm workstreams.
+
+## Learnings
+
+A closed PR can still be useful when it exposes weak assertions, animation timing problems, compatibility risks, or a better repository boundary. PR #272 also reinforced that application output should explain technical state in user terms: “how many files?” and “how much data?” are more useful than an internal renderer value.
+
+The CI race showed that two individually correct jobs can fail when they share mutable external state. “Flaky” described the symptom, not the cause.
+
+## Challenges / Notes
+
+The largest challenge was prioritization. The accepted project continued earlier work, but that did not mean every existing branch belonged in the coding plan. Community Bonding converted a GitHub backlog into a sequence: stabilize CI, finish review-heavy branches, work on larger interaction changes after the midterm, and publish evidence for every outcome—including closures.
+
+## Next Week Targets
+
+- Merge the isolated-repository CI fix.
+- Complete the remaining PR #292 legend opt-out review.
+- Continue focused revisions on PR #288 and PR #285.
+
+## Demo / Media
+
+::: {.evidence-panel .community-starting-board}
+### GSoC starting workstream snapshot
+
+| Workstream | Starting state | Community Bonding decision |
+|---|---|---|
+| Gallery #51 | Under review | Merge the ChIP-seq port |
+| PR #272 | Under review | Merge download-size information |
+| PR #291 | Broad migration | Close after compatibility research |
+| PR #310 | Hard-test experiment | Close and preserve test lessons |
+| Issue #324 / PR #330 | New CI diagnosis | Make it the first coding-period task |
+:::
+
+::: {.evidence-panel}
+### Download-status information delivered by PR #272
+
+| geom | files | rows | total_MB | mean_MB |
+|---|---:|---:|---:|---:|
+| Interactive layers | Shown per geom | Shown per geom | Reported | Reported |
+
+The ChIP-seq result is linked to its merged gallery evidence below. It is not reconstructed from invented data: only a pinned gallery artifact should be presented as the original visualization.
+:::
+
+## Evidence and Links
+
+- [Issue #327 — public GSoC work plan](https://github.com/animint/animint2/issues/327)
+- [Issue #324 — shared GitHub Pages repository race](https://github.com/animint/animint2/issues/324)
+- [PR #330 — isolated CI repositories](https://github.com/animint/animint2/pull/330)
+- [PR #272 — download status size information](https://github.com/animint/animint2/pull/272)
+- [Gallery PR #51 — ChIP-seq Large Margin](https://github.com/animint/gallery/pull/51)
+- [PR #291 — closed JSON migration](https://github.com/animint/animint2/pull/291)
+- [PR #310 — closed renderer-test experiment](https://github.com/animint/animint2/pull/310)

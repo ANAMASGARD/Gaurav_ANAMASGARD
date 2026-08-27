@@ -1,0 +1,315 @@
+{
+ "geoms": {
+ "geom1_point_multiline": {
+ "geom": "point",
+"classed": "geom1_point_multiline",
+"aes": {
+"key": "group",
+"colour": "group",
+"clickSelects": "group",
+"showSelected1": "group"
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"size":        9,
+"clickSelects": "group",
+"showSelected": "group",
+"help_clickSelects": "group",
+"help_showSelected": "group" 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"key": "character",
+"clickSelects": "character",
+"showSelected1": "character",
+"PANEL": "integer",
+"group": "character",
+"fill": "rgb"
+},
+"chunk_order": [],
+"nest_order": [
+ "showSelected1" 
+],
+"subset_order": [
+ "showSelected1" 
+],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom1_point_multiline_chunk1.tsv": {
+ "bytes":      191,
+"rows": 3 
+} 
+} 
+},
+"geom2_text_multiline": {
+ "geom": "text",
+"classed": "geom2_text_multiline",
+"aes": {
+"y": "label_y",
+"label": "label",
+"key": "group",
+"colour": "group",
+"clickSelects": "group"
+},
+"params": {
+ "parse": false,
+"check_overlap": false,
+"na.rm": false,
+"na.rm": false,
+"vjust":        0,
+"size":        5,
+"clickSelects": "group",
+"showSelected": [ ],
+"help_clickSelects": "group",
+"help_showSelected": [ ] 
+},
+"types": {
+"colour": "rgb",
+"x": "numeric",
+"y": "numeric",
+"label": "character",
+"key": "character",
+"clickSelects": "character",
+"PANEL": "integer",
+"group": "character"
+},
+"chunk_order": [],
+"nest_order": [],
+"subset_order": [],
+"chunks": 1,
+"total": 1,
+"chunk_info": {
+ "geom2_text_multiline_chunk1.tsv": {
+ "bytes":      198,
+"rows": 3 
+} 
+} 
+} 
+},
+"selectors": {
+ "group": {
+ "legend": true,
+"is.variable.value": false,
+"type": "single",
+"clickSelects": true,
+"showSelected": true,
+"selected": "Renderer",
+"levels": [ "Compiler", "Renderer", "Tests" ],
+"update": [
+ "geom1_point_multiline",
+"geom2_text_multiline" 
+] 
+} 
+},
+"plots": {
+ "multiline": {
+ "panel_margin_lines":     0.25,
+"legend": {
+ "group": {
+ "guide": "legend",
+"geoms": [ "point", "text" ],
+"title": "Feature<br/>workstream",
+"class": "group",
+"selector": "group",
+"is_discrete": true,
+"legend_type": "colour",
+"text_size": "13.6pt",
+"title_size": "17pt",
+"entries": [
+ {
+ "pointcolour": "#F8766D",
+"pointshape":       21,
+"pointsize":        9,
+"pointstroke":      0.5,
+"label": "Compiler",
+"textcolour": "#F8766D",
+"textsize":        5,
+"textangle":        0,
+"texthjust":      0.5,
+"textvjust":        0,
+"textfamily": "",
+"textfontface":        1,
+"textlineheight":      1.2 
+},
+{
+ "pointcolour": "#00BA38",
+"pointshape":       21,
+"pointsize":        9,
+"pointstroke":      0.5,
+"label": "Renderer",
+"textcolour": "#00BA38",
+"textsize":        5,
+"textangle":        0,
+"texthjust":      0.5,
+"textvjust":        0,
+"textfamily": "",
+"textfontface":        1,
+"textlineheight":      1.2 
+},
+{
+ "pointcolour": "#619CFF",
+"pointshape":       21,
+"pointsize":        9,
+"pointstroke":      0.5,
+"label": "Tests",
+"textcolour": "#619CFF",
+"textsize":        5,
+"textangle":        0,
+"texthjust":      0.5,
+"textvjust":        0,
+"textfamily": "",
+"textfontface":        1,
+"textlineheight":      1.2 
+} 
+] 
+} 
+},
+"strips": {
+ "top": [
+ "" 
+],
+"right": [
+ "" 
+],
+"n": {
+ "top":        0,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ 1 ],
+"ROW": [ 1 ],
+"COL": [ 1 ],
+"SCALE_X": [ 1 ],
+"SCALE_Y": [ 1 ],
+"AXIS_X": [ true ],
+"AXIS_Y": [ true ],
+"coord_fixed": [ false ],
+"width_proportion": [        1 ],
+"height_proportion": [        1 ] 
+},
+"panel_background": {
+ "fill": "#EBEBEB",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": [],
+"grid_major": {
+ "colour": "#FFFFFF",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+        2,
+       3 
+] 
+],
+"y": [
+ [
+      2.5,
+       3,
+     3.5 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FFFFFF",
+"size":     0.25,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+      1.5,
+       2,
+     2.5,
+       3,
+     3.5 
+] 
+],
+"y": [
+ [
+     2.25,
+     2.5,
+    2.75,
+       3,
+    3.25,
+     3.5,
+    3.75 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+        2,
+       3 
+],
+"xlab": [
+ "2",
+"3" 
+],
+"xrange": [     1.28,     3.92 ],
+"xline": true,
+"xticks": true,
+"y": [
+      2.5,
+       3,
+     3.5 
+],
+"ylab": [
+ "2.5",
+"3.0",
+"3.5" 
+],
+"yrange": [   2.1175,   3.9325 ],
+"yline": true,
+"yticks": true 
+},
+"xtitle": "Interactive labels<br/>click a point or legend entry",
+"xtitle_size": "17pt",
+"strip_text_xsize": "17pt",
+"xsize": "17pt",
+"xangle":        0,
+"xanchor": "middle",
+"ytitle": "Renderer output<br/>with measured spacing",
+"ytitle_size": "17pt",
+"strip_text_ysize": "17pt",
+"ysize": "17pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "2",
+"3" 
+],
+"ylabs": [
+ "2.5",
+"3.0",
+"3.5" 
+],
+"title": "Multi-line text in Animint2<br/>Merged in PR #261",
+"title_size": "20.4pt",
+"options": {
+ "width":      760,
+"height":      620 
+},
+"span": {
+ "rowspan": null,
+"colspan": null,
+"last_in_row": true 
+},
+"geoms": [
+ "geom1_point_multiline",
+"geom2_text_multiline" 
+] 
+} 
+} 
+}

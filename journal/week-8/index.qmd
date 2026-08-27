@@ -1,16 +1,72 @@
 ---
-title: "Week 8 — Reserved Progress Entry"
-description: "A neutral starter entry reserved for verified Week 8 Animint2 progress."
+title: "Week 8 — Multiline Facet Geometry"
+description: "July 13–19: measuring multiline strip labels and reserving the space they need."
+journal-title: "Multiline facet labels now reserve the space they need"
+entry: "week-8"
 week: 8
-date-start: "Schedule pending"
-date-end: "Schedule pending"
-status: "Planned"
+date-start: "2026-07-13"
+date-end: "2026-07-19"
+status: "Complete"
 sprint: "Week 8"
-pull-requests: 0
+pull-requests: 1
 issues: 0
-categories: [Planned]
-body-classes: "week-page week-8-page"
+categories: [SVG, Facets, Browser Testing, Geometry]
+body-classes: "week-page journey-entry-page week-8-page"
 ---
 
 {{< include ../_includes/week-nav.html >}}
-{{< include ../_includes/planned-week.qmd >}}
+{{< include ../_includes/week-header.qmd >}}
+
+## Outcome
+
+I added a browser-geometry regression test that detected multiline facet strips overlapping the panel and then fixed their placement.
+
+## Context
+
+PR #339 began in Week 3 by splitting multiline labels into SVG `<tspan>` elements. Week 8 addressed the separate layout problem revealed after the lines existed.
+
+## What I Did
+
+- Added a browser-geometry test to [PR #339](https://github.com/animint/animint2/pull/339) on July 18.
+- Measured strip-text and panel positions instead of only checking that multiple `<tspan>` elements existed.
+- Updated the renderer so multiline strips sit outside the panel area.
+- Improved text measurement to include the height of every line.
+- Preserved the behavior across both `facet_grid()` and `facet_wrap()` paths.
+
+## Learnings
+
+Multiline rendering has two distinct requirements: draw every line and reserve enough layout space for every line. DOM-existence tests can pass even when SVG elements overlap the visualization; geometric relationships are the meaningful acceptance condition.
+
+## Challenges / Notes
+
+Font metrics and browser text rendering vary. The test needed to assert a stable relationship between strip and panel boundaries without depending on one exact pixel value.
+
+## Next Week Targets
+
+Address review across custom-height facets, legend control, and positive panel margins.
+
+## Demo / Media
+
+::: {.facet-before-after}
+::: {.facet-evidence .is-before}
+**BEFORE**
+
+Line 1<br>Line 2
+
+<span>Strip exists, but its measured box can overlap the panel.</span>
+:::
+::: {.facet-evidence .is-after}
+**AFTER**
+
+Line 1<br>Line 2
+
+<span>All lines are measured and the panel begins beyond the strip boundary.</span>
+:::
+:::
+
+**OPEN AT AUGUST 24 CUTOFF.** This remains a schematic linked to the PR rather than a current-`master` live demo, so an open branch is not presented as shipped behavior.
+
+## Evidence and Links
+
+- [PR #339 — multiline facet strips](https://github.com/animint/animint2/pull/339)
+- [Issue #327 — July 18 update](https://github.com/animint/animint2/issues/327)

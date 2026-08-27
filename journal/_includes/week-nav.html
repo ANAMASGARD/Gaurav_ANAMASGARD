@@ -13,13 +13,17 @@
     <a class="week-nav-link" data-week="10" href="/journal/week-10/">Week 10</a>
     <a class="week-nav-link" data-week="11" href="/journal/week-11/">Week 11</a>
     <a class="week-nav-link" data-week="12" href="/journal/week-12/">Week 12</a>
+    <a class="week-nav-link" data-entry="final" href="/journal/final-submission/">Final</a>
   </div>
 </nav>
 <script>
 (() => {
-  const match = window.location.pathname.match(/\/journal\/(?:week-)?(\d+)?\/?$/);
-  const activeWeek = match && match[1] ? match[1] : "1";
-  const activeLink = document.querySelector(`.week-nav-link[data-week="${activeWeek}"]`);
+  const path = window.location.pathname;
+  const match = path.match(/\/journal\/week-(\d+)\/?$/);
+  const activeWeek = /\/journal\/?$/.test(path) ? "1" : (match ? match[1] : null);
+  const activeLink = /\/journal\/final-submission\/?$/.test(path)
+    ? document.querySelector('.week-nav-link[data-entry="final"]')
+    : document.querySelector(`.week-nav-link[data-week="${activeWeek}"]`);
   if (!activeLink) return;
 
   activeLink.classList.add("is-active");
